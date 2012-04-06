@@ -144,9 +144,12 @@ Here $h(c_v^*)$ is the part of the utility function which does not depend upon a
 	\hat{\gamma} &= \sum_{j\neq v} \gamma_j\\
 	\zeta(\gamma) & = \ln\left(\prod_{j\neq v} \left(\frac{\gamma_j}{r_j}\right)^{\gamma_j}\left(\sum_{j\neq v} \gamma_j\right)^{-\sum_{j\neq v} \gamma_j}\right) 
 \end{align*}
-
+Note here that the budget constraint is satistfied for any choice of $c_v^* \in [0,W/r_v]$.
 Society knows that given wealth and the consumption of the visible good, it is optimal to split consumption among the invisible goods as derived above.  Thus using \eqref{invop}, we can rewrite the total utility function as: 
-\[U(C,\gamma,v) = (1-\alpha) \left(\hat{\gamma} \ln \left(W-r_v c_v\right) + \gamma_v \ln \left(c_v \right)\right) + \alpha \left(\gamma_v \ln \left(g(c_v)\right) + \gamma_v \ln \left(c_v\right) \right) + \zeta(\gamma)\]
+\begin{equation}
+	\label{ufun}
+	U(C,\gamma,v) = (1-\alpha) \left(\hat{\gamma} \ln \left(W-r_v c_v\right) + \gamma_v \ln \left(c_v \right)\right) + \alpha \left(\gamma_v \ln \left(g(c_v)\right) + \gamma_v \ln \left(c_v\right) \right) + \zeta(\gamma)
+	 \end{equation}
 Here $g(c_v)$ is society's guess about $W-r_v c_v$ based on $c_v$. 
 In particular, note that society's belief over a consumer's utility is described by a single-dimensional function.
 
@@ -158,15 +161,47 @@ g'(c_v) = \frac{1}{\alpha}\left( \left( 1-\alpha\right) r_v - \frac{\gamma_v}{\h
 Now we can directly follow Heffetz and solve this differential equation:
 \begin{equation}
 	\label{difsol}
-	g(c_v) = \frac{\hat{\gamma}\left(1-\alpha\right)}{\gamma_v +\alpha \hat{\gamma}} c_v + K c_v^{\frac{\gamma_v}{\alpha \hat{\gamma}}}
+	g(c_v) = \frac{\hat{\gamma}\left(1-\alpha\right)}{\gamma_v +\alpha \hat{\gamma}} r_v c_v + K c_v^{-\frac{\gamma_v}{\alpha \hat{\gamma}}}
 \end{equation}
 To solve for the constant $K$, note that the lowest possible wealth type $\underbar{W}$ has no reason to signal in a separating equilibrium.
-In particular, his consumption will not be distorted, so that his demand for $c_v$ will be given by:
+In particular, his consumption will not be distorted, so that his demand $\underbar{c}$ for $c_v$ will be given by:
+\begin{equation}
+	\label{lowc}
+	\underbar{c} = \frac{\gamma_v}{r_v}\left(\sum_{j} \gamma_j\right)^{-1}\underbar{W} 
+\end{equation}
+Since in equilibrium $g(\underbar{c}) = \underbar{W} - r_v \underbar{c}$, we can plug into \eqref{difsol} and solve for $K$:
 \[
-c_v^* = \frac{\gamma_v}{r_v}\left(\sum_{j} \gamma_j\right)^{-1}\underbar{W} 
+K = \frac{\underbar{W}- \frac{\gamma_v + \hat{\gamma}}{\gamma_v + \alpha \hat{\gamma}}r_v \underbar{c}}{\underbar{c}^{-\frac{\gamma_v}{\alpha \hat{\gamma}}}}
 \]
-Since in equilibrium $g(c_v^*) = \underbar{W} - r_v c_v^*$, we can plug into \eqref{difsol} and solve for $K$.
-This part of the analysis directly follows from Heffetz.
+We can think of $g$ as a function of $c_v$ and $\underbar{W}$. 
+Then $g$ is jointly homothetic.  
+\footnote{
+Below I show that $g$ is jointly homothetic of degree one in $\underbar{W}$ and $c_v$.  First, it is immediate from \eqref{lowc} that $\underbar{c}$ scales linearly with $\underbar{W}$.
+Now $K$ scales non-linearly with $\underbar{W}$:
+\begin{align*}
+	K(s\underbar{W}) &= \frac{s\underbar{W}- \frac{\gamma_v + \hat{\gamma}}{\gamma_v + \alpha \hat{\gamma}}r_v s \underbar{c}}{(s\underbar{c})^{-\frac{\gamma_v}{\alpha \hat{\gamma}}}} \\
+	&= s^{1 + \frac{\gamma_v}{\alpha \hat{\gamma}}}K(\underbar{W})
+\end{align*}
+The way $K$ scales, however, is just right to make $g$ scale linearly in $c_v$:
+\begin{align*}
+	g(s c_v,\underbar{W}) &= \frac{\hat{\gamma}\left(1-\alpha\right)}{\gamma_v +\alpha \hat{\gamma}} r_v s c_v + s^{1+\frac{\gamma_v}{\alpha \hat{\gamma}}} K(\underbar{w}) (s c_v)^{-\frac{\gamma_v}{\alpha \hat{\gamma}}} \\
+	&= \frac{\hat{\gamma}\left(1-\alpha\right)}{\gamma_v +\alpha \hat{\gamma}} r_v s c_v + s K(\underbar{w}) c_v^{-\frac{\gamma_v}{\alpha \hat{\gamma}}} \\
+	&= s g(c_v,\underbar{W})
+\end{align*}
+}
+This means that, given prices, a scaling of social wealth just scales consumption choices.
+\footnote{
+In this footnote, I show that if $c^*$ is an interior maximizer of \eqref{ufun} for an individual of wealth $W$, then $s c^*$ is a solution to the  problem of an individual of wealth $s W$, as long as we also scale $\underbar{W}$ up by $s$ as well.
+If $c^*$ is an interior maximizer, then it solves the first order conditions of \eqref{ufun}:
+\[
+\frac{(1-\alpha)r_v \hat{\gamma}}{W-r_v c^*} = \frac{\alpha \gamma_v g'(c^*)}{g(c^*)} + \frac{\gamma_v}{c^*}
+\]
+Now divide both sides of the equation by $s$, and using the fact that $g$ is homothetic of degree one and $g'$ is homothetic of degree zero, we get:
+\[
+\frac{(1-\alpha)r_v \hat{\gamma}}{s W-r_v s c^*} = \frac{\alpha \gamma_v g'(s c^*)}{g(s c^*)} + \frac{\gamma_v}{s c^*}
+\]
+Thus, $s c^*$ solves the scaled problem.
+}
 \section{Data}
 This project requires three types of data.  We need consumer expenditure data at the household level, we need relative price data, and we need demographicly differentiated information about how visible different good categories are relative to each other. 
 \subsection{Vindex data}
@@ -399,27 +434,39 @@ Then the consumptions of goods $j\neq v$ are given by:
 \begin{align}
 	\label{eq:sgd}
 	r_jc_j &= \frac{\gamma_j}{\sum_{i\neq v}\gamma_i}  \left(W-  r_v c_v\right)\\
+	\label{eq:sgdsol}
 	\gamma_j &= \frac{r_j c_j}{\left(W- r_v c_v\right)} \sum_{i\neq v}\gamma_i  
 \end{align}
+
 We can solve for the 28 $\gamma$'s up to a scaling factor $\sum_{i\neq v}\gamma_i$.
 I normalize the parameter $\gamma_1$ on consumption of food at home to one. 
 \footnote{It is important to choose a good which always has positive consumption, since this strategy will not work if consumption of the normalized good is zero.  Fortunatelly, food at home is consumed in all but (x) of the households.}
-If food at home is not the observation type, then the solution for $j \neq v$ is:
+If food at home is not the observation type, i.e. $v\neq 1$, then the solution for $j \neq v$ is:
 \begin{equation}
 	\gamma_j = \frac{r_j c_j}{r_1 c_1}
 \end{equation}
+
 We are still missing $\gamma_v$ from the good which society observes.
-$\gamma_v$ can be approximated by using the implicit function theorem and a Taylor expansion around the non-signaling optimal consumption $c_v^*$:
+$\gamma_v$ can be approximated by using the implicit function theorem and a Taylor expansion around the optimal consumption of the visable good for some predetermined value $\hat{\gamma}_v$, for example the mean of the distribution in the last iteration.  Appreviating the $g(c,v,\gamma)$ function with $g(c_v)$ we have:
 \begin{equation}
-	\frac{\partial \psi_v}{\partial c_v}|c_v^* = \frac{1}{\frac{\partial c_v}{\partial \psi_v}}|c_v^*=\frac{\alpha \hat{\beta}}{\beta_v}\left(c_v^*-\psi_v\right)^2 \left( \frac{g'(c_v^*)}{g(c_v^*)-\hat{\psi}} - \frac{g^{''}(c_v^*)}{\left(g(c_v^*) -\hat{\psi}\right)^2}-\frac{r_v}{\alpha \hat{\beta}(W-\sum_{j\neq v} r_j (\psi_j + \gamma_j) -r_v c_v^*)^2}\right)
+	\frac{\partial \gamma_v}{\partial c_v(\hat{\gamma}_v)}|c_v(\hat{\gamma}_v) =\frac{\gamma_v}{c_v(\hat{\gamma}_v)}-\alpha \frac{c_v(\hat{\gamma}_v) g''(c_v(\hat{\gamma}_v))\sum_{j\neq v} \gamma_j }{g(c_v(\hat{\gamma}_v))}+\alpha \frac{c_v(\hat{\gamma}_v) (g'(c_v(\hat{\gamma}_v)))^2 \sum_{j\neq v}\gamma_j}{(g(c_v(\hat{\gamma}_v)))^2} + \frac{r_v^2 c_v(\hat{\gamma}_v)}{(W-r_v c_v(\hat{\gamma}_v))^2}
 \end{equation}
+
 The approximation is then:
 \begin{equation}
-	\gamma_v \approx \left(\frac{\partial \psi_v}{\partial c_v}|c_v^*\right)\left(c_v - c_v^*\right)
+	\gamma_v \approx \hat{\gamma}_v + \left(\frac{\partial \gamma_v}{\partial c_v(\hat{\gamma}_v)}|c_v(\hat{\gamma}_v)\right) \left(c_v - c_v(\hat{\gamma})\right)
 \end{equation}
+
 If the observation type \emph{is} food at home, then the situation changes a little bit.  
-The first step is then to use the following approximation to solve for $\sum_{j\neq 1} \gamma_j$:
-Once we have $\sum_{j\neq 1} \gamma_j$, we can solve  
+The first step is to use a similar approximation to solve for $\sum_{j\neq 1} \gamma_j$, around some value $\hat{\gamma}^*$:
+\begin{equation}
+	\frac{\partial \hat{\gamma}}{\partial c_v(\hat{\gamma})}|c_v(\hat{\gamma}^*) = \frac{g(c_v(\hat{\gamma}^*))}{\alpha g'(c_v(\hat{\gamma}^*))}\left(\frac{1}{c_v(\hat{\gamma}^*)} + \frac{r_v^2}{W-r_v c_v(\hat{\gamma}^*))}\right) + \hat{\gamma}^* \left(\frac{g'(c_v(\hat{\gamma}^*))}{g(c_v(\hat{\gamma}^*))} - \frac{g''(c_v(\hat{\gamma}^*))}{g'(c_v(\hat{\gamma}^*))}\right)
+\end{equation}
+And the approximation, as above:
+\begin{equation}
+	\hat{\gamma} \approx \hat{\gamma}^* + \left(\frac{\partial \hat{\gamma}}{\partial c_v(\hat{\gamma})}|c_v(\hat{\gamma}^*)\right) \left(c_v - c_v(\hat{\gamma}^*)\right)
+\end{equation}
+Once we have an approximation of $\sum_{j\neq 1} \gamma_j$, we can easily solve the simultaneous equations \eqref{eq:sgdsol}.
 
 It should be noted that to get the $g$ function, I need to estimate the lowest social wealth level. 
 At first blush, it appears that using the minimum wealth level in my data set would be a good estimator for this wealth level.
