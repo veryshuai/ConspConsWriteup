@@ -155,6 +155,7 @@ In particular, note that society's belief over a consumer's utility is described
 
 The first order conditions for an interior solution to the consumer's problem can be written:
 \begin{equation}
+	\label{foc}
 g'(c_v) = \frac{1}{\alpha}\left( \left( 1-\alpha\right) r_v - \frac{\gamma_v}{\hat{\gamma}}\frac{g(c_v)}{c_v }\right)
 \end{equation}
 
@@ -220,6 +221,8 @@ Table \ref{tab:vintab} below is an example of a vindex table for non-blacks unde
 \begin{table}
 	\begin{center}
 \begin{tabular}{|l|c|c|}
+	\hline
+	\textbf{Category} & \textbf{Vindex} & \textbf{SE} \\
 	\hline
 Clo (clothing) & 0.78 & (0.02)\\ 
 	\hline
@@ -311,14 +314,14 @@ By adding 29 latent observation types and preference heterogeneity, the version 
 
 \begin{figure}
 	\begin{center}
-		\includegraphics[scale=.8]{pics/shares_cropped.pdf}
+		\includegraphics[scale=1]{pics/shares_cropped.pdf}
 	\end{center}
 	\label{fig:shr}
 	\caption{Log Expenditure Shares by Log Expenditure for select goods}
 \end{figure}
 \begin{figure}
 	\begin{center}
-		\includegraphics[scale=.8]{pics/levels_cropped.pdf}
+		\includegraphics[scale=1]{pics/levels_cropped.pdf}
 	\end{center}
 	\label{fig:lev}
 	\caption{Log Category Expenditure by Log Expenditure for select goods}
@@ -423,10 +426,98 @@ As a reminder, the utility function now looks like this:
 U(C,\gamma,v) = (1-\alpha) \sum_{j=1}^{29}\gamma_j \ln(c_j )  + \alpha \left(\gamma_v \ln(c_v)+ \hat{\gamma}\ln(g(c_v,v,\gamma))  + \zeta \right)
 \end{equation}
 
-I assume that the preference shocks $\gamma$ are distributed exponential with rate parameter $\lambda_i$. 
-The exponential distribution is convenient because there are many zeros in the data, which imply a $\gamma$ of zero in the model.
-The exponential distribution has positive density at zero.
-I considered choosing the $\Gamma$ distribution, but this adds another parameter to estimate for each good, and the shape of $\gamma$ is not too different from that of the exponential distribution for the range of parameters which give positive density at zero.
+%I assume that the preference shocks $\gamma$ are distributed exponential with rate parameter $\lambda_i$. 
+%The exponential distribution is convenient because there are many zeros in the data, which imply a $\gamma$ of zero in the model.
+%The exponential distribution has positive density at zero.
+%I considered choosing the $\Gamma$ distribution, but this adds another parameter to estimate for each good, and the shape of $\gamma$ is not too different from that of the exponential distribution for the range of parameters which give positive density at zero.
+I assume that the preference parameters are distributed log normal with a mass point at zero.
+This assumption seems reasonable given the raw data.
+First of all, Table \ref{tab:sharetab} shows that there is a lot of mass at zero.
+\begin{table}
+	\begin{center}
+\begin{tabular}{|l|c|}
+	\hline
+\textbf{Category} & \textbf{Zero Expenditure} \\
+	\hline
+Clo (clothing) & 0.11 \\ 
+	\hline
+Cig (cigarettes) & 0.60 \\ 
+	\hline
+Car (cars) & 0.47 \\ 
+	\hline
+Fur (furniture) & 0.26 \\ 
+	\hline
+Ot1 (recreation 1) & 0.16 \\ 
+	\hline
+Jwl (jewelry) & 0.64 \\ 
+	\hline
+FdO (food out) & 0.10 \\ 
+	\hline
+AlH (alcohol home) & 0.49 \\ 
+	\hline
+AlO (alcohol out) & 0.51 \\ 
+	\hline
+Ot2 (recreation 2) & 0.10 \\ 
+	\hline
+Brb (barbers etc) & 0.17 \\ 
+	\hline
+Bks (books etc) & 0.48 \\ 
+	\hline
+Edu (education) & 0.70 \\ 
+	\hline
+Hom (rent/home) & 0.57 \\ 
+	\hline
+FdH (food home) & 0.02 \\ 
+	\hline
+Htl (hotels etc) & 0.62 \\ 
+	\hline
+Air (air travel) & 0.67 \\ 
+	\hline
+Bus (public trans.) & 0.73 \\ 
+	\hline
+CMn (car repair) & 0.24 \\ 
+	\hline
+Cha (charities) & 0.58 \\ 
+	\hline
+Gas (gasoline) & 0.11 \\ 
+	\hline
+Lry (laundry) & 0.33 \\ 
+	\hline
+Med (health care) & 0.25 \\ 
+	\hline
+Tel (home phone) & 0.06 \\ 
+	\hline
+Utl (home utilities) & 0.12 \\ 
+	\hline
+Fee (legal fees) & 0.36 \\ 
+	\hline
+CIn (car insur.) & 0.35 \\ 
+	\hline
+LIn (life insur.) & 0.54 \\ 
+	\hline
+HIn (home insur.) & 0.41 \\ 
+	\hline
+\end{tabular}
+\end{center}
+\label{tab:sharetab}
+\caption{Fraction with zero shares in household expenditures by category.}
+\vspace{-2in}
+\end{table}
+The highest zero consumption rate is public transportation at 73.44\%.  
+Given the Cobb-Douglas structure of utility, the only way to get exactly zero consumption is with a utility parameter of zero.
+The justification for the log-normal assumption is due to Figure .
+\begin{figure}
+	\begin{center}
+		\includegraphics[scale=1]{pics/shrplot_cropped.pdf}
+	\end{center}
+	\caption{Log non-zero consumption share histograms by category.}
+	\label{fig:shrplot}
+\end{figure}
+Figure  shows histograms of the logs of non-zero expenditures for the first 16 consumption categories.  
+The histograms are all reasonably close to normal probability distribution functions.
+If there was no signaling, Cobb-Douglas utility would imply that consumption shares are directly proportional to utility parameters.
+The signaling model retains a Cobb-Douglas flavor, as shares of non-observable goods are still proportional to utility parameters.
+Choosing a log-normal distribution with a zero mass point gives me enough flexibility to capture the general shape of the data.
 
 Consider a household of wealth type $W$ and with consumption vector $C$.  
 Suppose that the household is observation type $v$.
@@ -440,165 +531,197 @@ Then the consumptions of goods $j\neq v$ are given by:
 
 We can solve for the 28 $\gamma$'s up to a scaling factor $\sum_{i\neq v}\gamma_i$.
 I normalize the parameter $\gamma_1$ on consumption of food at home to one. 
-\footnote{It is important to choose a good which always has positive consumption, since this strategy will not work if consumption of the normalized good is zero.  Fortunatelly, food at home is consumed in all but (x) of the households.}
-If food at home is not the observation type, i.e. $v\neq 1$, then the solution for $j \neq v$ is:
+\footnote{It is important to choose a good which always has positive consumption, since this strategy will not work if consumption of the normalized good is zero.  
+Fortunately, food at home is consumed in all but (x) of the households.}
+If food at home is not the observation type, and in what follows I assume it is not, then the solution for $j \neq v$ is:
+\footnote{In a previous version of the estimation, I allowed for food at home to be an observation type.
+It is not difficult to do so.
+The only drawback is that the numerical optimization comes first (and solves for $\sum_{j \neq 1} \gamma_j$ rather than $\gamma_1$ which is normalized to unity.  
+Putting the numerical optimization in the first step potentially adds some error into the coefficients in the second step, and I found that the estimation routine became very touchy with regard to starting values.
+In any case, for now I assume that food at home is not the observation type.
+This assumption may not be too serious since food at home is a relatively invisible consumption category.
+}
 \begin{equation}
+	\label{eq:gamsol}
 	\gamma_j = \frac{r_j c_j}{r_1 c_1}
 \end{equation}
-
-We are still missing $\gamma_v$ from the good which society observes.
-$\gamma_v$ can be approximated by using the implicit function theorem and a Taylor expansion around the optimal consumption of the visable good for some predetermined value $\hat{\gamma}_v$, for example the mean of the distribution in the last iteration.  Appreviating the $g(c,v,\gamma)$ function with $g(c_v)$ we have:
-\begin{equation}
-	\frac{\partial \gamma_v}{\partial c_v(\hat{\gamma}_v)}|c_v(\hat{\gamma}_v) =\frac{\gamma_v}{c_v(\hat{\gamma}_v)}-\alpha \frac{c_v(\hat{\gamma}_v) g''(c_v(\hat{\gamma}_v))\sum_{j\neq v} \gamma_j }{g(c_v(\hat{\gamma}_v))}+\alpha \frac{c_v(\hat{\gamma}_v) (g'(c_v(\hat{\gamma}_v)))^2 \sum_{j\neq v}\gamma_j}{(g(c_v(\hat{\gamma}_v)))^2} + \frac{r_v^2 c_v(\hat{\gamma}_v)}{(W-r_v c_v(\hat{\gamma}_v))^2}
-\end{equation}
-
-The approximation is then:
-\begin{equation}
-	\gamma_v \approx \hat{\gamma}_v + \left(\frac{\partial \gamma_v}{\partial c_v(\hat{\gamma}_v)}|c_v(\hat{\gamma}_v)\right) \left(c_v - c_v(\hat{\gamma})\right)
-\end{equation}
-
-If the observation type \emph{is} food at home, then the situation changes a little bit.  
-The first step is to use a similar approximation to solve for $\sum_{j\neq 1} \gamma_j$, around some value $\hat{\gamma}^*$:
-\begin{equation}
-	\frac{\partial \hat{\gamma}}{\partial c_v(\hat{\gamma})}|c_v(\hat{\gamma}^*) = \frac{g(c_v(\hat{\gamma}^*))}{\alpha g'(c_v(\hat{\gamma}^*))}\left(\frac{1}{c_v(\hat{\gamma}^*)} + \frac{r_v^2}{W-r_v c_v(\hat{\gamma}^*))}\right) + \hat{\gamma}^* \left(\frac{g'(c_v(\hat{\gamma}^*))}{g(c_v(\hat{\gamma}^*))} - \frac{g''(c_v(\hat{\gamma}^*))}{g'(c_v(\hat{\gamma}^*))}\right)
-\end{equation}
-And the approximation, as above:
-\begin{equation}
-	\hat{\gamma} \approx \hat{\gamma}^* + \left(\frac{\partial \hat{\gamma}}{\partial c_v(\hat{\gamma})}|c_v(\hat{\gamma}^*)\right) \left(c_v - c_v(\hat{\gamma}^*)\right)
-\end{equation}
-Once we have an approximation of $\sum_{j\neq 1} \gamma_j$, we can easily solve the simultaneous equations \eqref{eq:sgdsol}.
-
-It should be noted that to get the $g$ function, I need to estimate the lowest social wealth level. 
+Using the first order conditions to the consumer's problem \eqref{foc} and given the results of \eqref{eq:gamsol}, for each household I numerically solve for  $\gamma_v$.
+%We are still missing $\gamma_v$ from the good which society observes.
+%$\gamma_v$ can be approximated by using the implicit function theorem and a Taylor expansion around the optimal consumption of the visable good for some predetermined value $\hat{\gamma}_v$, for example the mean of the distribution in the last iteration.  Appreviating the $g(c,v,\gamma)$ function with $g(c_v)$ we have:
+%\begin{equation}
+%	\frac{\partial \gamma_v}{\partial c_v(\hat{\gamma}_v)}|c_v(\hat{\gamma}_v) =\frac{\gamma_v}{c_v(\hat{\gamma}_v)}-\alpha \frac{c_v(\hat{\gamma}_v) g''(c_v(\hat{\gamma}_v))\sum_{j\neq v} \gamma_j }{g(c_v(\hat{\gamma}_v))}+\alpha \frac{c_v(\hat{\gamma}_v) (g'(c_v(\hat{\gamma}_v)))^2 \sum_{j\neq v}\gamma_j}{(g(c_v(\hat{\gamma}_v)))^2} + \frac{r_v^2 c_v(\hat{\gamma}_v)}{(W-r_v c_v(\hat{\gamma}_v))^2}
+%\end{equation}
+%
+%The approximation is then:
+%\begin{equation}
+%	\gamma_v \approx \hat{\gamma}_v + \left(\frac{\partial \gamma_v}{\partial c_v(\hat{\gamma}_v)}|c_v(\hat{\gamma}_v)\right) \left(c_v - c_v(\hat{\gamma})\right)
+%\end{equation}
+%
+%If the observation type \emph{is} food at home, then the situation changes a little bit.  
+%The first step is to use a similar approximation to solve for $\sum_{j\neq 1} \gamma_j$, around some value $\hat{\gamma}^*$:
+%\begin{equation}
+%	\frac{\partial \hat{\gamma}}{\partial c_v(\hat{\gamma})}|c_v(\hat{\gamma}^*) = \frac{g(c_v(\hat{\gamma}^*))}{\alpha g'(c_v(\hat{\gamma}^*))}\left(\frac{1}{c_v(\hat{\gamma}^*)} + \frac{r_v^2}{W-r_v c_v(\hat{\gamma}^*))}\right) + \hat{\gamma}^* \left(\frac{g'(c_v(\hat{\gamma}^*))}{g(c_v(\hat{\gamma}^*))} - \frac{g''(c_v(\hat{\gamma}^*))}{g'(c_v(\hat{\gamma}^*))}\right)
+%\end{equation}
+%And the approximation, as above:
+%\begin{equation}
+%	\hat{\gamma} \approx \hat{\gamma}^* + \left(\frac{\partial \hat{\gamma}}{\partial c_v(\hat{\gamma})}|c_v(\hat{\gamma}^*)\right) \left(c_v - c_v(\hat{\gamma}^*)\right)
+%\end{equation}
+%Once we have an approximation of $\sum_{j\neq 1} \gamma_j$, we can easily solve the simultaneous equations \eqref{eq:sgdsol}.
+It should be noted that to get the $g$ function in the first order condition \eqref{foc}, I need to estimate the lowest social wealth level. 
 At first blush, it appears that using the minimum wealth level in my data set would be a good estimator for this wealth level.
 Presumably due to measurement error, however, the data set contains a few unbelievably low values--the lowest (positive) value is something on the order of six dollars of annual expenditure.
 In practice, I assume the lowest possible wealth level is one thousand dollars, and drop any households with lower expenditure.
-Out of my 160,617 household observations, 4722 are dropped.
-The dropped observations include something like 2500 observations which have negative annual expenditures, caused by reported negative consumption (NEED TO CHECK EXACT NUMBER).
-For completeness, given an observation type $v$, the likelihood function for a particular household is written as follows:
+Out of my 160,617 household observations, 4722 are dropped because they are less than 1000 dollars, 1079 further observations are dropped due to negative consumption reports, and finally 800 further observations are dropped due to zero expenditures on food at home.
+This leaves me with a total of 154,016 usable observations.
+For completeness, I include the likelihood function for a single household below.  $\gamma_j$ is a function of observed consumption $C$ and observation type $v$, but to simplify notation I just write $\gamma_j$:
 \begin{equation}
 	\label{lik1}
-	l(v,W,C,\theta) = \sum_{j} \ln \phi(\gamma_j,0,\sigma_j)
+	l(C|v,\mu,\sigma) = \sum_{j} \left(\mathbf{1}_{\{\gamma_j = 0\}}\ln\left(pr(\gamma_j=0)\right)) + \mathbf{1}_{\{\gamma_j \neq 0\}} \left(\ln\left(1-pr(\gamma_j = 0)\right)+\ln \phi(\gamma_j|\mu_j,\sigma_j)\right)\right)
 \end{equation}
+Here $\phi$ is the log-normal probability density function.
 
-Once we have solved for the gammas, we can calculate a likelihood for each observation type possibility.
+Once we have solved for the distribution parameters, we can calculate a likelihood for each observation type possibility.
 Up to this point, I have not introduced the Heffetz vindex into the estimation. The vindex enters in the next step (the E step in the EM algorithm).
-Given a set of parameters, we need to choose the most likely observation types.
-This calculation is as follows:
+Given a set of parameters, we need to choose the most likely observation type for each household.
+This calculation for each household is as follows:
 \begin{equation}
-	pr(i|W,C,\theta) = \frac{v_i l(i,W,C,\theta)}{\sum_j v_j l(j,W,C,\theta)}
+	\max_{i\in I} \ln (v_i) + l(C|i,\mu,\sigma)
 \end{equation}
-The $v_i$ here is the vindex probability, or the probability of society choosing that particular good to announce.
+The $v_i$ here is the vindex probability, or the probability of social group judging well-being based on a particular good category.
 In practice I have different visibility indexes for four groups of households: blacks under 40, blacks over 40, non-blacks under 40, and non-blacks over 40.
-\footnote{A household is identified by the self-identified characteristics of whoever answered the consumption survey.} 
 The visibility probabilities are taken directly from Heffetz and normalized so that they sum to one.
-\footnote{In a previous version of this project, I needed to calculate equilibrium consumptions for each type.  This led me to keep the type nmber small.  In the current version, the fineness of the type does not affect the speed of estimation.  One of the next things on the plate, in terms of this project, is including very fine types--as fine as allowed by the Heffetz survey.}
+\footnote{A household is identified by the self-identified characteristics of whoever answered the consumption survey. 
+In a previous version of this project, I needed to calculate equilibrium consumptions for each type.  This led me to keep the type nmber small.  In the current version, the fineness of the type does not affect the speed of estimation.  One of the next things on the plate, in terms of this project, is including very fine types--as fine as allowed by the Heffetz survey.}
 
-The vector $\theta$ of parameters to be estimated contains 59 utility function parameters and 29 standard deviations for the preference heterogeneity.  
-This totals to 88 parameters.  
-However, since the preference heterogeneity is assumed to be independent normal, the sample variance in the $\gamma$'s gives me the likelihood maximizing value for the $\sigma$'s.
-Thus I have only the 59 utility parameters to estimate in the EM loop. 
-In my useable dataset, I have 155,270 households which is more than 2,500 household observations per parameter.
-\section{Discussion of Estimation}
-I am currently using only 10,000 randomly chosen household observations in the EM algorithm.
-When I impliment parallel computing in the code, I should be able to handle all of the data at about the same speed (since I have access to 12 cores to run at any given time).
-The likelihood algorithm needs to loop over household observations.
-The reason I haven't been able to just change the for to parfor in the code is that the task per observation is very quick, only a fraction of a second.
-The overhead of passing information back and forth between cores with such quick tasks makes is quicker to just use a standard serial process.
-The typical way to solve this problem is to group the small tasks into larger tasks to be passed to individual cores.  
-In any case, this is probably the next thing I will implement in the code.
-
-With 10,000 observations, it takes about two seconds to evaluate the likelihood function once.
-Since the solver I am using (knitro) needs to approximate the jacobian at each iteration, one iteration of the likelihood solver takes about two minutes.
-The second step in which the most likely observation types are chosen takes a bit longer to run one iteration, but usually only needs to run onc or two iterations before the EM algorithm converges stops.
-
-One issue is the appearance of NaNs and infs in the likelihood estimation. 
-This happens occasionally, and rather than kill the loop I currently just penalize the likelihood.
-I do this by adding a log likelihood value about ten times worse than the minimum of likelihood values appearing in a typical run.
-The infs appear when the likelihood is very low, so that MATLAB approximates with zero.
-I haven't been able to diagnose the occassional NaN yet.
-\section{Preliminary Results}
-Table \ref{tab:parest} below presents some estimation results.  
-As mentioned above, these results estimated on only a (small) random sample of the full dataset.
-The main parameter of interest--the weight of conspicuous consumption in utilityis 0.44.  
-
+There are 28 $\mu$'s, 28 $\sigma$'s, 28 zero mass point probabilities, and $\alpha$ to be estimated--a total of 85 parameters.   
+In my useable dataset, I have 154,016 households which is 1,800 household observations per parameter.
+However, to save computation time, I am currently using only 10,000 randomly chosen household observations, or a little over 100 observations per parameter.
+Since the preference heterogeneity is assumed to be independent, given observation types and an $\alpha$ I can use the (log) sample mean and variance to recover the likelihood maximizing $\mu$ and $\sigma$'s.
+Thus the maximization step above is really only over the single dimensional $\alpha$ parameter.
+%\section{Discussion of Estimation}
+%The overhead of passing information back and forth between cores with such quick tasks makes is quicker to just use a standard serial process.
+%The typical way to solve this problem is to group the small tasks into larger tasks to be passed to individual cores.  
+%In any case, this is probably the next thing I will implement in the code.
+%
+%With 10,000 observations, it takes about two seconds to evaluate the likelihood function once.
+%Since the solver I am using (knitro) needs to approximate the jacobian at each iteration, one iteration of the likelihood solver takes about two minutes.
+%The second step in which the most likely observation types are chosen takes a bit longer to run one iteration, but usually only needs to run onc or two iterations before the EM algorithm converges stops.
+%
+%One issue is the appearance of NaNs and infs in the likelihood estimation. 
+%This happens occasionally, and rather than kill the loop I currently just penalize the likelihood.
+%I do this by adding a log likelihood value about ten times worse than the minimum of likelihood values appearing in a typical run.
+%The infs appear when the likelihood is very low, so that MATLAB approximates with zero.
+%I haven't been able to diagnose the occassional NaN yet.
+\section{Results}
+Table \ref{tab:parest} below presents estimation results.  
 \begin{table}
 	\begin{center}
-		\begin{tabular}{|l|c|c|}
+		\begin{tabular}{|l|c|c|c|}
 			\hline
-			Good Cat & $\beta$ & $\psi$ \\
+			Good Cat & $\mu$ & $\sigma$ & $pr(\gamma_j =  0)$\\
 			\hline
-			FdH & 1.0 & 7.6 \\   
+			FdO & -1.2106 &    1.1823 &    0.0836\\ 
+                        \hline
+			Cig & -6.1907 &   11.4001 &    0.8274\\ 
 			\hline
-			FdO & 7.6 & 7.7 \\ 
+			AlH & -2.7418 &    1.2418 &    0.4760\\ 
 			\hline
-			Cig & 4.7 & 8.2 \\ 
+			AlO & -3.0832 &    1.6011 &    0.5032\\ 
 			\hline
-			AlH & 5.7 & 7.7 \\ 
+			Clo & -1.4358 &    1.1580 &    0.0938\\ 
 			\hline
-			AlO & 5.0 & 7.8 \\ 
+			Lry & -3.3559 &    1.3826 &    0.3102\\ 
 			\hline
-			Clo & 12.7 & 7.3  \\
+			Jwl & -5.3608 &    8.1810 &    0.6604\\ 
 			\hline
-			Lry & 5.7 & 7.5 \\ 
+			Brb & -2.6958 &    1.0096 &    0.1530\\ 
 			\hline
-			Jwl & 7.9 & 7.5 \\ 
+			Hom &  0.3824 &    0.8689 &    0.7046\\ 
 			\hline
-			Brb & 1.4 & 7.8 \\ 
+			Htl & -2.4135 &    1.3596 &    0.6360\\ 
 			\hline
-			Hom & 9.2 & 7.6 \\ 
+			Fur & -1.9858 &    1.4964 &    0.2570\\ 
 			\hline
-			Htl & 9.1 & 7.6 \\ 
+			Utl & -0.8731 &    0.7561 &    0.0960\\ 
 			\hline
-			Fur & 9.0 & 7.2 \\ 
+			Tel & -1.6308 &    0.9058 &    0.0360\\ 
 			\hline
-			Utl & 3.5 & 7.9 \\ 
+			HIn & -1.5132 &    1.1389 &    0.4102\\ 
 			\hline
-			Tel & 8.3 & 7.4 \\ 
+			Med & -1.8537 &    1.3468 &    0.2514\\ 
 			\hline
-			HIn & 10.4 & 7.3 \\ 
+			Fee & -2.9173 &    1.3449 &    0.3530\\ 
 			\hline
-			Med & 8.2 & 7.8 \\ 
+			LIn & -2.2290 &    1.2182 &    0.5192\\ 
 			\hline
-			Fee & 15.5 & 7.7 \\ 
+			Car & -2.3967 &    1.8427 &    0.5890\\ 
 			\hline
-			LIn & 9.7 & 9.1 \\ 
+			CMn & -2.2251 &    1.5484 &    0.2236\\ 
 			\hline
-			Car & 3.6 & 7.3 \\ 
+			Gas & -1.0737 &    0.8481 &    0.0956\\ 
 			\hline
-			CMn & 7.9 & 7.7 \\ 
+			CIn & -1.4963 &    0.8789 &    0.3360\\ 
 			\hline
-			Gas & 7.2 & 8.2 \\ 
+			Bus & -6.1303 &    8.6399 &    0.7626\\ 
 			\hline
-			CIn & 11.5 & 7.7 \\ 
+			Air & -2.2693 &    1.6096 &    0.6914\\ 
 			\hline
-			Bus & 4.5 & 7.7 \\ 
+			Bks & -3.4553 &    1.4929 &    0.4718\\ 
 			\hline
-			Air & 9.2 & 7.7 \\ 
+			Ot1 & -2.7484 &    1.1775 &    0.1316\\ 
 			\hline
-			Bks & 4.9 & 7.7 \\ 
+			Ot2 & -1.3021 &    1.2837 &    0.0828\\ 
 			\hline
-			Ot1 & 12.1 & 6.6 \\ 
+			Edu & -5.8550 &   10.3474 &    0.8262\\ 
 			\hline
-			Ot2 & 9.1 & 7.7 \\ 
+			Cha & -2.3950 &    1.5843 &    0.5950\\ 
 			\hline
-			Edu & 9.3 & 8.0 \\ 
+		        \hline	
+			$\alpha$ & 0.1459 & & \\
 			\hline
-			Cha & 7.4 & 7.2 \\ 
-			\hline
-			\hline
-			$\alpha$ & .44 & \\
 			\hline
 		\end{tabular}
 	\end{center}
-	\caption{Preliminary Parameter Estimates}
+	\caption{Parameter Estimates}
 	\label{tab:parest}
 \end{table}
-One aspect of the estimation which is maybe less desirable is the standard deviations of the preference shock.
-I didn't report these, but they are so high as to make me think I have a mistake in the code (I think I am getting expenditure variance rather than variance in gamma).
-At the current levels-running into the thousands-- they will cause some significant fraction of a simulated population to exhibit negative consumption.
-That the estimates are high is not too surprising, given the large number of zeros in the data.
-NOTE: SHOULD INCLUDE A STATISTIC HERE.
-However, the current estimates are too high.
+The main parameter of interest, the weight of conspicuous consumption in utility, is a reasonable 0.1459.  
+Qualitatively, cigarettes, jewelry, and education have particularly low $\mu$'s and high $\sigma$'s. 
+This says that most people care very little about these goods, but some people spend care very deeply for them.
+The reason the estimates come out this way is that most households spend very little on jewelry, cigarettes, and education, but some households spend large somes in these categories. 
+
+Figure and figure are scatter plots of simulated data, made in the same way as the scatter plots of the actual data in figures \ref{fig:shr} and \ref{fig:lev}. 
+\begin{figure}
+	\begin{center}
+		\includegraphics[scale=1]{pics/shares_fake_cropped.pdf}
+	\end{center}
+	\caption{Simulated expenditure share plots by category.}
+	\label{fig:shares_fake}
+\end{figure}
+\begin{figure}
+	\begin{center}
+		\includegraphics[scale=1]{pics/levels_fake_cropped.pdf}
+	\end{center}
+	\caption{Simulated expenditure level plots by category.}
+	\label{fig:levels_fake}
+\end{figure}
+The simulated data only have 5000 observations compared with the full dataset's upwards of 150,000 observations. 
+Besides the sparcity, however, the simulated data looks quite similar to the actual data.
+
+The estimation does less well on observation types.
+Ideally the observation type distribution (for a particular demographic) should be the same as the vindex probability distribution from the Heffetz survey.
+The estimated observation type densities, however, have only a $0.3778$ correlation with the vindex probabilities.
+Figure \ref{fig:vinmatch} is a scatter plot of the vindex probabilities and the estimated observation type densities for a particular demographic type (white, under 40).
+\begin{figure}
+	\begin{center}
+		\includegraphics[scale=.8]{pics/vinmatch_cropped.pdf}
+	\end{center}
+	\caption{Estimated observation type distribution compared to Heffetz vindex.}
+	\label{fig:vinmatch}
+\end{figure}
+Each point is labeled with the relevant good category.
+The estimated probabilities are exagerated compared with the vindex probabilities.
+I do not have good intuition about why this happens.
 
 One exercise which we can perform right away is look at the welfare cost of conspicuous consumption.
 Consider a typical consumer (with the median/mode preference shock) of various wealth levels.  
