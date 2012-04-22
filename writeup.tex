@@ -711,30 +711,185 @@ Besides the sparcity, however, the simulated data looks quite similar to the act
 The estimation does less well on observation types.
 Ideally the observation type distribution (for a particular demographic) should be the same as the vindex probability distribution from the Heffetz survey.
 The estimated observation type densities, however, have only a $0.3778$ correlation with the vindex probabilities.
-Figure \ref{fig:vinmatch} is a scatter plot of the vindex probabilities and the estimated observation type densities for a particular demographic type (white, under 40).
+Figure \ref{fig:vinmatch} is a scatter plot of the vindex probabilities and the estimated observation type densities.
 \begin{figure}
 	\begin{center}
 		\includegraphics[scale=.8]{pics/vinmatch_cropped.pdf}
 	\end{center}
-	\caption{Estimated observation type distribution compared to Heffetz vindex.}
+	\caption{Estimated (log) observation type distribution compared to (log) Heffetz vindex.}
 	\label{fig:vinmatch}
 \end{figure}
-Each point is labeled with the relevant good category.
+Each point is labeled with the relevant good category, and the colors represent different demographic types (black or not, under or over 40).
 The estimated probabilities are exagerated compared with the vindex probabilities.
 I do not have good intuition about why this happens.
 
-One exercise which we can perform right away is look at the welfare cost of conspicuous consumption.
-Consider a typical consumer (with the median/mode preference shock) of various wealth levels.  
-Figure \ref{fig:wellos} below plots percentage loss in utility over expenditure for all 29 observation types.
+\subsection{Welfare experiments}
+Now that we have an estimated model, we can talk about the welfare costs of signaling.
+Consider a typical consumer (with the modal preference parameter for each category) of various wealth levels.  
+Figure \ref{fig:uchnge} plots percentage gain in utility over expenditures (from 1000-20,000 dollars a year) for the 28  observation types.
+I broke out housing because the gain was much higher than in the other observation types.
+As we would  predict, the wealthier a household is, the more it has to gain from eliminating signaling.
+This is because wealthier households need to distort their consumption more to signal their wealth. 
+To see this, note that the poorest household gains nothing from an elimination of signaling, since the poorest household has nothing to gain from signaling anyway.
 
 \begin{figure}
 	\begin{center}
-		\includegraphics[scale=.8]{pics/wellos_cropped.pdf}
+		\includegraphics[scale=.8]{pics/uchnge_cropped.pdf}
 	\end{center}
-	\caption{Percentage Welfare Loss Due to Conspicuous Consumption}
-	\label{fig:wellos}
+	\caption{Percentage welfare gain due to the elimination of signaling, by observation type}
+	\label{fig:uchnge}
 \end{figure}
 
+\section{Optimal Taxes}
+There is scope in this environment for welfare-increasing taxes.  
+In what follows I consider an excise tax, the revenue of which is passed back to consumers in proportion to their wealth.
+Here I use the homotheticity result at the end of Section 2 so that this redistribution scheme does not change budget shares.
+I do not want to introduce the supply side into this model.
+The operating assumption is that taxes affect neither firm pricing decisions nor worker wages.
+\footnote{
+A cheap and totally uninteresting way to embed this assumption in general equilibrium would be to assume that inelastically supplied effective labor is the only input into a linear production function, and that there is perfect competition between firms.
+Since the prices paid to firms do not change if we impose taxes, wages do not adjust.
+Production is just scaled up or down depending on the demand effect of the taxes.
+}
+A tax assessed on a relatively visible good has two effects.
+Intuitively, people overconsume visible goods.
+As a visible good increases in price, a smaller proportion of wealth is spent on the visible good.
+Since taxes are completly passed back lumpsum to consumers (with a caveat), no wealth is lost.
+There is just less distortion in equilibrium.
+
+With the tax scheme I am implementing, there is also a redistributive effect.
+Since the rich distort consumption the most in order to signal, the first affect mostly helps them.
+However, tax revenues are passed back in proportion to wealth.
+The more wealthy a consumer is, the higher the share her budget she spends on the visible good
+A rich consumer pays more tax per unit wealth than she receives back from the government.
+Thus the poor are also made better off by an excise tax on a visible good.  
+The goal is to find a set of non-negative excise taxs that maximizes the sum of all utilities in a society.
+
+Once we have the distribution of utility parameters, it is straightforward to numerically solve for the optimal tax.
+First I simulate a thousand individuals.
+Utility parameters are randomly drawn from the estimated distributions.
+Wealth levels are drawn from the total expenditure distribution in the data for a single year, the year 2000.
+Prices are also those from the year 2000.
+Observation types are drawn from estimated distribution of a single type (non-black, under 40).
+Then I use a numerical solver to search over good category specific taxes in order to maximize the unweighted sum of each individual's utility.
+In an inner loop, I use the prices implied by a set of taxes to numerically solve for optimal consumption for each consumer.
+Using the homotheticity result, I can just scale up each consumer's optimal consumption by the tax revenue.
+\footnote{It is a little more subtle than this, since some of what is redistributed back to consumers is again collected in taxes.
+Thus expenditures are actually scaled up by a geometric sum of the proportion of total expenditure which is collected as taxes. 
+}
+Utility is then calculated and passed back to the outer loop.
+
+Optimal taxes are expressed as a multiple of base prices in Table \ref{tab:opttax}.
+\begin{table}
+	\begin{center}
+		\begin{tabular}{|l|c|}
+			\hline
+			\textbf{Good Cat} & \textbf{Tax} \\
+			\hline
+			FdH &  3.7860\\
+			\hline
+			FdO &  1.5188\\ 
+			\hline
+			Cig &  8.4272\\ 
+			\hline
+			AlH &  2.1151\\ 
+			\hline
+			AlO &  0.0761\\ 
+			\hline
+			Clo &  1.1873\\ 
+			\hline
+			Lry &  0.0000\\ 
+			\hline
+			Jwl &  3.1023\\ 
+			\hline
+			Brb &  0.0000\\ 
+			\hline
+			Hom &  8.8748\\ 
+			\hline
+			Htl &  0.0733\\ 
+			\hline
+			Fur &  0.9623\\ 
+			\hline
+			Utl &  1.9966\\ 
+			\hline
+			Tel &  0.9322\\ 
+			\hline
+			HIn &  0.3863\\ 
+			\hline
+			Med &  0.7386\\ 
+			\hline
+			Fee &  0.0000\\ 
+			\hline
+			LIn &  0.5304\\ 
+			\hline
+			Car &  1.1046\\ 
+			\hline
+			CMn &  2.0361\\ 
+			\hline
+			Gas &  2.2456\\ 
+			\hline
+			CIn &  0.5941\\ 
+			\hline
+			Bus &  2.7202\\ 
+			\hline
+			Air &  2.2799\\ 
+			\hline
+			Bks &  0.0000\\ 
+			\hline
+			Ot1 &  0.0000\\ 
+			\hline
+			Ot2 &  1.5486\\ 
+			\hline
+			Edu &  1.2739\\ 
+			\hline
+			Cha &  1.3754\\ 
+			\hline
+		\end{tabular}
+	\end{center}
+	\caption{Optimal taxes as multiple of base price}
+	\label{tab:opttax}
+\end{table}
+Optimal taxes can be quite large--in the case of cigarettes and homes, the price is raised by a factor of eight.
+The reason these taxes are so high is that many people signal with home and cigarette consumption.
+In fact, the estimated distribution of observation types is strongly correlated with optimal taxes.
+Figure \ref{fig:tvscat} is a scatter plot of log estimated observation types and log tax adjusted prices.
+\begin{figure}
+	\begin{center}
+		\includegraphics[scale=.8]{pics/tvscat_cropped.pdf}
+	\end{center}
+	\caption{Scatter plot of log estimated observation type probability and log post-tax price}
+	\label{fig:tvscat}
+\end{figure}
+I present the simulated utility gain for each of the thousand simulated consumers in Figure \ref{fig:taxscat}.
+\footnote{I trimmed four outliers for presentation.
+One outlier had large utility loss, around -30\%, and the others had very large utility gains.}
+\begin{figure}
+	\begin{center}
+		\includegraphics[scale=.8]{pics/taxscat_cropped.pdf}
+	\end{center}
+	\caption{Percentage utility change under optimal tax regime by log wealth}
+	\label{fig:taxscat}
+\end{figure}
+Note that not everyone gains from the optimal tax.  
+The taxes hurt people who happen to have uncommon observation types.
+Since these goods become relatively cheap, these consumers must buy large amounts to signal their wealth, and thus their consumption profiles become more distorted.
+However, a large majority of consumers gain from the tax regime.
+The median welfare increase is 3.4\%, and the mean is 3.7\%.
+\section{Conclusion}
+This paper takes a conspicuous consumption model from the theory literature seriously by adding preference heterogeneity and estimating parameters from data.
+The results of the estimation show that signaling may play an important role in consumption decisions.
+About 14.6\% of a consumers actual well-being is due to his social group's belief about his well-being.
+This fairly large number means that taxing the goods which are frequently used as signals of well-being may lead to significant welfare increases.
+A simulation suggests a median welfare increase of 3.4\%.
+In India, a tax on festival spending might increase the welfare of the poorest Indians.
+In the United States, I suggest a large tax on Apple products.
+
+In order to get an estimable model, I had to make a few unrealistic assumptions.
+One's social group sees only consumption expenditures in one good category. 
+This is clearly counterfactual.
+In the real world, one's social group sees a full vector of consumption expenditures, but with some noise.
+An earlier version of this paper had a model with this feature, but estimation involved numerically calculating a thirty dimensional integral for each consumer for each parameter trial.
+Future research might focus on finding a tractible model to estimate without such a stark assumption about the observability of consumption.
 \bibliographystyle{plainnat}
 \bibliography{biglist.bib}
 \end{document}
