@@ -1,7 +1,7 @@
 \documentclass{article}
 \usepackage{amsmath}
 \usepackage{amsfonts}
-\usepackage[utf8x]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage{default}
 \usepackage[margin = 1in]{geometry}
 \usepackage{natbib}
@@ -18,19 +18,27 @@ Surveys}
 \maketitle
 
 \section{Introduction}
-Economists have long theorized about the role of conspicuous consumption in household spending decisions.  When a consumer decides which products to buy, part of her decision is based on what society will infer about her after observing what she chooses.  Introspection lends credence to this theory, but researchers have only recently attempted to measure the importance of conspicuous consumption in consumer demand.  
+Economists have long theorized about the role of conspicuous consumption in household spending decisions.  
+When a consumer decides which products to buy, part of her decision is based on what society will infer about her after observing what she chooses.  
+Introspection lends credence to this theory, but researchers have only recently attempted to measure the importance of conspicuous consumption in consumer demand.  
 This paper uses household budget survey data to estimate a structural model of conspicuous consumption and consumer demand.  
 
-In this research agenda, I take conspicuous consumption to be a mechanism for signaling wealth, or well-being.\footnote{It is important to note that this is different than signaling social status, to the extent that status is not perfectly correlated with wealth.  Also, the signal is not about relative wealth, but about absolute wealth, which differentiates this research from the ``positional goods'' literature associated with Cornell's Robert Frank.}  I am taking the point of view that the reason people consume conspicuous goods is that they can be at least partially observed by society, and inform society about the consumer's (unobservable) wealth.  There have been several recent empirical studies in this vein of research.  In one notable study, \citet{Blochetal2004} estimate a reduced form model of dowries and spending on wedding celebrations in India, and find results consistent with the idea that dowries buy the quality of husband (invisible), and weddings signal the status of husbands to society (conspicuous).  In a recent paper, \citet{Heffetz2011} conducts a telephone survey in the United States to determine the visibility of consumption goods.  Heffetz then analyzes household budget survey data, and finds evidence that the relitively visible goods identified by the survey are being used as a means to signal wealth. 
+
+In what follows, I take conspicuous consumption to be a mechanism for signaling wealth or well-being.\footnote{It is important to note that this is different than signaling social status, to the extent that status is not perfectly correlated with wealth.  Also, the signal is not about relative wealth, but about absolute wealth, which differentiates this research from the ``positional goods'' literature associated with Cornell's Robert Frank.}  
+I am taking the point of view that the reason people consume conspicuous goods is that they can be at least partially observed by society, and inform society about the consumer's (unobservable) wealth.  
+There have been several recent empirical studies in this vein of research.  
+In one notable study, \citet{Blochetal2004} estimate a reduced form model of dowries and spending on wedding celebrations in India, and find results consistent with the idea that dowries buy the quality of husband (invisible), and weddings signal the status of husbands to society (conspicuous).  
+In a recent paper, \citet{Heffetz2011} conducts a telephone survey in the United States to determine the visibility of consumption goods.  Heffetz then analyzes household budget survey data, and finds evidence that the relitively visible goods identified by the survey are being used as a means to signal wealth. 
+\citet{Charlesetal2009} finds that consumption signaling can explain differences in the spending habits of Americans across ethnicities and locations without resorting to preference heterogeneity.
 
 Since conspicuous consumption is a distortion from what would otherwise be an individual's optimal choice of goods, it is costly in terms of consumer welfare.  If people care deeply about social status, then the welfare cost of the distortion may be large.  Moreover, if everyone's wealth was known to society, then there would be no reason to overconsume conspicuous goods.  This point seems particularly poignant when considering the spending habits of the very poor.  A recent study reports that in parts of India, the \emph{median} household making under a dollar a day spends 10\% of its income on festivals--this while 43\% of such households did not have enough to eat throughout the year \citep{BanerjeeDuflo2007}.  Could it be that the poor overconsume festivals as a signal that they are not even poorer?  If so, there are policies such as taxing festival spending that may substantially increase welfare.  Measuring the importance of conspicuous consumption to consumers is a first step in gauging the social benefit of such a policy.
 
 It is worthwhile to take a moment to differentiate the estimation of conspicuous consumption at hand from the relatively large literature on estimating interdependent preferences.  Beginning with James Duesenberry's 1949 doctoral thesis,\footnote{Later published as \citep{Duesenberry1949}} researchers have theorized that the consumption of neighbors affects own demand.  A typical econometric model in this literature lets household demand parameters depend linearly on the (weighted) average consumption of a reference group. A relationship between neighbor consumption and own consumption is taken to mean that preferences are interdependent.  The literature, however, does not take a stance on why consumption is interdependent, and it is hard to interpret what the estimated coefficients really mean.\footnote{To cite one of the first econometric papers in this literature, \citet{Pollak1976} speculates that exposure to the consumption of ``superior'' goods leads one to develop a taste for them.}  
 
-Ori Heffetz and several others have provided reduced form evidence that conspicuous consumption may be important in explaining household purchasing behavior.
-I expand on this literature by introducing a structural estimation of household utility which aims to explain just how strong this conspicuous consumption effect may be.
-In addition, a fully specified model allows me to perform counter-factuals to guage the welfare benefits of taxing conspicuous good.
-\footnote{This model is very partial equilibrium, however, taking prices as given and totally extracting away from the production side of the economy.}
+As mentioned above, several studies have provided reduced form evidence that a signaling motive is an important part household purchasing behavior.
+In this paper, I contribute to the  literature by introducing a structural estimation of household utility which measures just how strong this conspicuous consumption effect is.
+A fully specified and estimated model allows me to perform counter-factuals, both to understand the welfare losses due to the signaling motive, and also to guage the welfare benefits of taxing conspicuous goods.
+In the last part of the paper, I propose a tax which significantly increases social welfare.
 
 \section{Environment}
 There is a continuum of consumers who live for a single period and are endowed with an exogenous wealth level $w \in \left[ \underline{w},\overline{w} \right]$.
@@ -51,8 +59,8 @@ Preferences of all members of a social group are common knowledge within the soc
 There is a social belief function $W$ mapping consumption of the observable good, observation type, and preference type to the unobservable full consumption vector, $C_b: \mathbb{R}_+\times\mathbb{R}^{\|I\|}\times I\rightarrow \mathbb{R}_+^{\|I\|}$.
 Following earlier literature (Heffetz,Ireland) I assume the utility function is additively separable in fundamental utility and social belief.
 The utility function is written:
-\[U(C,\gamma,i) = (1-\alpha) u(C,\gamma) + \alpha\  u(C_b(C_i,\gamma,i),\gamma).\]
-Here $C_i$ denotes the i-th component of the consumption vector $C$.
+\[U(C,\gamma,i) = (1-\alpha) u(C,\gamma) + \alpha\  u(C_b(c_i,\gamma,i),\gamma).\]
+Here $c_i$ denotes the i-th component of the consumption vector $C$.
 \subsection{Equilibrium Concept}
 Let $r$ be an exogenous vector of prices.  
 %Given the social belief function, the problem for a consumer of wealth type $\tilde{W}$ in the first version is:
@@ -68,13 +76,13 @@ Given a social belief function $C_b$, the consumer's problem in the second versi
 An equilibrium is a social belief function $C_b$ and a vector-valued consumption function $C$ on $(W,\gamma,i)$ such that:
 \begin{enumerate}
 	\item $\forall (W,\gamma,i), \ C(W,\gamma,i)$ solves the consumer's problem for type $(W,\gamma,i)$ and social belief function $C_b$.
-	\item $\forall (W,\gamma,i), \ C(W,\gamma,i) = C_b(C_i(W,\gamma,i),\gamma,i).$
+	\item $\forall (W,\gamma,i), \ C(W,\gamma,i) = C_b(c_i(W,\gamma,i),\gamma,i).$
 \end{enumerate}
-As above, $C_i(W,\gamma,i)$ denotes the i-th component of the consumption vector $C(W,\gamma,i)$.
+As above, $c_i(W,\gamma,i)$ denotes the i-th component of the consumption vector $C(W,\gamma,i)$.
 The first condition says that all consumers choose an optimizing  bundle, and the second condition says that society is able to completely learn the well-being of each consumer, regardless of the consumer's observation type.
 %\subsection{Specializing to Stone-Geary}
 %Let the fundamental utility function be Stone-Geary:
-%\[u(C,\gamma) = \sum_{i=1}^{\|I\|} \beta_i \ln(c_i - \gamma_i))\]
+%\[u(C,\gamma) = \sum_{i=1}^{\|I\|} \beta_i \ln(c_i - \gamma_i)
 %
 %Note that there is no uncertainty in the consumer's problem.
 %The model can be written as a generalization of the Heffetz model to many goods and preference heterogeneity.\footnote{ In the Heffetz version, there are only two goods, one visible and the other invisible to society. In my version, there is one visible good for each observation type, and all the other goods are invisible.}
@@ -616,68 +624,68 @@ Thus the maximization step above is really only over the single dimensional $\al
 Table \ref{tab:parest} below presents estimation results.  
 \begin{table}
 	\begin{center}
-		\begin{tabular}{|l|c|c|c|}
+		\begin{tabular}{|l|c c |c c |c c|}
 			\hline
-			Good Cat & $\mu$ & $\sigma$ & $pr(\gamma_j =  0)$\\
+			Good Cat & $\mu$ & std err      & $\sigma$ & std err       & $pr(\gamma_j =  0)$ & std err\\
 			\hline
-			FdO & -1.2106 &    1.1823 &    0.0836\\ 
-                        \hline
-			Cig & -6.1907 &   11.4001 &    0.8274\\ 
+			FdO & -1.2106 &  (0.0002) &  1.1823 & (0.0005) &   0.0836 & (0.0038)\\ 
 			\hline
-			AlH & -2.7418 &    1.2418 &    0.4760\\ 
+			Cig & -6.1907 &  (0.0022) & 11.4001 & (0.0512) &   0.8274 & (0.0054)\\ 
 			\hline
-			AlO & -3.0832 &    1.6011 &    0.5032\\ 
+			AlH & -2.7418 &  (0.0002) &  1.2418 & (0.0006) &   0.4760 & (0.0070)\\ 
 			\hline
-			Clo & -1.4358 &    1.1580 &    0.0938\\ 
+			AlO & -3.0832 &  (0.0003) &  1.6011 & (0.0010) &   0.5032 & (0.0070)\\ 
 			\hline
-			Lry & -3.3559 &    1.3826 &    0.3102\\ 
+			Clo & -1.4358 &  (0.0002) &  1.1580 & (0.0005) &   0.0938 & (0.0040)\\ 
 			\hline
-			Jwl & -5.3608 &    8.1810 &    0.6604\\ 
+			Lry & -3.3559 &  (0.0002) &  1.3826 & (0.0007) &   0.3102 & (0.0065)\\ 
 			\hline
-			Brb & -2.6958 &    1.0096 &    0.1530\\ 
+			Jwl & -5.3608 &  (0.0015) &  8.1810 & (0.0228) &   0.6604 & (0.0067)\\ 
 			\hline
-			Hom &  0.3824 &    0.8689 &    0.7046\\ 
+			Brb & -2.6958 &  (0.0002) &  1.0096 & (0.0004) &   0.1530 & (0.0050)\\ 
 			\hline
-			Htl & -2.4135 &    1.3596 &    0.6360\\ 
+			Hom &  0.3824 &  (0.0002) &  0.8689 & (0.0004) &   0.7046 & (0.0065)\\ 
 			\hline
-			Fur & -1.9858 &    1.4964 &    0.2570\\ 
+			Htl & -2.4135 &  (0.0002) &  1.3596 & (0.0007) &   0.6360 & (0.0068)\\ 
 			\hline
-			Utl & -0.8731 &    0.7561 &    0.0960\\ 
+			Fur & -1.9858 &  (0.0002) &  1.4964 & (0.0008) &   0.2570 & (0.0061)\\ 
 			\hline
-			Tel & -1.6308 &    0.9058 &    0.0360\\ 
+			Utl & -0.8731 &  (0.0001) &  0.7561 & (0.0002) &   0.0960 & (0.0041)\\ 
 			\hline
-			HIn & -1.5132 &    1.1389 &    0.4102\\ 
+			Tel & -1.6308 &  (0.0001) &  0.9058 & (0.0003) &   0.0360 & (0.0025)\\ 
 			\hline
-			Med & -1.8537 &    1.3468 &    0.2514\\ 
+			HIn & -1.5132 &  (0.0002) &  1.1389 & (0.0005) &   0.4102 & (0.0069)\\ 
 			\hline
-			Fee & -2.9173 &    1.3449 &    0.3530\\ 
+			Med & -1.8537 &  (0.0002) &  1.3468 & (0.0007) &   0.2514 & (0.0061)\\ 
 			\hline
-			LIn & -2.2290 &    1.2182 &    0.5192\\ 
+			Fee & -2.9173 &  (0.0002) &  1.3449 & (0.0007) &   0.3530 & (0.0067)\\ 
 			\hline
-			Car & -2.3967 &    1.8427 &    0.5890\\ 
+			LIn & -2.2290 &  (0.0002) &  1.2182 & (0.0006) &   0.5192 & (0.0070)\\ 
 			\hline
-			CMn & -2.2251 &    1.5484 &    0.2236\\ 
+			Car & -2.3967 &  (0.0003) &  1.8427 & (0.0013) &   0.5890 & (0.0069)\\ 
 			\hline
-			Gas & -1.0737 &    0.8481 &    0.0956\\ 
+			CMn & -2.2251 &  (0.0003) &  1.5484 & (0.0009) &   0.2236 & (0.0058)\\ 
 			\hline
-			CIn & -1.4963 &    0.8789 &    0.3360\\ 
+			Gas & -1.0737 &  (0.0001) &  0.8481 & (0.0003) &   0.0956 & (0.0040)\\ 
 			\hline
-			Bus & -6.1303 &    8.6399 &    0.7626\\ 
+			CIn & -1.4963 &  (0.0001) &  0.8789 & (0.0003) &   0.3360 & (0.0066)\\ 
 			\hline
-			Air & -2.2693 &    1.6096 &    0.6914\\ 
+			Bus & -6.1303 &  (0.0014) &  8.6399 & (0.0211) &   0.7626 & (0.0060)\\ 
 			\hline
-			Bks & -3.4553 &    1.4929 &    0.4718\\ 
+			Air & -2.2693 &  (0.0003) &  1.6096 & (0.0010) &   0.6914 & (0.0065)\\ 
 			\hline
-			Ot1 & -2.7484 &    1.1775 &    0.1316\\ 
+			Bks & -3.4553 &  (0.0002) &  1.4929 & (0.0008) &   0.4718 & (0.0070)\\ 
 			\hline
-			Ot2 & -1.3021 &    1.2837 &    0.0828\\ 
+			Ot1 & -2.7484 &  (0.0002) &  1.1775 & (0.0005) &   0.1316 & (0.0047)\\ 
 			\hline
-			Edu & -5.8550 &   10.3474 &    0.8262\\ 
+			Ot2 & -1.3021 &  (0.0002) &  1.2837 & (0.0006) &   0.0828 & (0.0038)\\ 
 			\hline
-			Cha & -2.3950 &    1.5843 &    0.5950\\ 
+			Edu & -5.8550 &  (0.0019) & 10.3474 & (0.0383) &   0.8262 & (0.0054)\\ 
+			\hline
+			Cha & -2.3950 &  (0.0003) &  1.5843 & (0.0010) &   0.5950 & (0.0069)\\ 
 			\hline
 		        \hline	
-			$\alpha$ & 0.1459 & & \\
+			$\alpha$ & 0.1459 & (0.0071) & & & & \\
 			\hline
 			\hline
 		\end{tabular}
