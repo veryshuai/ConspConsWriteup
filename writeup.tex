@@ -10,37 +10,47 @@
 \usepackage{wrapfig}
 \usepackage[nolists]{endfloat}
 
-\title{Conspicuous Consumption: Testing and Measurement using Household Budget
-Surveys}
+\title{A Structural Comparison of Conspicuous Consumption in China and the United States
+}
 \author{David Jinkins}
 
 \begin{document}
 \maketitle
 
+\begin{abstract}
+    The objective of this paper is to measure the relative importance of conspicous consumption to Americans and Chinese.  To this end, I estimate the parameters of a utility function borrowed from recent theoretical work using American and Chinese data.  The main parameter of interest governs the amount that individuals care about peer group beliefs regarding their welfare.  Using survey data on the visibility of different good categories along with household budget surveys, I find that Chinese consumers care 50\% more than American consumers about the beliefs of their peer group.  
+\end{abstract}
+
 \section{Introduction}
-Economists have long theorized about the role of conspicuous consumption in household spending decisions.  
-When a consumer decides which products to buy, part of her decision is based on what society will infer about her after observing what she chooses.  
-Introspection lends credence to this theory, but researchers have only recently attempted to measure the importance of conspicuous consumption in consumer demand.  
-This paper uses household budget survey data to estimate a structural model of conspicuous consumption and consumer demand.  
 
+I wear a Seiko automatic watch.  Over the course of a month, it picks up about five minutes.  I knew it would do this before I bought it from online reviews, but even so I purchased it for about \$100 a few years ago.  I could have picked up a digital casio for \$5 which would run more reliably, would have probably been easier to read, and I wouldn't have had to worry about getting it wet.  For all the functions a watch performs, the Casio would have been superior, and yet, I still bought the relatively expensive Seiko.  Why did I do that?  Why did you buy your watch?
 
-In what follows, I take conspicuous consumption to be a mechanism for signaling wealth or well-being.\footnote{It is important to note that this is different than signaling social status, to the extent that status is not perfectly correlated with wealth.  Also, the signal is not about relative wealth, but about absolute wealth, which differentiates this research from the ``positional goods'' literature associated with Cornell's Robert Frank.}  
-I am taking the point of view that the reason people consume conspicuous goods is that they can be at least partially observed by society, and inform society about the consumer's (unobservable) wealth.  
-There have been several recent empirical studies in this vein of research.  
-In one notable study, \citet{Blochetal2004} estimate a reduced form model of dowries and spending on wedding celebrations in India, and find results consistent with the idea that dowries buy the quality of husband (invisible), and weddings signal the status of husbands to society (conspicuous).  
-In a recent paper, \citet{Heffetz2011} conducts a telephone survey in the United States to determine the visibility of consumption goods.  Heffetz then analyzes household budget survey data, and finds evidence that the relitively visible goods identified by the survey are being used as a means to signal wealth. 
-\citet{Charlesetal2009} finds that consumption signaling can explain differences in the spending habits of Americans across ethnicities and locations without resorting to preference heterogeneity.
+In this paper, I am going to take the point of view that a consumer bases part of her decision to buy a product on what society will infer about her after observing what she chooses.  
+My personal introspection supports this idea, and I will cite some papers below which find reduced form evidence for this sort of behavior. This paper adds to this literature by writing down a structural model and estimating parameters, which allows us to measure just how much people care about social beliefs, and also figure out ballpark estimates for how much excise taxes might increase social welfare. This is primarily a \emph{measurement} paper.
 
-Since conspicuous consumption is a distortion from what would otherwise be an individual's optimal choice of goods, it is costly in terms of consumer welfare.  If people care deeply about social status, then the welfare cost of the distortion may be large.  Moreover, if everyone's wealth was known to society, then there would be no reason to overconsume conspicuous goods.  This point seems particularly poignant when considering the spending habits of the very poor.  A recent study reports that in parts of India, the \emph{median} household making under a dollar a day spends 10\% of its income on festivals--this while 43\% of such households did not have enough to eat throughout the year \citep{BanerjeeDuflo2007}.  Could it be that the poor overconsume festivals as a signal that they are not even poorer?  If so, there are policies such as taxing festival spending that may substantially increase welfare.  Measuring the importance of conspicuous consumption to consumers is a first step in gauging the social benefit of such a policy.
+In this paper as well as the literature I am following, people care about the beliefs of their peers ``just because''.  I am going to put peer group beliefs about personal welfare directly into the utility function.  Some might argue that people only care about peer group beliefs as the means to an ultimate consumptive end--wearing a nice watch makes people trust you more, so you are more likely to get a loan, or secure that business deal.  I am sympathetic to this point of view, and I sure this is going on to some degree.  However, note that the two points of view about peer beliefs are complementary.  From a long perspective, our brains might have been selected to care about peer group beliefs precisely because good standing makes successful reproduction more likely. In this case, the utils we get from positive peer group beliefs are like an evolutionary rule of thumb, similar to THIS LITERATURE.  
 
-It is worthwhile to take a moment to differentiate the estimation of conspicuous consumption at hand from the relatively large literature on estimating interdependent preferences.  Beginning with James Duesenberry's 1949 doctoral thesis,\footnote{Later published as \citep{Duesenberry1949}} researchers have theorized that the consumption of neighbors affects own demand.  A typical econometric model in this literature lets household demand parameters depend linearly on the (weighted) average consumption of a reference group. A relationship between neighbor consumption and own consumption is taken to mean that preferences are interdependent.  The literature, however, does not take a stance on why consumption is interdependent, and it is hard to interpret what the estimated coefficients really mean.\footnote{To cite one of the first econometric papers in this literature, \citet{Pollak1976} speculates that exposure to the consumption of ``superior'' goods leads one to develop a taste for them.}  
+There are also several strands of empirical literature that support the presence of a social component in the utility function.  Consider the famous ultimatum game in which one player proposes a split of a sum of money, and the other player decides whether to accept or reject.  If the second player accepts, the money is allocated according to the split, and if the the second player rejects, neither player gets anything.  There is a long and robust experimental literature showing that if people only care about immediate monetary payoffs, the splits they propose are ``too fair''.  Researchers have been careful to pair subjects which do not know each other and are unlikely to have interaction after the experiment, and the result still holds.  One explanation for this behavior is that there is some sort of social component in the utility function(GARY BOLTON,THE OTHER GUY).  A second defense comes from the literature on self-reported happiness and relative wealth.  Luttmer (??) finds that relative wealth compared with neighbors has a robust positive correlation  with self-reported happiness, controlling for absolute wealth level.  On the face of it, it seems hard to explain this fact without some sort of social component in the utiltiy function.  If you still don't believe that there is a social belief component in the utility function, then you can think of this paper as estimating a reduced form model.  It is still novel to directly compare China and the United States.
 
-As mentioned above, several studies have provided reduced form evidence that a signaling motive is an important part household purchasing behavior.
-In this paper, I contribute to the  literature by introducing a structural estimation of household utility which measures just how strong this conspicuous consumption effect is.
-A fully specified and estimated model allows me to perform counter-factuals, both to understand the welfare losses due to the signaling motive, and also to guage the welfare benefits of taxing conspicuous goods.
-In the last part of the paper, I propose a tax which significantly increases social welfare.
+%In what follows, I take conspicuous consumption to be a mechanism for signaling wealth or well-being.\footnote{It is important to note that this is different than signaling social status, to the extent that status is not perfectly correlated with wealth.  Also, the signal is not about relative wealth, but about absolute wealth, which differentiates this research from the ``positional goods'' literature associated with Cornell's Robert Frank.}  
+%I am taking the point of view that the reason people consume conspicuous goods is that they can be at least partially observed by society, and inform society about the consumer's (unobservable) wealth.  
+%There have been several recent empirical studies in this vein of research.  
+As mentioned above, this is not the first paper to take an empirical look at conspicuous consumption, although it is to my knowledge the first structural estimation.
+I give a one line summary of three recent representative papers below:
+\begin{itemize}
+	\item \citet{Blochetal2004} estimate a reduced form model of dowries and spending on wedding celebrations in India, and find results consistent with the idea that dowries buy the quality of husband (invisible), and weddings signal the status of husbands to society (conspicuous).  
+	\item \citet{Heffetz2011} conducts a telephone survey in the United States to determine the visibility of consumption goods.  Heffetz then analyzes household budget survey data, and finds evidence that the relitively visible goods identified by the survey are being used as a means to signal wealth. 
+	\item \citet{Charlesetal2009} finds that consumption signaling can explain differences in the spending habits of Americans across ethnicities and locations without resorting to preference heterogeneity.
+\end{itemize}
 
-\section{Environment}
+Using a structural estimation, I can examine both the absolute and relative magnitude of the motive for conspicuous consumption, and I can gauge the welfare gains from an excise tax on the most visible good categories.  To explain how an excise tax can raise everyone's welfare, first note that if everyone's wealth was directly observable by their peer group, then there would be no reason to distort consumption towards conspicuous goods.  One way to get people closer to the complete information allocation is to raise the price of the visible good, and then redistribute the proceeds of the tax regressively.  If things work out the right way, the rich are better off because they distort less, and the poor are better off because they are getting a subsidy from the rich.  If people care deeply about peer group belief, then the welfare gains from this sort of tax can be very large.\footnote{Signaling distortions are particularly worrying when considering the economic lives of the poor.  A recent study reports that in parts of India, the \emph{median} household making under a dollar a day spends 10\% of its income on festivals--this while 43\% of such households did not have enough to eat throughout the year \citep{BanerjeeDuflo2007}.  } In our estimation BLAH BLAH BLAH.
+
+I should mention that there is a relatively large and old related literature estimating what are known as interdependent preferences.  Beginning with James Duesenberry's 1949 doctoral thesis,\footnote{Later published as \citep{Duesenberry1949}} researchers have theorized that the consumption of neighbors affects own demand.  A typical econometric model in this literature lets household demand parameters depend linearly on the (weighted) average of the consumption of a reference group. A relationship between neighbor consumption and own consumption is taken to mean that preferences are interdependent.  The literature, however, does not take a stance on why consumption neighborhood consumption should be linked in this particular way. \footnote{To cite one of the first econometric papers in this literature, \citet{Pollak1976} speculates that exposure to the consumption of ``superior'' goods leads one to develop a taste for them.}  
+
+There are six sections below.  First I set out the environment and preferences, and define the equilibrium concept.  The second section specializes the model, and derives estimation equations.  The third section describes the data and discusses identification.  I present the results of the estimation in the fourth section, and in the fifth section I discuss taxation.  A final section concludes. 
+
+\section{Model}
+\subsection{Environment and Preferences}
 There is a continuum of consumers who live for a single period and are endowed with an exogenous wealth level $w \in \left[ \underline{w},\overline{w} \right]$.
 Consumers use this wealth to buy goods with exogenous prices $\{r_i\}_I$ in order to maximize a utility function on the space of good categories $I$, $\|I\|<\infty$. 
 Consumers vary in wealth level, which is observable to the econometrician, and preference type, which is not observable.
@@ -128,89 +138,6 @@ The first condition says that all consumers choose an optimizing  bundle, and th
 %\]
 %Since in equilibrium $g(c_v^*) = \underbar{W} - c_v^*$, we can plug into \eqref{difsol} and solve for $K$.
 %This part of the analysis directly follows from Heffetz.
-\subsection{Specializing to Cobb-Douglas}
-Let the fundamental utility function be Cobb-Douglas:
-\[u(C,\gamma) = \sum_{i=1}^{\|I\|} \gamma_i \ln(c_i)\]
-
-Note that there is no uncertainty in the consumer's problem.
-The model can be written as a generalization of the Heffetz model to many goods and preference heterogeneity.\footnote{ In the Heffetz version, there are only two goods, one visible and the other invisible to society. In my version, there is one visible good for each observation type, and all the other goods are invisible.}
-Let $v\in I$ be the observation type.
-Suppose that $c_v^*$ is the equilibrium consumption of the visible good.
-Then the consumptions of the other goods must satisfy:
-\[ U(C^*,\gamma,v|c_v^*)=\underset{\{c_i\}_{i\neq v}}{\max} \ U(C,\gamma,v|c_v^*) :  \sum_{i \neq v} r_i c_i \le W-r_v c_v^*\]
-The demand for good $i\neq v$ as:
-\[ c_i^* = \frac{\gamma_i}{r_i}\left(\sum_{j\neq v} \gamma_j\right)^{-1}\left(W-r_v c_v^* \right)\]
-Plugging these demands into the equilibrium utility function we get:
-\begin{align}
-	U(C^*,\gamma,v) &= (1-\alpha)\sum_{i\neq v} \gamma_i \ln\left(\frac{\gamma_i}{r_i}\left(\sum_{j\neq v} \gamma_j\right)^{-1}\left(W-r_v c_v^* \right)\right) + h(c_v^*) \nonumber \\ 
-	&= (1-\alpha) \ln\left(\prod_{j\neq v} \left(\frac{\gamma_j}{r_j}\right)^{\gamma_j}\left(\sum_{j\neq v} \gamma_j\right)^{-\sum_{j\neq v} \gamma_j}\left(W-r_v c_v^* \right)^{\sum_{j\neq v} \gamma_j}\right) + h(c_v^*) \nonumber \\ 
-	\label{invop}
-	&= (1-\alpha) \hat{\gamma} \ln \left(W-r_v c_v^*\right) + h(c_v^*) + (1-\alpha) \zeta(\gamma) 
-\end{align}
-Here $h(c_v^*)$ is the part of the utility function which does not depend upon any of the invisible goods, and:
-\begin{align*}
-	\hat{\gamma} &= \sum_{j\neq v} \gamma_j\\
-	\zeta(\gamma) & = \ln\left(\prod_{j\neq v} \left(\frac{\gamma_j}{r_j}\right)^{\gamma_j}\left(\sum_{j\neq v} \gamma_j\right)^{-\sum_{j\neq v} \gamma_j}\right) 
-\end{align*}
-Note here that the budget constraint is satistfied for any choice of $c_v^* \in [0,W/r_v]$.
-Society knows that given wealth and the consumption of the visible good, it is optimal to split consumption among the invisible goods as derived above.  Thus using \eqref{invop}, we can rewrite the total utility function as: 
-\begin{equation}
-	\label{ufun}
-	U(C,\gamma,v) = (1-\alpha) \left(\hat{\gamma} \ln \left(W-r_v c_v\right) + \gamma_v \ln \left(c_v \right)\right) + \alpha \left(\gamma_v \ln \left(g(c_v)\right) + \gamma_v \ln \left(c_v\right) \right) + \zeta(\gamma)
-	 \end{equation}
-Here $g(c_v)$ is society's guess about $W-r_v c_v$ based on $c_v$. 
-In particular, note that society's belief over a consumer's utility is described by a single-dimensional function.
-
-The first order conditions for an interior solution to the consumer's problem can be written:
-\begin{equation}
-	\label{foc}
-g'(c_v) = \frac{1}{\alpha}\left( \left( 1-\alpha\right) r_v - \frac{\gamma_v}{\hat{\gamma}}\frac{g(c_v)}{c_v }\right)
-\end{equation}
-
-Now we can directly follow Heffetz and solve this differential equation:
-\begin{equation}
-	\label{difsol}
-	g(c_v) = \frac{\hat{\gamma}\left(1-\alpha\right)}{\gamma_v +\alpha \hat{\gamma}} r_v c_v + K c_v^{-\frac{\gamma_v}{\alpha \hat{\gamma}}}
-\end{equation}
-To solve for the constant $K$, note that the lowest possible wealth type $\underbar{W}$ has no reason to signal in a separating equilibrium.
-In particular, his consumption will not be distorted, so that his demand $\underbar{c}$ for $c_v$ will be given by:
-\begin{equation}
-	\label{lowc}
-	\underbar{c} = \frac{\gamma_v}{r_v}\left(\sum_{j} \gamma_j\right)^{-1}\underbar{W} 
-\end{equation}
-Since in equilibrium $g(\underbar{c}) = \underbar{W} - r_v \underbar{c}$, we can plug into \eqref{difsol} and solve for $K$:
-\[
-K = \frac{\underbar{W}- \frac{\gamma_v + \hat{\gamma}}{\gamma_v + \alpha \hat{\gamma}}r_v \underbar{c}}{\underbar{c}^{-\frac{\gamma_v}{\alpha \hat{\gamma}}}}
-\]
-We can think of $g$ as a function of $c_v$ and $\underbar{W}$. 
-Then $g$ is jointly homothetic.  
-\footnote{
-Below I show that $g$ is jointly homothetic of degree one in $\underbar{W}$ and $c_v$.  First, it is immediate from \eqref{lowc} that $\underbar{c}$ scales linearly with $\underbar{W}$.
-Now $K$ scales non-linearly with $\underbar{W}$:
-\begin{align*}
-	K(s\underbar{W}) &= \frac{s\underbar{W}- \frac{\gamma_v + \hat{\gamma}}{\gamma_v + \alpha \hat{\gamma}}r_v s \underbar{c}}{(s\underbar{c})^{-\frac{\gamma_v}{\alpha \hat{\gamma}}}} \\
-	&= s^{1 + \frac{\gamma_v}{\alpha \hat{\gamma}}}K(\underbar{W})
-\end{align*}
-The way $K$ scales, however, is just right to make $g$ scale linearly in $c_v$:
-\begin{align*}
-	g(s c_v,\underbar{W}) &= \frac{\hat{\gamma}\left(1-\alpha\right)}{\gamma_v +\alpha \hat{\gamma}} r_v s c_v + s^{1+\frac{\gamma_v}{\alpha \hat{\gamma}}} K(\underbar{w}) (s c_v)^{-\frac{\gamma_v}{\alpha \hat{\gamma}}} \\
-	&= \frac{\hat{\gamma}\left(1-\alpha\right)}{\gamma_v +\alpha \hat{\gamma}} r_v s c_v + s K(\underbar{w}) c_v^{-\frac{\gamma_v}{\alpha \hat{\gamma}}} \\
-	&= s g(c_v,\underbar{W})
-\end{align*}
-}
-This means that, given prices, a scaling of social wealth just scales consumption choices.
-\footnote{
-In this footnote, I show that if $c^*$ is an interior maximizer of \eqref{ufun} for an individual of wealth $W$, then $s c^*$ is a solution to the  problem of an individual of wealth $s W$, as long as we also scale $\underbar{W}$ up by $s$ as well.
-If $c^*$ is an interior maximizer, then it solves the first order conditions of \eqref{ufun}:
-\[
-\frac{(1-\alpha)r_v \hat{\gamma}}{W-r_v c^*} = \frac{\alpha \gamma_v g'(c^*)}{g(c^*)} + \frac{\gamma_v}{c^*}
-\]
-Now divide both sides of the equation by $s$, and using the fact that $g$ is homothetic of degree one and $g'$ is homothetic of degree zero, we get:
-\[
-\frac{(1-\alpha)r_v \hat{\gamma}}{s W-r_v s c^*} = \frac{\alpha \gamma_v g'(s c^*)}{g(s c^*)} + \frac{\gamma_v}{s c^*}
-\]
-Thus, $s c^*$ solves the scaled problem.
-}
 \section{Data}
 This project requires three types of data.  We need consumer expenditure data at the household level, we need relative price data, and we need demographicly differentiated information about how visible different good categories are relative to each other. 
 \subsection{Vindex data}
@@ -415,7 +342,91 @@ Lin & life insurance, endowment, annuities, and other death-benefits insurance. 
 \end{tabular}
 \end{sideways}
 
-\section{Derivation of Estimation Equations}
+\section{Estimation}
+\subsection{Specializing to Cobb-Douglas}
+Let the fundamental utility function be Cobb-Douglas:
+\[u(C,\gamma) = \sum_{i=1}^{\|I\|} \gamma_i \ln(c_i)\]
+
+Note that there is no uncertainty in the consumer's problem.
+The model can be written as a generalization of the Heffetz model to many goods and preference heterogeneity.\footnote{ In the Heffetz version, there are only two goods, one visible and the other invisible to society. In my version, there is one visible good for each observation type, and all the other goods are invisible.}
+Let $v\in I$ be the observation type.
+Suppose that $c_v^*$ is the equilibrium consumption of the visible good.
+Then the consumptions of the other goods must satisfy:
+\[ U(C^*,\gamma,v|c_v^*)=\underset{\{c_i\}_{i\neq v}}{\max} \ U(C,\gamma,v|c_v^*) :  \sum_{i \neq v} r_i c_i \le W-r_v c_v^*\]
+The demand for good $i\neq v$ as:
+\[ c_i^* = \frac{\gamma_i}{r_i}\left(\sum_{j\neq v} \gamma_j\right)^{-1}\left(W-r_v c_v^* \right)\]
+Plugging these demands into the equilibrium utility function we get:
+\begin{align}
+	U(C^*,\gamma,v) &= (1-\alpha)\sum_{i\neq v} \gamma_i \ln\left(\frac{\gamma_i}{r_i}\left(\sum_{j\neq v} \gamma_j\right)^{-1}\left(W-r_v c_v^* \right)\right) + h(c_v^*) \nonumber \\ 
+	&= (1-\alpha) \ln\left(\prod_{j\neq v} \left(\frac{\gamma_j}{r_j}\right)^{\gamma_j}\left(\sum_{j\neq v} \gamma_j\right)^{-\sum_{j\neq v} \gamma_j}\left(W-r_v c_v^* \right)^{\sum_{j\neq v} \gamma_j}\right) + h(c_v^*) \nonumber \\ 
+	\label{invop}
+	&= (1-\alpha) \hat{\gamma} \ln \left(W-r_v c_v^*\right) + h(c_v^*) + (1-\alpha) \zeta(\gamma) 
+\end{align}
+Here $h(c_v^*)$ is the part of the utility function which does not depend upon any of the invisible goods, and:
+\begin{align*}
+	\hat{\gamma} &= \sum_{j\neq v} \gamma_j\\
+	\zeta(\gamma) & = \ln\left(\prod_{j\neq v} \left(\frac{\gamma_j}{r_j}\right)^{\gamma_j}\left(\sum_{j\neq v} \gamma_j\right)^{-\sum_{j\neq v} \gamma_j}\right) 
+\end{align*}
+Note here that the budget constraint is satistfied for any choice of $c_v^* \in [0,W/r_v]$.
+Society knows that given wealth and the consumption of the visible good, it is optimal to split consumption among the invisible goods as derived above.  Thus using \eqref{invop}, we can rewrite the total utility function as: 
+\begin{equation}
+	\label{ufun}
+	U(C,\gamma,v) = (1-\alpha) \left(\hat{\gamma} \ln \left(W-r_v c_v\right) + \gamma_v \ln \left(c_v \right)\right) + \alpha \left(\gamma_v \ln \left(g(c_v)\right) + \gamma_v \ln \left(c_v\right) \right) + \zeta(\gamma)
+	 \end{equation}
+Here $g(c_v)$ is society's guess about $W-r_v c_v$ based on $c_v$. 
+In particular, note that society's belief over a consumer's utility is described by a single-dimensional function.
+
+The first order conditions for an interior solution to the consumer's problem can be written:
+\begin{equation}
+	\label{foc}
+g'(c_v) = \frac{1}{\alpha}\left( \left( 1-\alpha\right) r_v - \frac{\gamma_v}{\hat{\gamma}}\frac{g(c_v)}{c_v }\right)
+\end{equation}
+
+Now we can directly follow Heffetz and solve this differential equation:
+\begin{equation}
+	\label{difsol}
+	g(c_v) = \frac{\hat{\gamma}\left(1-\alpha\right)}{\gamma_v +\alpha \hat{\gamma}} r_v c_v + K c_v^{-\frac{\gamma_v}{\alpha \hat{\gamma}}}
+\end{equation}
+To solve for the constant $K$, note that the lowest possible wealth type $\underbar{W}$ has no reason to signal in a separating equilibrium.
+In particular, his consumption will not be distorted, so that his demand $\underbar{c}$ for $c_v$ will be given by:
+\begin{equation}
+	\label{lowc}
+	\underbar{c} = \frac{\gamma_v}{r_v}\left(\sum_{j} \gamma_j\right)^{-1}\underbar{W} 
+\end{equation}
+Since in equilibrium $g(\underbar{c}) = \underbar{W} - r_v \underbar{c}$, we can plug into \eqref{difsol} and solve for $K$:
+\[
+K = \frac{\underbar{W}- \frac{\gamma_v + \hat{\gamma}}{\gamma_v + \alpha \hat{\gamma}}r_v \underbar{c}}{\underbar{c}^{-\frac{\gamma_v}{\alpha \hat{\gamma}}}}
+\]
+We can think of $g$ as a function of $c_v$ and $\underbar{W}$. 
+Then $g$ is jointly homothetic.  
+\footnote{
+Below I show that $g$ is jointly homothetic of degree one in $\underbar{W}$ and $c_v$.  First, it is immediate from \eqref{lowc} that $\underbar{c}$ scales linearly with $\underbar{W}$.
+Now $K$ scales non-linearly with $\underbar{W}$:
+\begin{align*}
+	K(s\underbar{W}) &= \frac{s\underbar{W}- \frac{\gamma_v + \hat{\gamma}}{\gamma_v + \alpha \hat{\gamma}}r_v s \underbar{c}}{(s\underbar{c})^{-\frac{\gamma_v}{\alpha \hat{\gamma}}}} \\
+	&= s^{1 + \frac{\gamma_v}{\alpha \hat{\gamma}}}K(\underbar{W})
+\end{align*}
+The way $K$ scales, however, is just right to make $g$ scale linearly in $c_v$:
+\begin{align*}
+	g(s c_v,\underbar{W}) &= \frac{\hat{\gamma}\left(1-\alpha\right)}{\gamma_v +\alpha \hat{\gamma}} r_v s c_v + s^{1+\frac{\gamma_v}{\alpha \hat{\gamma}}} K(\underbar{w}) (s c_v)^{-\frac{\gamma_v}{\alpha \hat{\gamma}}} \\
+	&= \frac{\hat{\gamma}\left(1-\alpha\right)}{\gamma_v +\alpha \hat{\gamma}} r_v s c_v + s K(\underbar{w}) c_v^{-\frac{\gamma_v}{\alpha \hat{\gamma}}} \\
+	&= s g(c_v,\underbar{W})
+\end{align*}
+}
+This means that, given prices, a scaling of social wealth just scales consumption choices.
+\footnote{
+In this footnote, I show that if $c^*$ is an interior maximizer of \eqref{ufun} for an individual of wealth $W$, then $s c^*$ is a solution to the  problem of an individual of wealth $s W$, as long as we also scale $\underbar{W}$ up by $s$ as well.
+If $c^*$ is an interior maximizer, then it solves the first order conditions of \eqref{ufun}:
+\[
+\frac{(1-\alpha)r_v \hat{\gamma}}{W-r_v c^*} = \frac{\alpha \gamma_v g'(c^*)}{g(c^*)} + \frac{\gamma_v}{c^*}
+\]
+Now divide both sides of the equation by $s$, and using the fact that $g$ is homothetic of degree one and $g'$ is homothetic of degree zero, we get:
+\[
+\frac{(1-\alpha)r_v \hat{\gamma}}{s W-r_v s c^*} = \frac{\alpha \gamma_v g'(s c^*)}{g(s c^*)} + \frac{\gamma_v}{s c^*}
+\]
+Thus, $s c^*$ solves the scaled problem.
+}
+\subsection{Derivation of Estimation Equations}
 The strategy in this section is to use maximum likelihood to estimate the parameters of the model.  
 While there is no uncertainty in the model for consumers, their are two parameter sets that are unobserved by the econometrician.
 The first is a latent variable--the observation type.
