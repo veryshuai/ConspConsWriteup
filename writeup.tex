@@ -18,7 +18,7 @@
 \maketitle
 
 \begin{abstract}
-    The objective of this paper is to measure the relative importance of conspicous consumption to Americans and Chinese.  To this end, I estimate the parameters of a utility function borrowed from recent theoretical work using American and Chinese data.  The main parameter of interest governs the amount that individuals care about peer group beliefs regarding their welfare.  Using survey data on the visibility of different good categories along with household budget surveys, I find that Chinese consumers care twice as much as American consumers about the beliefs of their peer group.  
+    The objective of this paper is to measure the relative importance of conspicous consumption to Americans and Chinese.  To this end, I estimate the parameters of a utility function borrowed from recent theoretical work using American and Chinese data.  The main parameter of interest governs the amount that individuals care about peer group beliefs regarding their welfare.  Using survey data on the visibility of different good categories along with household budget surveys, I find that Chinese consumers care twice as much as American consumers about the beliefs of their peer group.
 \end{abstract}
 
 \section{Introduction}
@@ -32,15 +32,9 @@ In this paper as well as the literature I am following, people care about the be
 
 There are also several strands of empirical literature that support the presence of a social component in the utility function.  Consider the famous ultimatum game in which one player proposes a split of a sum of money, and the other player decides whether to accept or reject.  If the second player accepts, the money is allocated according to the split, and if the the second player rejects, neither player gets anything.  There is a long and robust experimental literature showing that if people only care about immediate monetary payoffs, the splits they propose are ``too fair''.  Researchers have been careful to pair subjects which do not know each other and are unlikely to have interaction after the experiment, and the result still holds.  One explanation for this behavior is that there is some sort of social component in the utility function\citep{FehrSchmidt1999,BoltonOckenfels2000}.  A second defense comes from the literature on self-reported happiness and relative wealth.  \citet{Luttmer2004} finds that relative wealth compared with neighbors has a robust positive correlation  with self-reported happiness, controlling for absolute wealth level.  On the face of it, it seems hard to explain this fact without some sort of social component in the utiltiy function.  If you still don't believe that there is a social belief component in the utility function, then you can think of this paper as estimating a reduced form model.  It is still novel to directly compare China and the United States.
 
-As mentioned above, this is not the first paper to take an empirical look at conspicuous consumption, although it is to my knowledge the first structural estimation.
-I give a one line summary of three recent representative papers below:
-\begin{itemize}
-	\item \citet{Blochetal2004} estimate a reduced form model of dowries and spending on wedding celebrations in India, and find results consistent with the idea that dowries buy the quality of husband (invisible), and weddings signal the status of husbands to society (conspicuous).  
-	\item \citet{Heffetz2011} conducts a telephone survey in the United States to determine the visibility of consumption goods.  Heffetz then analyzes household budget survey data, and finds evidence that the relitively visible goods identified by the survey are being used as a means to signal wealth. 
-	\item \citet{Charlesetal2009} finds that consumption signaling can explain differences in the spending habits of Americans across ethnicities and locations without resorting to preference heterogeneity.
-\end{itemize}
+As mentioned above, this is not the first paper to take an empirical look at conspicuous consumption  \citep{Blochetal2004,Charlesetal2009,MoavNeeman2010,MoavNeeman2012}.  My paper borrows both data and functional forms from \citet{Heffetz2011}, who conducts a telephone survey in the United States to determine the visibility of consumption goods.  Heffetz then analyzes household budget survey data, and finds evidence that the relitively visible goods identified by the survey are being used as a means to signal wealth.  To my knowledge, the only other structural estimation of a utility function including conspicuous consumption is \citet{Truglia2012}.  Truglia follows earlier literature in using a two-good functional form, and a variety of specifications for how non-market goods like status enter utility.  My specification below differs from Truglia's in a few important ways.  Some cosmetic differences include that I allow for individual level preference heterogeneity and estimate a many good utility function.  Any good can be used for signaling in my model, while in Truglia's model cars and clothes are the visible goods.  More substantively, while Truglia is focused on the provision of unobservable non-market goods (status), I assume that society cares only about an individual's unobservable welfare.  This allows me to consider peer-group beliefs more explicitly, rather than assume a functional form for the provision of a non-market good.  In agreement with my findings, Truglia finds that in his framework a tax on luxery goods creates large welfare gains.
 
-Using a structural estimation, I can examine both the absolute and relative magnitude of the motive for conspicuous consumption, and I can gauge the welfare gains from an excise tax on the most visible good categories.  To explain how an excise tax can raise everyone's welfare, first note that if everyone's wealth was directly observable by their peer group, then there would be no reason to distort consumption towards conspicuous goods.  One way to get people closer to the complete information allocation is to raise the price of the visible good, and then redistribute the proceeds of the tax regressively.  If things work out the right way, the rich are better off because they distort less, and the poor are better off because they are getting a subsidy from the rich.  If people care deeply about peer group belief, then the welfare gains from this sort of tax can be very large.\footnote{Signaling distortions are particularly worrying when considering the economic lives of the poor.  A recent study reports that in parts of India, the \emph{median} household making under a dollar a day spends 10\% of its income on festivals--this while 43\% of such households did not have enough to eat throughout the year \citep{BanerjeeDuflo2007}.  } 
+Using a structural estimation, I can examine both the absolute and relative magnitude of the motive for conspicuous consumption, and I can gauge the welfare gains from an excise tax on the most visible good categories.  To explain how an excise tax can raise everyone's welfare, first note that if everyone's wealth was directly observable by their peer group, then there would be no reason to distort consumption towards conspicuous goods.  One way to get people closer to the complete information allocation is to raise the price of the visible good, and then redistribute the proceeds of the tax regressively.  If things work out the right way, the rich are better off because they distort less, and the poor are better off because they are getting a subsidy from the rich.  If people care deeply about peer group belief, then the welfare gains from this sort of tax can be large.\footnote{Signaling distortions are particularly worrying when considering the economic lives of the poor.  A recent study reports that in parts of India, the \emph{median} household making under a dollar a day spends 10\% of its income on festivals--this while 43\% of such households did not have enough to eat throughout the year \citep{BanerjeeDuflo2007}.  } 
 
 I should mention that there is a relatively large and old related literature estimating what are known as interdependent preferences.  Beginning with James Duesenberry's 1949 doctoral thesis,\footnote{Later published as \citep{Duesenberry1949}} researchers have theorized that the consumption of neighbors affects own demand.  A typical econometric model in this literature lets household demand parameters depend linearly on the (weighted) average of the consumption of a reference group. A relationship between neighbor consumption and own consumption is taken to mean that preferences are interdependent.  The literature, however, does not take a stance on why consumption neighborhood consumption should be linked in this particular way. \footnote{To cite one of the first econometric papers in this literature, \citet{Pollak1976} speculates that exposure to the consumption of ``superior'' goods leads one to develop a taste for them.}  
 
@@ -107,53 +101,66 @@ If we were to take the naive Heffetz or Ireland model at face value, all consume
 By adding 29 latent observation types and preference heterogeneity, the version of model estimated in this paper can match this sort of noisy data quite well.
 
 \begin{figure}
-	\begin{center}
+	\centering
 		\includegraphics[scale=1]{pics/shares_cropped.pdf}
-	\end{center}
 	\label{fig:shr}
 	\caption{Log Expenditure Shares by Log Expenditure for select goods}
 \end{figure}
 \begin{figure}
-	\begin{center}
+	\centering
 		\includegraphics[scale=1]{pics/levels_cropped.pdf}
-	\end{center}
 	\label{fig:lev}
 	\caption{Log Category Expenditure by Log Expenditure for select goods}
 \end{figure}
 \begin{figure}
-	\begin{center}
+	\centering
 		\includegraphics[scale=.8]{pics/exphist_cropped.pdf}
-	\end{center}
 	\label{fig:exphist}
 	\caption{Histogram of  Log Expenditure}
 \end{figure}
 
-For the Chinese household expenditures, I used publicly available data from the Chinese Household Income Project (CHIP) \citep{CHIP2002}. Like the American household expenditure data, the CHIP data comprises of repeated cross-sections of Chinese households.  In this study I use urban households surveyed in 1995 and 2002 for a total of 13,767 observations.  I use 14 good categories which correspond to aggregates of those in the American household expenditure survey.   The Table describes how aggregation was done.  
-% \begin{table}
-%     \begin{center}
-%     \begin{sideways}
-% 	\begin{tabular}{|l|l|l|l|l|}
-% 	    	US Cat			 & 1995 Chn Cat  & 2002 Chn Cat  & Chn Cat Name & Chn Price Name\\
-% 		Fdh,Fdo	 		 & h27	 	 & e1-e152-e153	 & Food-Cigarettes-Alcohol	 		 & Food\\ 
-% 		Alh,Alo	 		 & h30-h31	 & e153	 	 & Alcohol	 				 & Liquor and beverage\\ 
-% 		Cig	 		 & h31	 	 & e152	 	 & Cigarettes	 				 & Tobacco\\ 
-% 		Bks	 		 & h37	 	 & f631	 	 & Textbooks	 				 & Teaching materials and ref books\\ 
-% 		Edu	 		 & h38 to h42	 & f63-f631	 & Education-Textbooks	 	 		 & Education fares\\ 
-% 		Bus,Car,Air,Gas,Cmn,Cin	 & h44	 	 & f514	 	 & Transportation	 			 & Transportation fares\\ 
-% 		Utl	 		 & h45 to h46	 & f72	 	 & Water, Electricity, Fuel, and others	 	 & Water, Electricity, and Fuel\\ 
-% 		Tel	 		 & h47	 	 & f522	 	 & Communication	 			 & Communication fares\\ 
-% 		Clo,Jwl	 		 & h32	 	 & f2 	  	 & Clothes	 				 & Clothing\\ 
-% 		Ot1,Ot2	 		 & h33	 	 & f6-f63	 & Entertainment and Cultural Services	 	 & Recreation fares\\ 
-% 		Fur,Lry,Brb	 	 & h34,h36	 & f3 	 	 & Home Equipment, Facilities, and Services	 & washing and Haircut fares\\ 
-% 		Med,Lin	 		 & h48	 	 & f4 	 	 & Health and Medical Expenditure	 	 & Medicine and Medical service\\ 
-% 		Hom,Htl	 		 & h64	 	 & f71	 	 & Housing	 			 	 & Housing\\ 
-% 		Fee,Cha	 		 & h35	 	 & f8 	 	 & Miscellaneous Goods and Services	 	 & -\\ 
-% 	\end{tabular}
-% 	\end{sideways}
-%     \end{center}
-%     \caption{Chinese Consumption and Price Categories}
-%     \label{tab:chncons}
-% \end{table}
+For the Chinese household expenditures, I used publicly available data from the Chinese Household Income Project (CHIP) \citep{CHIP2002}. Like the American household expenditure data, the CHIP data comprises of repeated cross-sections of Chinese households.  In this study I use urban households surveyed in 1995 and 2002 for a total of 13,767 observations.  I use 14 good categories which correspond to aggregates of those in the American household expenditure survey.   The Table \ref{tab:chncons} describes how aggregation was done.  
+\begin{table}
+    \centering
+    \footnotesize
+    \begin{sideways}
+	\begin{tabular}{|l|l|l|l|l|}
+	    	\hline
+		\textbf{US Cat}			 & \textbf{1995 Chn Cat}  & \textbf{2002 Chn Cat}  & \textbf{Chn Cat Name} & \textbf{Chn Price Name}\\
+		\hline
+		Fdh,Fdo	 		 & h27	 	 & e1-e152-e153	 & Food-Cig.-Alcohol	 		 	 & Food\\ 
+		\hline
+		Alh,Alo	 		 & h30-h31	 & e153	 	 & Alcohol	 				 & Liquor \& beverage\\
+		\hline
+		Cig	 		 & h31	 	 & e152	 	 & Cigarettes	 				 & Tobacco\\ 
+		\hline
+		Bks	 		 & h37	 	 & f631	 	 & Textbooks	 				 & Teaching mat. \& ref books\\ 
+		\hline
+		Edu	 		 & h38 to h42	 & f63-f631	 & Education-Textbooks	 	 		 & Education fares\\ 
+		\hline
+		Bus,Car*		 & h44	 	 & f514	 	 & Transportation	 			 & Transport. fares\\ 
+		\hline
+		Utl	 		 & h45 to h46	 & f72	 	 & Water, Elec., Fuel, \& other	 	 	 & Water, Elec., \& Fuel\\ 
+		\hline
+		Tel	 		 & h47	 	 & f522	 	 & Communication	 			 & Communication fares\\ 
+		\hline
+		Clo,Jwl	 		 & h32	 	 & f2 	  	 & Clothes	 				 & Clothing\\ 
+		\hline
+		Ot1,Ot2	 		 & h33	 	 & f6-f63	 & Entertain. \& Cultur. Serv.		 	 & Recreation fares\\ 
+		\hline
+		Fur,Lry,Brb	 	 & h34,h36	 & f3 	 	 & Home Equip., Facil., \& Serv.		 & Washing \& Haircut\\ 
+		\hline
+		Med,Lin	 		 & h48	 	 & f4 	 	 & Health \& Med. 			 	 & Medicine \& Med. serv.\\ 
+		\hline
+		Hom,Htl	 		 & h64	 	 & f71	 	 & Housing	 			 	 & Housing\\ 
+		\hline
+		Fee,Cha	 		 & h35	 	 & f8 	 	 & Misc. Goods \& Serv.			 	 & -\\ 
+		\hline
+	\end{tabular}
+	\end{sideways}
+    \caption{Chinese Consumption and Price Categories \scriptsize{*Air,Gas,Cmn,Cin}}
+    \label{tab:chncons}
+\end{table}
 
 \subsection{Vindex}
 Data about the relative visibility of  various types of goods is taken from \citet{Heffetz2011}.  
@@ -168,7 +175,7 @@ A higher index implies that a good category is  more conspicuous.
 A result of this aggregation methodology is that the index is cardinal rather than ordinal.  Two goods with similar index values are similar in visibility.  Details on the implementation of the survey and calculation of the index are available in the original paper.
 Table \ref{tab:vintab} below is an example of a vindex table for non-blacks under 40.
 \begin{table}
-	\begin{center}
+    \centering
 \begin{tabular}{|l|c|c|}
 	\hline
 	\textbf{Category} & \textbf{Vindex} & \textbf{SE} \\
@@ -236,7 +243,6 @@ Und (underwear) & 0.14 & (0.02)\\
 HIn (home insur.) & 0.13 & (0.02)\\ 
 	\hline
 \end{tabular}
-\end{center}
 \label{tab:vintab}
 \caption{Vindex for non-blacks under 40.}
 \vspace{-2in}
@@ -247,7 +253,9 @@ I have a time-series of relative price data from the Bureau of Labor services.
 Most of the NBER household good categories were easy to match with the definitions used by the BLS.   
 Since prices are normalized to one in 1983, the units of each good which enter into the utility function are whatever one dollar could buy in 1983.
 The following page is a table showing the price category names I used compared with the NBER good categories:
-\begin{table}
+    \begin{table}
+	\footnotesize
+	\centering
 \begin{sideways}
 \begin{tabular}{|l|l|l|}
 \hline
@@ -316,8 +324,7 @@ Lin & life insurance, endowment, annuities, and other death-benefits insurance. 
 \end{tabular}
 \end{sideways}
 \end{table}
-
-Chinese prices are taken from the China Statistical Yearbook (\citep{CSY}).  The Chinese prices are denominated in Renminbi, and are normalized to one in 1995--my first year of data. I include a table comparing price and good categories below:ADD TABLE 
+Chinese prices are taken from the China Statistical Yearbook (\citep{CSY}).  The Chinese prices are denominated in Renminbi, and are normalized to one in 1995--my first year of data. The Chinese price category comparison is located in Table \ref{tab:chncons}. 
 
 \section{Estimation}
 \subsection{Specializing to Cobb-Douglas}
@@ -423,7 +430,7 @@ I assume that the preference parameters are distributed log normal with a mass p
 This assumption seems reasonable given the raw data.
 First of all, Table \ref{tab:sharetab} shows that there is a lot of mass at zero.
 \begin{table}
-	\begin{center}
+ 	\centering	
 \begin{tabular}{|l|c|}
 	\hline
 \textbf{Category} & \textbf{Zero Expenditure} \\
@@ -487,7 +494,6 @@ LIn (life insur.) & 0.54 \\
 HIn (home insur.) & 0.41 \\ 
 	\hline
 \end{tabular}
-\end{center}
 \label{tab:sharetab}
 \caption{Fraction with zero shares in household expenditures by category.}
 \vspace{-2in}
@@ -496,9 +502,8 @@ The highest zero consumption rate in the United States is public transportation 
 Given the Cobb-Douglas structure of utility, the only way to get exactly zero consumption is with a utility parameter of zero.
 The justification for the log-normal assumption is due to Figure \ref{fig:shrplot}.
 \begin{figure}
-	\begin{center}
+	\centering
 		\includegraphics[scale=1]{pics/shrplot_cropped.pdf}
-	\end{center}
 	\caption{Log non-zero consumption share histograms by category.}
 	\label{fig:shrplot}
 \end{figure}
@@ -521,7 +526,7 @@ Then the consumptions of goods $j\neq v$ are given by:
 We can solve for the 28 $\gamma$'s up to a scaling factor $\sum_{i\neq v}\gamma_i$.
 I normalize the parameter $\gamma_1$ on consumption of food at home to one. 
 \footnote{It is important to choose a good which always has positive consumption, since this strategy will not work if consumption of the normalized good is zero.  
-Fortunately, food at home is consumed in all but NEED TO ADD THIS NUMBER of the households.}
+Fortunately, food at home is consumed in all but 800 of the 150,000 US households.}
 If food at home is not the observation type, and in what follows I assume it is not, then the solution for $j \neq v$ is:
 \footnote{In a previous version of the estimation, I allowed for food at home to be an observation type.
 It is not difficult to do so.
@@ -542,10 +547,10 @@ In practice, I assume the lowest possible wealth level is \$1000 in the American
 In the American data, for instance, out of 160,617 household observations, 4722 are dropped because they are less than 1000 dollars, 1079 further observations are dropped due to negative consumption reports, and finally 800 further observations are dropped due to zero expenditures on food at home.
 This leaves me with a total of 154,016 usable observations.
 
-The first-stage likelihood is written as follows. $\mu$ and $\sigma$ are vectors of log-normal location and dispersion parameters, and $z$ is a vector of zero probabilities. $\phi$ is the log-normal probability density function. Household $h$'s preference parameter for good $i$, $\gamma_{hi}$, is implicitly a function of $v_h$ and $C_{h}$, the observation type and consumption of a particular household. 
+The first-stage likelihood is written as follows. $\mu$ and $\sigma$ are vectors of log-normal location and dispersion parameters, and $z$ is a vector of zero probabilities. $\phi$ is the log-normal probability density function. Household $h$'s preference parameter for good $i$, $\gamma_{hi}$, is implicitly a function of $v_h$ and $C_{h}$, the observation type and consumption of a particular household, as well as the parameter $\alpha$. 
 \begin{equation}
 	\label{lik1}
-	l^1(\mu,\sigma,z) = \sum_{h} \sum_{i} \left(\mathbf{1}_{\{\gamma_{hi} = 0\}}\ln\left(z_i\right) + \mathbf{1}_{\{\gamma_{hi} \neq 0\}} \left(\ln\left(z_i\right)+\ln \phi(\gamma_{hi}|\mu_i,\sigma_i)\right)\right)
+	l^1(\alpha,\mu,\sigma,z) = \sum_{h} \sum_{i} \left(\mathbf{1}_{\{\gamma_{hi} = 0\}}\ln\left(z_i\right) + \mathbf{1}_{\{\gamma_{hi} \neq 0\}} \left(\ln\left(1 - z_i\right)+\ln \phi(\gamma_{hi}|\mu_i,\sigma_i)\right)\right)
 \end{equation}
 
 Once we have solved for the distribution parameters, we can move to the second stage. 
@@ -554,7 +559,7 @@ Given a set of preference distribution parameters, we need to choose the most li
 P is the vector of vindex probabilities.  $\gamma_{hi}$ remains an implicit function as in \eqref{lik1} above:
 \begin{equation}
     \label{lik2}
-    l_h^2(i) = \ln(p_i) + \sum_{i} \left(\mathbf{1}_{\{\gamma_{hi} = 0\}}\ln\left(z_i\right) + \mathbf{1}_{\{\gamma_{hi} \neq 0\}} \left(\ln\left(z_i\right)+\ln \phi(\gamma_{hi}|\mu_i,\sigma_i)\right)\right)
+    l_h^2(i) = \ln(p_i) + \sum_{i} \left(\mathbf{1}_{\{\gamma_{hi} = 0\}}\ln\left(z_i\right) + \mathbf{1}_{\{\gamma_{hi} \neq 0\}} \left(\ln\left(1-z_i\right)+\ln \phi(\gamma_{hi}|\mu_i,\sigma_i)\right)\right)
 \end{equation}
 In practice, in the United States I have different visibility indexes for four groups of households: blacks under 40, blacks over 40, non-blacks under 40, and non-blacks over 40.
 The vector $P$ will differ for these different demographic groups.
@@ -578,7 +583,7 @@ Since in China I currently have a single demographic category, the identificatio
 Tables \ref{tab:parest} and \ref{tab:chnparest} below respectively present American and Chinese parameter estimates.  
 The standard errors in the tables should be regarded somewhat cautiously, as these are done using the Fisher information from the first-stage likelihood alone.  In essence, they are the standard errors assuming that the observation types are known.  The proper way to get the standard errors would be to bootstrap.  The optimization routine is currently quite slow, however, and I have not done this yet.
 \begin{table}
-	\begin{center}
+	/centering
 		\begin{tabular}{|l|c c |c c |c c|}
 			\hline
 			Good Cat & $\mu$ & std err      & $\sigma$ & std err       & $pr(\gamma_j =  0)$ & std err\\
@@ -644,12 +649,11 @@ The standard errors in the tables should be regarded somewhat cautiously, as the
 			\hline
 			\hline
 		\end{tabular}
-	\end{center}
 	\caption{US Parameter Estimates}
 	\label{tab:parest}
 \end{table}
 \begin{table}
-    \begin{center}
+    \centering
 	\begin{tabular}{|l|c c |c c |c c|}
 		\hline
 		Good Cat & $\mu$ & std err      & $\sigma$ & std err       & $pr(\gamma_j =  0)$ & std err\\
@@ -686,7 +690,6 @@ The standard errors in the tables should be regarded somewhat cautiously, as the
 	\end{tabular}
      	\linebreak
 	\small{*Fur/Lry/Brb, Bus/Car/Gas/Air/Cmn/Cin}
-    \end{center}
     \caption{Chinese Parameter Estimates}
     \label{tab:chnparest}
 \end{table}
@@ -694,16 +697,14 @@ The main parameter of interest, the weight of conspicuous consumption in utility
 
 The model does a good job of simulating data similar to the real data set. In Figure \ref{fig:shares_fake} and figure \ref{fig:levels_fake} are scatter plots of simulated US data, made in the same way as the scatter plots of the actual US data in figures \ref{fig:shr} and \ref{fig:lev}. 
 \begin{figure}
-	\begin{center}
+	\centering
 		\includegraphics[scale=1]{pics/shares_fake_cropped.pdf}
-	\end{center}
 	\caption{Simulated expenditure share plots by category.}
 	\label{fig:shares_fake}
 \end{figure}
 \begin{figure}
-    \begin{center}
+    \centering
 	\includegraphics[scale=1]{pics/levels_fake_cropped.pdf}
-    \end{center}
     \caption{Simulated expenditure level plots by category.}
     \label{fig:levels_fake}
 \end{figure}
@@ -715,9 +716,8 @@ Ideally the observation type distribution (for a particular demographic) should 
 The estimated American observation type densities, however, have only a $0.3778$ correlation with the vindex probabilities.
 Figure \ref{fig:vinmatch} is a scatter plot of the vindex probabilities and the estimated observation type densities.
 \begin{figure}
-    \begin{center}
+    \centering
 	\includegraphics[scale=.8]{pics/vinmatch_cropped.pdf}
-    \end{center}
     \caption{Estimated (log) observation type distribution compared to (log) Heffetz vindex.}
     \label{fig:vinmatch}
 \end{figure}
@@ -737,9 +737,8 @@ This is because wealthier households need to distort their consumption more to s
 Note that the poorest households gain nothing from an elimination of signaling, since they hardly signal anyway.
 
 \begin{figure}
-    \begin{center}
+    \centering
 	\includegraphics[scale=.8]{pics/uchnge_cropped.pdf}
-    \end{center}
     \caption{Percentage welfare gain due to the elimination of signaling, by observation type}
     \label{fig:uchnge}
 \end{figure}
@@ -784,7 +783,7 @@ Utility is then calculated and passed back to the outer loop.
 
 The pareto efficient taxes I found are expressed as a multiple of base prices in Table \ref{tab:opttax}. I restricted the taxes to be no more than the base price.
 \begin{table}
-    \begin{center}
+    \centering
 	\begin{tabular}{|l|c|}
 	    \hline
 	    \textbf{Good Cat} & \textbf{Tax} \\
@@ -848,16 +847,14 @@ The pareto efficient taxes I found are expressed as a multiple of base prices in
 	    Cha &  0.2849\\ 
 	    \hline
 	\end{tabular}
-    \end{center}
-    \caption{Pareto efficient taxes as multiple of base price}
+    \caption{Pareto taxes as multiple of base price}
     \label{tab:opttax}
 \end{table}
 I present the simulated utility gain for each of the thousand simulated consumers in Figure \ref{fig:taxscatter}.
 \begin{figure}
-    \begin{center}
+    \centering 
 	\includegraphics[scale=.8]{pics/taxscat_cropped.jpg}
-    \end{center}
-    \caption{Percentage utility change under pareto tax regime by log wealth}
+    \caption{Welfare gains in utils under pareto tax regime by log wealth}
     \label{fig:taxscatter}
 \end{figure}
 There is a correlation coefficient of $0.179$ between the vindex levels and the pareto taxes presented above.  This is positive, as one might expect, meaning that more visible goods are more heavily taxed.
