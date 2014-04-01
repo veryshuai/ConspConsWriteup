@@ -7,12 +7,15 @@
 \usepackage{natbib}
 \usepackage{graphicx}
 \usepackage{rotating}
-\usepackage{wrapfig}
+%\usepackage{wrapfig}
 \usepackage[nolists]{endfloat}
 
 \title{A Structural Comparison of Conspicuous Consumption in China and the United States
 }
-\author{David Jinkins}
+\author{David Jinkins
+    \thanks{This research was supported by a National Science Foundation EAPSI fellowship.  I would like to thank Jonathan Eaton, Ed Green, Jim Tybout, Venky Venkateswaran, Yaohui Zhao, and the participants in the Penn State I/O and Trade reading groups for helpful comments, all under the standard disclaimer.}
+}
+\date{September 26, 2012}
 
 \begin{document}
 \maketitle
@@ -411,110 +414,18 @@ Now divide both sides of the equation by $s$, and using the fact that $g$ is hom
 Thus, $s c^*$ solves the scaled problem.
 }
 \subsection{Derivation of Estimation Equations}
-While there is ainty in the model for consumers, the econometrician does not observe either the preference type of a household, or its peer group's observation type.
-As is standard in this type of problem, I proceed with the EM algorithm.
-In the first stage, I take observation types as given, and update preference distribution parameters by maximizing a first-stage likelihood.
-Next I update observation types by maximizing a second-stage likelihood given the preference distribution parameters.
-Using these observation types, I return to the first-stage and get a new set of preference distribution parameters.
-This process is repeated until there is no reassignment of observation type.
+We are interested in the paramter $\alpha$, which is the weight given to the peer-belief part of the utility function.  In order to estimate the parameter of interest, we have to jointly estimate the observation type of each household.  To do this, I proceed with a two step 'hard' expectation maximization algorithm.  In the first stage, I condition on the observation type of each household and update $\alpha$.  In the second stage, I condition on $\alpha$ and update the observation type of each household.  This process is repeated until there is no reassignment of observation type.
 
-The first order of business is to derive the two likelihood functions.
+The first order of business is to derive the two conditional likelihood functions.
 As a reminder, the utility function now looks like this:
 \begin{equation}
 	\label{totuti}
 U(C,\gamma,v) = (1-\alpha) \sum_{j=1}^{29}\gamma_j \ln(c_j )  + \alpha \left(\gamma_v \ln(c_v)+ \hat{\gamma}\ln(g(c_v,v,\gamma))  + \zeta \right)
 \end{equation}
 
-Since the EM algorithm is based on maximizing a likelihood, I need to specify the preference heterogeneity distributions up to a finite set of parameters.
-I assume that the preference parameters are distributed log normal with a mass point at zero.
-This assumption seems reasonable given the raw data.
-First of all, Table \ref{tab:sharetab} shows that there is a lot of mass at zero.
-\begin{table}
- 	\centering	
-\begin{tabular}{|l|c|}
-	\hline
-\textbf{Category} & \textbf{Zero Expenditure} \\
-	\hline
-Clo (clothing) & 0.11 \\ 
-	\hline
-Cig (cigarettes) & 0.60 \\ 
-	\hline
-Car (cars) & 0.47 \\ 
-	\hline
-Fur (furniture) & 0.26 \\ 
-	\hline
-Ot1 (recreation 1) & 0.16 \\ 
-	\hline
-Jwl (jewelry) & 0.64 \\ 
-	\hline
-FdO (food out) & 0.10 \\ 
-	\hline
-AlH (alcohol home) & 0.49 \\ 
-	\hline
-AlO (alcohol out) & 0.51 \\ 
-	\hline
-Ot2 (recreation 2) & 0.10 \\ 
-	\hline
-Brb (barbers etc) & 0.17 \\ 
-	\hline
-Bks (books etc) & 0.48 \\ 
-	\hline
-Edu (education) & 0.70 \\ 
-	\hline
-Hom (rent/home) & 0.57 \\ 
-	\hline
-FdH (food home) & 0.02 \\ 
-	\hline
-Htl (hotels etc) & 0.62 \\ 
-	\hline
-Air (air travel) & 0.67 \\ 
-	\hline
-Bus (public trans.) & 0.73 \\ 
-	\hline
-CMn (car repair) & 0.24 \\ 
-	\hline
-Cha (charities) & 0.58 \\ 
-	\hline
-Gas (gasoline) & 0.11 \\ 
-	\hline
-Lry (laundry) & 0.33 \\ 
-	\hline
-Med (health care) & 0.25 \\ 
-	\hline
-Tel (home phone) & 0.06 \\ 
-	\hline
-Utl (home utilities) & 0.12 \\ 
-	\hline
-Fee (legal fees) & 0.36 \\ 
-	\hline
-CIn (car insur.) & 0.35 \\ 
-	\hline
-LIn (life insur.) & 0.54 \\ 
-	\hline
-HIn (home insur.) & 0.41 \\ 
-	\hline
-\end{tabular}
-\label{tab:sharetab}
-\caption{Fraction with zero shares in household expenditures by category.}
-\vspace{-2in}
-\end{table}
-The highest zero consumption rate in the United States is public transportation at 73.44\%.  
-Given the Cobb-Douglas structure of utility, the only way to get exactly zero consumption is with a utility parameter of zero.
-The justification for the log-normal assumption is due to Figure \ref{fig:shrplot}.
-\begin{figure}
-	\centering
-		\includegraphics[scale=1]{pics/shrplot_cropped.pdf}
-	\caption{Log non-zero consumption share histograms by category.}
-	\label{fig:shrplot}
-\end{figure}
-Figure  shows histograms of the logs of non-zero expenditures for 16 good categories.  
-The histograms are all reasonably close to normal probability distribution functions.
-If there was no signaling, Cobb-Douglas utility would imply that consumption shares are directly proportional to utility parameters.
-The signaling model retains a Cobb-Douglas flavor, as shares of non-observable goods are still proportional to utility parameters.
-Choosing a log-normal distribution with a zero mass point gives me enough flexibility to capture the general shape of the data.
+\subsection{First stage conditional likelihood}
 
-Given observation type, we can think of utility parameters as a function of consumption.  Consider a household of wealth type $W$ and with consumption vector $C$.  
-Suppose that the household is observation type $v$.
+Given observation type, we can think of utility parameters as an exact function of consumption.  Consider a household of wealth type $W$ and with consumption vector $C$.  Suppose that the household is observation type $v$.
 Then the consumptions of goods $j\neq v$ are given by:
 \begin{align}
 	\label{eq:sgd}
@@ -531,9 +442,7 @@ If food at home is not the observation type, and in what follows I assume it is 
 \footnote{In a previous version of the estimation, I allowed for food at home to be an observation type.
 It is not difficult to do so.
 The only drawback is that the numerical optimization comes first (and solves for $\sum_{j \neq 1} \gamma_j$ rather than $\gamma_1$ which is normalized to unity.  
-Putting the numerical optimization in the first step potentially adds some error into the coefficients in the second step, and I found that the estimation routine became very touchy with regard to starting values.
-In any case, for now I assume that food at home is not the observation type.
-This assumption is not be too serious as food at home is a fairly low visibility good category.
+Putting the numerical optimization in the first step potentially adds some error into the coefficients in the second step, and I found that the estimation routine became very touchy with regard to starting values.  Food at home is a fairly low visibility good category.
 }
 \begin{equation}
 	\label{eq:gamsol}
