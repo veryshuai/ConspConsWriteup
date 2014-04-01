@@ -15,13 +15,13 @@
 \author{David Jinkins
     \thanks{This research was supported by a National Science Foundation EAPSI fellowship.  I would like to thank Jonathan Eaton, Ed Green, Jim Tybout, Venky Venkateswaran, Yaohui Zhao, and the participants in the Penn State I/O and Trade reading groups for helpful comments, all under the standard disclaimer.}
 }
-\date{September 26, 2012}
+\date{April 1, 2014}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-    The objective of this paper is to measure the relative importance of conspicous consumption to Americans and Chinese.  To this end, I estimate the parameters of a utility function borrowed from recent theoretical work using American and Chinese data.  The main parameter of interest governs the amount that individuals care about peer group beliefs regarding their welfare.  Using survey data on the visibility of different good categories along with household budget surveys, I find that Chinese consumers care twice as much as American consumers about the beliefs of their peer group.
+    I measure the relative importance of conspicous consumption to Americans and Chinese.  To this end, I estimate the parameters of a utility function borrowed from recent theoretical work using American and Chinese data.  The main parameter of interest governs the amount that individuals care about peer group beliefs regarding their welfare.  Using survey data on the visibility of different good categories along with household budget surveys, I find that Chinese consumers care twice as much as American consumers about the beliefs of their peer group.
 \end{abstract}
 
 \section{Introduction}
@@ -45,43 +45,30 @@ There are six sections below.  First I set out the environment and preferences, 
 
 \section{Model}
 \subsection{Environment and Preferences}
-There is a continuum of consumers who live for a single period and are endowed with an exogenous wealth level $w \in \left[ \underline{w},\overline{w} \right]$.
-Consumers use this wealth to buy goods with exogenous prices $\{r_i\}_I$ in order to maximize a utility function on the space of good categories $I$. 
-Slightly abusing notation, $I$ is both the set of good categories and the assumed finite cardinality of that set.
-Each good category is endowed with a visibility, $v$.
-Consumers vary in wealth level and preference type.
-Preference type $\gamma$ is a real vector of length $I$ and is  drawn from a distribution $G$.
 
-The utility function consists of two additively separable parts.  The first part is a fundamental utility $u:\mathbb{R}_+^{I}\rightarrow\mathbb{R}$.
-The fundamental utility describes the pleasure consumers get directly from consuming a bundle of goods.
-The second part is the belief of a consumer's peer group (group of friends or colleages) over her utility.
-The peer group is a passive actor which forms a beliefs over the utility level of members based on expenditures on a finite set of observable good categories.
-These categories can differ between peer groups.
-This assumption is meant to capture the idea that the peer group does not see everything that its members spend their money on, and thus has incomplete information regarding the total well-being (wealth) of members.
-Preferences of all members need not be the same, but they are assumed to be known to the peer group.
-To keep the model, equilibrium, and empirics simple, I restrict peer group observation to a single good category.\footnote{Since preferences are completely known to the peer group, the only thing that the peer group does not know is the one-dimensional wealth of each member.  If I allow for more than one observed good (more than one dimension), then the equilibrium will be driven by beliefs off the equilibrium path. While I haven't proved a uniqueness result in the current model setup, there is some hope for a unique equilibrium.  In a multiple unobserved good version, there is very little hope.  
+There is a finite set of goods $G$.  Good $g \in G$ has an exogenous price $p_g$.  There is a continuum of heterogenous consumers $I$. Consumer $i \in I$ is endowed with wealth $w_i \in \left[ \underline{w},\overline{w} \right]$, preference type $\gamma_i \in \Gamma$, and observation type $t_i \in G$.  Consumer $i$ also has a good-specific visibility measures $\{v_{ig}\}_{g\in G}$
 
-One way to restore hope would be to drop the assumption that the peer group knows the preferences of its members.  This, however, would make the estimation much more difficult.  If I were to continue developing this model, this would be the logical next step.}
-The observable good category is called the observation type of each peer group.
-I assume that the observation type is a random, with probability weighted by the visibility of a good category.
+A consumer decides how to allocate his wealth to buy goods in order to maximize his utility.  Following earlier theoretical literature (\citet{Heffetz2011},\citet{Ireland1994}), I assume a consumer's utility function consists of two additively separable parts.  We can then write the utility as in \eqref{eq:metautil}.  
 
-For now suppose that there is a peer belief function $C_b: \mathbb{R}_+\times\mathbb{R}^{I}\times I\rightarrow \mathbb{R}_+^{I}$.  $C_b$ maps consumption of the observable good, observation type, and preference type to the unobservable full consumption vector.
-I will derive this belief function for the special case I estimate later, and using this notation facilitates exposition.
-Following earlier theoretical literature (\citet{Heffetz2011},\citet{Ireland1994}) I assume the utility function is additively separable in fundamental utility and social belief.
-The utility function is written:
-\[U(C,\gamma,i) = (1-\alpha) u(C,\gamma) + \alpha\  u(C_b(c_i,\gamma,i),\gamma).\]
-Here $c_i$ denotes the i-th component of the consumption vector $C$.
+\begin{equation}
+    \label{eq:metautil}
+    U(C_i,\gamma_i,t_i) = (1-\alpha) u(C_i,\gamma_i) + \alpha\  u(C_b(c_{t_i},\gamma_i,t_i),\gamma_i)
+\end{equation}
+
+The first term on the right-hand side of \eqref{eq:metautil} is a fundamental utility $u:\mathbb{R}_+^{I}\rightarrow\mathbb{R}$.  
+Fundamental utility describes the pleasure a consumer gets directly from consuming a bundle of goods.
+The second term is the belief of a consumer's peer group over his utility.  Peer group belief over the utility level of Consumer $i$ is based on his expenditure on good category $t_i$.  $C_b$ maps consumption of the observable good, observation type, and preference type to the unobservable full consumption vector.  The preference type $\gamma_i$ of Consumer $i$ is known to his peer group.\footnote{Since preferences are completely known to the peer group, the only thing that the peer group does not know is the one-dimensional wealth of each member.  If I allow for more than one observed good (more than one dimension), then the equilibrium will be driven by beliefs off the equilibrium path, and there will be many possible equilibria.}
+The observation type $t_i$ of Consumer $i$ is random, with it's probability weighted by Consumer $i$'s good-specific visability measure $v_{ij}$.  
+
 \subsection{Equilibrium Concept}
-Let $r$ be an exogenous vector of prices.  
-Given a social belief function $C_b$, the consumer's problem in the second version of the model for a consumer of wealth type $W$, preference type $\gamma$, and observation type $i$ is:
-\[ \max_C \ U(C,\gamma,i|C_b) :  r\cdot C \le W\]
-An equilibrium is a social belief function $C_b$ and a vector-valued consumption function $C$ on $(W,\gamma,i)$ such that:
+
+An equilibrium is a social belief function $C_b$ and a vector-valued consumption function $C$ on $(W,\Gamma,G)$ such that:
 \begin{enumerate}
-	\item $\forall (W,\gamma,i), \ C(W,\gamma,i)$ solves the consumer's problem for type $(W,\gamma,i)$ and social belief function $C_b$.
-	\item $\forall (W,\gamma,i), \ C(W,\gamma,i) = C_b(c_i(W,\gamma,i),\gamma,i).$
+	\item For each consumer type $(w_i,\gamma_i,t_i), \ C(w_i,\gamma_i,t_i)$ solves the consumer's problem.
+    \item For each consumer types $(w_i,\gamma_i,t_i), \ C(w_i,\gamma_i,t_i) = C_b(c_{t_i}(w_i,\gamma_i,t_i),\gamma_i,t_i).$
 \end{enumerate}
-As above, $c_i(W,\gamma,i)$ denotes the i-th component of the consumption vector $C(W,\gamma,i)$.
-The first condition says that all consumers choose an optimizing  bundle, and the second condition says that society is able to completely learn the well-being of each consumer, regardless of the consumer's observation type.
+The first condition says that a consumer chooses an optimum consumption bundle, and the second condition says that Consumer $i$'s peer group learns his true type.
+
 \section{Data}
 This project requires three types of data.  We need consumer expenditure data at the household level, we need relative price data, and we need demographicly differentiated information about how visible different good categories are relative to each other. 
 \subsection{Household Expenditures}
@@ -332,41 +319,33 @@ Chinese prices are taken from the China Statistical Yearbook (\citep{CSY}).  The
 \section{Estimation}
 \subsection{Specializing to Cobb-Douglas}
 Let the fundamental utility function be Cobb-Douglas:
-\[u(C,\gamma) = \sum_{i=1}^{I} \gamma_i \ln(c_i)\]
-
-Note that there is no uncertainty in the consumer's problem.
-The model can be written as a generalization of the Heffetz model to many goods and preference heterogeneity.\footnote{ In the Heffetz version, there are only two goods, one visible and the other invisible to society. In my version, there is one visible good for each observation type, and all the other goods are invisible.}
-Let $v\in I$ be the observation type.
-Suppose that $c_v^*$ is the equilibrium consumption of the visible good.
-Then the consumptions of the other goods must satisfy:
-\[ U(C^*,\gamma,v|c_v^*)=\underset{\{c_i\}_{i\neq v}}{\max} \ U(C,\gamma,v|c_v^*) :  \sum_{i \neq v} r_i c_i \le W-r_v c_v^*\]
-The demand for good $i\neq v$ as:
-\[ c_i^* = \frac{\gamma_i}{r_i}\left(\sum_{j\neq v} \gamma_j\right)^{-1}\left(W-r_v c_v^* \right)\]
+\[u(C,\gamma) = \sum_{g=1}^{G} \gamma_g \ln(c_g)\]
+The model can then be written as a generalization of the Heffetz model to many goods and preference heterogeneity.\footnote{ In the Heffetz version, there are only two goods, one visible and the other invisible to society. In my version, there is one visible good for each observation type, and all the other goods are invisible.}
+In what follows I drop subscripts for Consumer $i$ to save on notation. Let $t \in G$ be Consumer $i$'s observation type, and let $c_{t}^*$ be Consumer $i$'s equilibrium consumption of the visible good.
+Then the consumption of the non-visible goods must satisfy:
+\[ U(C^*,\gamma,t,w|c_t^*)=\underset{\{c_g\}_{g\neq t}}{\max} \ U(C,\gamma,t,w|c_t^*) :  \sum_{g \neq t} p_g c_g \le w-p_t c_t^*\]
+The equilibrium demand for good $g\neq t$ conditional on spending on the visible good is the standard Cobb-Douglas constant expenditure share:
+\[p_g c_g^* = \frac{\gamma_g}{p_g}\left(\sum_{j\neq t} \gamma_j\right)^{-1}\left(w-p_t c_t^* \right)\]
 Plugging these demands into the equilibrium utility function we get:
 \begin{align}
-	U(C^*,\gamma,v) &= (1-\alpha)\sum_{i\neq v} \gamma_i \ln\left(\frac{\gamma_i}{r_i}\left(\sum_{j\neq v} \gamma_j\right)^{-1}\left(W-r_v c_v^* \right)\right) + h(c_v^*) \nonumber \\ 
-	&= (1-\alpha) \ln\left(\prod_{j\neq v} \left(\frac{\gamma_j}{r_j}\right)^{\gamma_j}\left(\sum_{j\neq v} \gamma_j\right)^{-\sum_{j\neq v} \gamma_j}\left(W-r_v c_v^* \right)^{\sum_{j\neq v} \gamma_j}\right) + h(c_v^*) \nonumber \\ 
+	U(C^*,\gamma,t,w) &= (1-\alpha)\sum_{g\neq t} \gamma_g \ln\left(\frac{\gamma_g}{p_g}\left(\sum_{j\neq t} \gamma_j\right)^{-1}\left(w-p_t c_t^* \right)\right) + h(c_t^*) \nonumber \\ 
+	&= (1-\alpha) \ln\left(\prod_{j\neq t} \left(\frac{\gamma_j}{p_j}\right)^{\gamma_j}\left(\sum_{j\neq t} \gamma_j\right)^{-\sum_{j\neq t} \gamma_j}\left(w-p_t c_t^* \right)^{\sum_{j\neq t} \gamma_j}\right) + h(c_t^*) \nonumber \\ 
 	\label{invop}
-	&= (1-\alpha) \hat{\gamma} \ln \left(W-r_v c_v^*\right) + h(c_v^*) + (1-\alpha) \zeta(\gamma) 
+	&= (1-\alpha) \hat{\gamma} \ln \left(w-p_t c_t^*\right) + h(c_t^*) + \zeta
 \end{align}
-Here $h(c_v^*)$ is the part of the utility function which does not depend upon any of the invisible goods, and:
-\begin{align*}
-	\hat{\gamma} &= \sum_{j\neq v} \gamma_j\\
-	\zeta(\gamma) & = \ln\left(\prod_{j\neq v} \left(\frac{\gamma_j}{r_j}\right)^{\gamma_j}\left(\sum_{j\neq v} \gamma_j\right)^{-\sum_{j\neq v} \gamma_j}\right) 
-\end{align*}
-Note here that the budget constraint is satistfied for any choice of $c_v^* \in [0,W/r_v]$.
-Society knows that given wealth and the consumption of the visible good, it is optimal to split consumption among the invisible goods as derived above.  Thus using \eqref{invop}, we can rewrite the total utility function as: 
+Here $h(c_v^*)$ is the part of the utility function which does not depend upon consumption of anything but the visible good, and $\zeta$ is a constant which depends only on exogenous parameters.
+
+Consumer $i$'s peer group knows that given wealth and the consumption of the visible good, it is optimal to split consumption among the non-visible goods as derived above.  Using \eqref{invop}, we can rewrite the total utility function as: 
 \begin{equation}
 	\label{ufun}
-	U(C,\gamma,v) = (1-\alpha) \left(\hat{\gamma} \ln \left(W-r_v c_v\right) + \gamma_v \ln \left(c_v \right)\right) + \alpha \left(\gamma_v \ln \left(g(c_v)\right) + \gamma_v \ln \left(c_v\right) \right) + \zeta(\gamma)
+	U(C,\gamma,t,w) = (1-\alpha) \left(\hat{\gamma} \ln \left(w-p_t c_t\right) + \gamma_t \ln \left(c_t \right)\right) + \alpha \left(\gamma_t \ln \left(s(c_t)\right) + \gamma_t \ln \left(c_t\right) \right) + \zeta
 	 \end{equation}
-Here $g(c_v)$ is society's guess about $W-r_v c_v$ based on $c_v$. 
-In particular, note that society's belief over a consumer's utility is described by a single-dimensional function.
+The single-valued function $s(c_t)$ is society's belief about $w-p_t c_t$. 
 
 The first order conditions for an interior solution to the consumer's problem can be written:
 \begin{equation}
 	\label{foc}
-g'(c_v) = \frac{1}{\alpha}\left( \left( 1-\alpha\right) r_v - \frac{\gamma_v}{\hat{\gamma}}\frac{g(c_v)}{c_v }\right)
+s'(c_t^*) = \frac{1}{\alpha}\left( \left( 1-\alpha\right) p_t - \frac{\gamma_t}{\hat{\gamma}}\frac{s(c_t^*)}{c_t^*}\right)
 \end{equation}
 
 Now we can directly follow Heffetz and solve this differential equation:
