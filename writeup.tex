@@ -340,7 +340,7 @@ Consumer $i$'s peer group knows that given wealth and the consumption of the vis
 	\label{ufun}
 	U(C,\gamma,t,w) = (1-\alpha) \left(\hat{\gamma} \ln \left(w-p_t c_t\right) + \gamma_t \ln \left(c_t \right)\right) + \alpha \left(\gamma_t \ln \left(s(c_t)\right) + \gamma_t \ln \left(c_t\right) \right) + \zeta
 	 \end{equation}
-The single-valued function $s(c_t)$ is society's belief about $w-p_t c_t$. 
+The single-valued function $s(c_t)$ is the belief of the peer group about $w-p_t c_t$. 
 
 The first order conditions for an interior solution to the consumer's problem can be written:
 \begin{equation}
@@ -351,32 +351,32 @@ s'(c_t^*) = \frac{1}{\alpha}\left( \left( 1-\alpha\right) p_t - \frac{\gamma_t}{
 Now we can directly follow Heffetz and solve this differential equation:
 \begin{equation}
 	\label{difsol}
-	g(c_v) = \frac{\hat{\gamma}\left(1-\alpha\right)}{\gamma_v +\alpha \hat{\gamma}} r_v c_v + K c_v^{-\frac{\gamma_v}{\alpha \hat{\gamma}}}
+	g(c_t^*) = \frac{\hat{\gamma}\left(1-\alpha\right)}{\gamma_t +\alpha \hat{\gamma}} r_t c_t + K c_t^{-\frac{\gamma_t}{\alpha \hat{\gamma}}}
 \end{equation}
-To solve for the constant $K$, note that the lowest possible wealth type $\underbar{W}$ has no reason to signal in a separating equilibrium.
-In particular, his consumption will not be distorted, so that his demand $\underbar{c}$ for $c_v$ will be given by:
+To solve for the constant $K$, we use the idea that the lowest possible wealth type $\underbar{W}$ has no reason to signal in a separating equilibrium.
+From his perspective, things are already as bad as they can be, so there is no reason for him to distort his consumption to signal.  His demand $\underbar{c}$ for $c_t$ will be given by:
 \begin{equation}
 	\label{lowc}
-	\underbar{c} = \frac{\gamma_v}{r_v}\left(\sum_{j} \gamma_j\right)^{-1}\underbar{W} 
+	\underbar{c} = \frac{\gamma_t}{r_t}\left(\sum_{j} \gamma_j\right)^{-1}\underbar{W} 
 \end{equation}
-Since in equilibrium $g(\underbar{c}) = \underbar{W} - r_v \underbar{c}$, we can plug into \eqref{difsol} and solve for $K$:
+Since in equilibrium $g(\underbar{c}) = \underbar{W} - r_t \underbar{c}$, we can plug into \eqref{difsol} and solve for $K$:
 \[
-K = \frac{\underbar{W}- \frac{\gamma_v + \hat{\gamma}}{\gamma_v + \alpha \hat{\gamma}}r_v \underbar{c}}{\underbar{c}^{-\frac{\gamma_v}{\alpha \hat{\gamma}}}}
+K = \frac{\underbar{W}- \frac{\gamma_t + \hat{\gamma}}{\gamma_t + \alpha \hat{\gamma}}r_t \underbar{c}}{\underbar{c}^{-\frac{\gamma_t}{\alpha \hat{\gamma}}}}
 \]
-We can think of $g$ as a function of $c_v$ and $\underbar{W}$. 
+We can think of $g$ as a function of $c_t$ and $\underbar{W}$. 
 Then $g$ is jointly homothetic.  
 \footnote{
-Below I show that $g$ is jointly homothetic of degree one in $\underbar{W}$ and $c_v$.  First, it is immediate from \eqref{lowc} that $\underbar{c}$ scales linearly with $\underbar{W}$.
+Below I show that $g$ is jointly homothetic of degree one in $\underbar{W}$ and $c_t$.  First, it is immediate from \eqref{lowc} that $\underbar{c}$ scales linearly with $\underbar{W}$.
 Now $K$ scales non-linearly with $\underbar{W}$:
 \begin{align*}
-	K(s\underbar{W}) &= \frac{s\underbar{W}- \frac{\gamma_v + \hat{\gamma}}{\gamma_v + \alpha \hat{\gamma}}r_v s \underbar{c}}{(s\underbar{c})^{-\frac{\gamma_v}{\alpha \hat{\gamma}}}} \\
-	&= s^{1 + \frac{\gamma_v}{\alpha \hat{\gamma}}}K(\underbar{W})
+	K(s\underbar{W}) &= \frac{s\underbar{W}- \frac{\gamma_t + \hat{\gamma}}{\gamma_t + \alpha \hat{\gamma}}r_t s \underbar{c}}{(s\underbar{c})^{-\frac{\gamma_t}{\alpha \hat{\gamma}}}} \\
+	&= s^{1 + \frac{\gamma_t}{\alpha \hat{\gamma}}}K(\underbar{W})
 \end{align*}
-The way $K$ scales, however, is just right to make $g$ scale linearly in $c_v$:
+The way $K$ scales, however, is just right to make $g$ scale linearly in $c_t$:
 \begin{align*}
-	g(s c_v,\underbar{W}) &= \frac{\hat{\gamma}\left(1-\alpha\right)}{\gamma_v +\alpha \hat{\gamma}} r_v s c_v + s^{1+\frac{\gamma_v}{\alpha \hat{\gamma}}} K(\underbar{w}) (s c_v)^{-\frac{\gamma_v}{\alpha \hat{\gamma}}} \\
-	&= \frac{\hat{\gamma}\left(1-\alpha\right)}{\gamma_v +\alpha \hat{\gamma}} r_v s c_v + s K(\underbar{w}) c_v^{-\frac{\gamma_v}{\alpha \hat{\gamma}}} \\
-	&= s g(c_v,\underbar{W})
+	g(s c_t,\underbar{W}) &= \frac{\hat{\gamma}\left(1-\alpha\right)}{\gamma_t +\alpha \hat{\gamma}} r_t s c_t + s^{1+\frac{\gamma_t}{\alpha \hat{\gamma}}} K(\underbar{w}) (s c_t)^{-\frac{\gamma_t}{\alpha \hat{\gamma}}} \\
+	&= \frac{\hat{\gamma}\left(1-\alpha\right)}{\gamma_t +\alpha \hat{\gamma}} r_t s c_t + s K(\underbar{w}) c_t^{-\frac{\gamma_t}{\alpha \hat{\gamma}}} \\
+	&= s g(c_t,\underbar{W})
 \end{align*}
 }
 This means that, given prices, a scaling of social wealth just scales consumption choices.
