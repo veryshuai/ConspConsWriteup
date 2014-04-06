@@ -351,100 +351,87 @@ s'(c_t^*) = \frac{1}{\alpha}\left( \left( 1-\alpha\right) p_t - \frac{\gamma_t}{
 Now we can directly follow Heffetz and solve this differential equation:
 \begin{equation}
 	\label{difsol}
-	g(c_t^*) = \frac{\hat{\gamma}\left(1-\alpha\right)}{\gamma_t +\alpha \hat{\gamma}} r_t c_t + K c_t^{-\frac{\gamma_t}{\alpha \hat{\gamma}}}
+	s(c_t^*) = \frac{\hat{\gamma}\left(1-\alpha\right)}{\gamma_t +\alpha \hat{\gamma}} p_t c_t + K c_t^{-\frac{\gamma_t}{\alpha \hat{\gamma}}}
 \end{equation}
 To solve for the constant $K$, we use the idea that the lowest possible wealth type $\underbar{W}$ has no reason to signal in a separating equilibrium.
 From his perspective, things are already as bad as they can be, so there is no reason for him to distort his consumption to signal.  His demand $\underbar{c}$ for $c_t$ will be given by:
 \begin{equation}
 	\label{lowc}
-	\underbar{c} = \frac{\gamma_t}{r_t}\left(\sum_{j} \gamma_j\right)^{-1}\underbar{W} 
+	\underbar{c} = \frac{\gamma_t}{p_t}\left(\sum_{j} \gamma_j\right)^{-1}\underbar{W} 
 \end{equation}
-Since in equilibrium $g(\underbar{c}) = \underbar{W} - r_t \underbar{c}$, we can plug into \eqref{difsol} and solve for $K$:
+Since in equilibrium $s(\underbar{c}) = \underbar{W} - p_t \underbar{c}$, we can plug into \eqref{difsol} and solve for $K$:
 \[
-K = \frac{\underbar{W}- \frac{\gamma_t + \hat{\gamma}}{\gamma_t + \alpha \hat{\gamma}}r_t \underbar{c}}{\underbar{c}^{-\frac{\gamma_t}{\alpha \hat{\gamma}}}}
+K = \frac{\underbar{W}- \frac{\gamma_t + \hat{\gamma}}{\gamma_t + \alpha \hat{\gamma}}p_t \underbar{c}}{\underbar{c}^{-\frac{\gamma_t}{\alpha \hat{\gamma}}}}
 \]
-We can think of $g$ as a function of $c_t$ and $\underbar{W}$. 
-Then $g$ is jointly homothetic.  
+We can think of $s$ as a function of $c_t$ and $\underbar{W}$. 
+Then $s$ is jointly homothetic.  
 \footnote{
-Below I show that $g$ is jointly homothetic of degree one in $\underbar{W}$ and $c_t$.  First, it is immediate from \eqref{lowc} that $\underbar{c}$ scales linearly with $\underbar{W}$.
+Below I show that $s$ is jointly homothetic of degree one in $\underbar{W}$ and $c_t$.  First, it is immediate from \eqref{lowc} that $\underbar{c}$ scales linearly with $\underbar{W}$.
 Now $K$ scales non-linearly with $\underbar{W}$:
 \begin{align*}
-	K(s\underbar{W}) &= \frac{s\underbar{W}- \frac{\gamma_t + \hat{\gamma}}{\gamma_t + \alpha \hat{\gamma}}r_t s \underbar{c}}{(s\underbar{c})^{-\frac{\gamma_t}{\alpha \hat{\gamma}}}} \\
-	&= s^{1 + \frac{\gamma_t}{\alpha \hat{\gamma}}}K(\underbar{W})
+	K(\xi\underbar{W}) &= \frac{\xi\underbar{W}- \frac{\gamma_t + \hat{\gamma}}{\gamma_t + \alpha \hat{\gamma}}p_t \xi \underbar{c}}{(\xi\underbar{c})^{-\frac{\gamma_t}{\alpha \hat{\gamma}}}} \\
+	&= \xi^{1 + \frac{\gamma_t}{\alpha \hat{\gamma}}}K(\underbar{W})
 \end{align*}
-The way $K$ scales, however, is just right to make $g$ scale linearly in $c_t$:
+The way $K$ scales, however, is just right to make $s$ scale linearly in $c_t$:
 \begin{align*}
-	g(s c_t,\underbar{W}) &= \frac{\hat{\gamma}\left(1-\alpha\right)}{\gamma_t +\alpha \hat{\gamma}} r_t s c_t + s^{1+\frac{\gamma_t}{\alpha \hat{\gamma}}} K(\underbar{w}) (s c_t)^{-\frac{\gamma_t}{\alpha \hat{\gamma}}} \\
-	&= \frac{\hat{\gamma}\left(1-\alpha\right)}{\gamma_t +\alpha \hat{\gamma}} r_t s c_t + s K(\underbar{w}) c_t^{-\frac{\gamma_t}{\alpha \hat{\gamma}}} \\
-	&= s g(c_t,\underbar{W})
+	s(\xi c_t,\underbar{W}) &= \frac{\hat{\gamma}\left(1-\alpha\right)}{\gamma_t +\alpha \hat{\gamma}} p_t \xi c_t + \xi^{1+\frac{\gamma_t}{\alpha \hat{\gamma}}} K(\underbar{w}) (\xi c_t)^{-\frac{\gamma_t}{\alpha \hat{\gamma}}} \\
+	&= \frac{\hat{\gamma}\left(1-\alpha\right)}{\gamma_t +\alpha \hat{\gamma}} p_t \xi c_t + \xi K(\underbar{w}) c_t^{-\frac{\gamma_t}{\alpha \hat{\gamma}}} \\
+	&= \xi s(c_t,\underbar{W})
 \end{align*}
 }
 This means that, given prices, a scaling of social wealth just scales consumption choices.
 \footnote{
-In this footnote, I show that if $c^*$ is an interior maximizer of \eqref{ufun} for an individual of wealth $W$, then $s c^*$ is a solution to the  problem of an individual of wealth $s W$, as long as we also scale $\underbar{W}$ up by $s$ as well.
+In this footnote, I show that if $c^*$ is an interior maximizer of \eqref{ufun} for an individual of wealth $W$, then $\xi c^*$ is a solution to the  problem of an individual of wealth $\xi W$, as long as we also scale $\underbar{W}$ up by $\xi$ as well.
 If $c^*$ is an interior maximizer, then it solves the first order conditions of \eqref{ufun}:
 \[
-\frac{(1-\alpha)r_v \hat{\gamma}}{W-r_v c^*} = \frac{\alpha \gamma_v g'(c^*)}{g(c^*)} + \frac{\gamma_v}{c^*}
+\frac{(1-\alpha)r_v \hat{\gamma}}{W-r_v c^*} = \frac{\alpha \gamma_v s'(c^*)}{s(c^*)} + \frac{\gamma_v}{c^*}
 \]
-Now divide both sides of the equation by $s$, and using the fact that $g$ is homothetic of degree one and $g'$ is homothetic of degree zero, we get:
+Now divide both sides of the equation by $\xi$, and using the fact that $s$ is homothetic of degree one and $s'$ is homothetic of degree zero, we get:
 \[
-\frac{(1-\alpha)r_v \hat{\gamma}}{s W-r_v s c^*} = \frac{\alpha \gamma_v g'(s c^*)}{g(s c^*)} + \frac{\gamma_v}{s c^*}
+\frac{(1-\alpha)r_v \hat{\gamma}}{\xi W-r_v \xi c^*} = \frac{\alpha \gamma_v s'(\xi c^*)}{s(\xi c^*)} + \frac{\gamma_v}{\xi c^*}
 \]
-Thus, $s c^*$ solves the scaled problem.
+Thus, $\xi c^*$ solves the scaled problem.
 }
-\subsection{Derivation of Estimation Equations}
-We are interested in the paramter $\alpha$, which is the weight given to the peer-belief part of the utility function.  In order to estimate the parameter of interest, we have to jointly estimate the observation type of each household.  To do this, I proceed with a two step 'hard' expectation maximization algorithm.  In the first stage, I condition on the observation type of each household and update $\alpha$.  In the second stage, I condition on $\alpha$ and update the observation type of each household.  This process is repeated until there is no reassignment of observation type.
+\subsection{Estimation Equations}
+We are interested in the paramter $\alpha$, which is the weight given to the peer-belief part of the utility function.  In order to estimate the parameter of interest, we have to jointly estimate the observation type of each household, which are nuisance parameters.  I use a two step 'hard' expectation maximization algorithm.  In the first stage, I condition on the observation type of each household and update $\alpha$ and preference parameter distributions.  In the second stage, I take $\alpha$ and the preference parameter distributions as given and find the most likely observation type of each household.  I repeat the process until observation types do not change.
 
-The first order of business is to derive the two conditional likelihood functions.
-As a reminder, the utility function now looks like this:
-\begin{equation}
-	\label{totuti}
-U(C,\gamma,v) = (1-\alpha) \sum_{j=1}^{29}\gamma_j \ln(c_j )  + \alpha \left(\gamma_v \ln(c_v)+ \hat{\gamma}\ln(g(c_v,v,\gamma))  + \zeta \right)
-\end{equation}
+\subsection{Likelihood function}
 
-\subsection{First stage conditional likelihood}
-
-Given observation type, we can think of utility parameters as an exact function of consumption.  Consider a household of wealth type $W$ and with consumption vector $C$.  Suppose that the household is observation type $v$.
-Then the consumptions of goods $j\neq v$ are given by:
+Given consumption, household utility parameters $\gamma(\alpha,t_i|C_i)$ are a function of the utilty weight $\alpha$ and the observation type $t_i$.  Consider a household of wealth type $w$ and with consumption vector $C$.  Suppose that the household is observation type $t$.
+Then the consumptions of goods $j\neq t$ are given by:
 \begin{align}
 	\label{eq:sgd}
-	r_jc_j &= \frac{\gamma_j}{\sum_{i\neq v}\gamma_i}  \left(W-  r_v c_v\right)\\
+	p_jc_j &= \frac{\gamma_j}{\sum_{g\neq t}\gamma_g}  \left(w-  p_t c_t\right)\\
 	\label{eq:sgdsol}
-	\gamma_j &= \frac{r_j c_j}{\left(W- r_v c_v\right)} \sum_{i\neq v}\gamma_i  
+	\gamma_j &= \frac{p_j c_j}{\left(w- p_t c_t\right)} \sum_{g\neq t}\gamma_g  
 \end{align}
 
-We can solve for the 28 $\gamma$'s up to a scaling factor $\sum_{i\neq v}\gamma_i$.
+We can solve for the 28 non-observation type $\gamma$'s up to a scaling factor $\sum_{g\neq t}\gamma_g$.
 I normalize the parameter $\gamma_1$ on consumption of food at home to one. 
 \footnote{It is important to choose a good which always has positive consumption, since this strategy will not work if consumption of the normalized good is zero.  
-Fortunately, food at home is consumed in all but 800 of the 150,000 US households.}
-If food at home is not the observation type, and in what follows I assume it is not, then the solution for $j \neq v$ is:
-\footnote{In a previous version of the estimation, I allowed for food at home to be an observation type.
-It is not difficult to do so.
-The only drawback is that the numerical optimization comes first (and solves for $\sum_{j \neq 1} \gamma_j$ rather than $\gamma_1$ which is normalized to unity.  
-Putting the numerical optimization in the first step potentially adds some error into the coefficients in the second step, and I found that the estimation routine became very touchy with regard to starting values.  Food at home is a fairly low visibility good category.
-}
+Food at home is consumed in all but 800 of the 150,000 US households.}
+If food at home is not the observation type, and in what follows I assume it is not, then the solution for $j \neq t$ is:
+\footnote{In the next iteration of the estimation, I will allow for food at home to be an observation type.  This simply requires solving \eqref{eq:approx} for $\hat{\gamma}$ rather than $\gamma_t$.  In a previous version of this paper I was solving exactly numerically for $\gamma_t$, and in that case solving for $\hat{\gamma}$ resulted in numerical sensitivity.}
 \begin{equation}
 	\label{eq:gamsol}
-	\gamma_j = \frac{r_j c_j}{r_1 c_1}
+	\gamma_j = \frac{p_j c_j}{p_1 c_1}
 \end{equation}
-Using the first order conditions to the consumer's problem \eqref{foc} and given the results of \eqref{eq:gamsol}, for each household I numerically solve for  $\gamma_v$.
-It should be noted that to get the $g$ function in the first order condition \eqref{foc}, I need to estimate the lowest social wealth level. 
-At first blush, it appears that using the minimum wealth level in my data set would be a good estimator for this wealth level.
-Presumably due to measurement error, however, the American data set contains a few unbelievably low values--the lowest (positive) value is something on the order of six dollars of annual expenditure.
-In practice, I assume the lowest possible wealth level is \$1000 in the American case and 1000 RMB ($\approx$\$120) in the Chinese case, and drop any households with lower expenditure.
-In the American data, for instance, out of 160,617 household observations, 4722 are dropped because they are less than 1000 dollars, 1079 further observations are dropped due to negative consumption reports, and finally 800 further observations are dropped due to zero expenditures on food at home.
-This leaves me with a total of 154,016 usable observations.
+Given the results of \eqref{eq:gamsol}, I linearize the solution to the consumer's problem \eqref{foc} around $\alpha = 0$ to approximate $\gamma_t$ with the following formula:
+\begin{equation}
+    \label{eq:approx}
+    \gamma_t = \hat{\gamma} \frac{p_t c_t - \alpha w}{w - p_t c_t}
+\end{equation}
+The intuition behind \eqref{eq:approx} is that a high $\alpha$ and a high utility parameter $\gamma_t$ both induce high visible good expenditures $p_t c_t$. Conditional on expenditures, the higher is $\alpha$, the lower must be $\gamma_t$.  The linearization of the model allows me to avoid a nested fix point in the calculation of each households preference parameters, but will of course introduce some error into my parameter estimates.  In the appendix I explore how large this error may be, and in which direction.
 
-The first-stage likelihood is written as follows. $\mu$ and $\sigma$ are vectors of log-normal location and dispersion parameters, and $z$ is a vector of zero probabilities. $\phi$ is the log-normal probability density function. Household $h$'s preference parameter for good $i$, $\gamma_{hi}$, is implicitly a function of $v_h$ and $C_{h}$, the observation type and consumption of a particular household, as well as the parameter $\alpha$. 
+Given $\alpha$ and observation type, we get the preference parameters.  Let $\mu$ and $\sigma$ be vectors of log-normal location and dispersion parameters, and let $z$ be a vector of zero probabilities. Let $\phi$ be the log-normal probability density function. Let household $h$'s preference parameter for good $g$, which is a function of $\alpha$, be $\gamma_{hg}(\alpha)$.  The likelihood function is:
 \begin{equation}
 	\label{lik1}
-	l^1(\alpha,\mu,\sigma,z) = \sum_{h} \sum_{i} \left(\mathbf{1}_{\{\gamma_{hi} = 0\}}\ln\left(z_i\right) + \mathbf{1}_{\{\gamma_{hi} \neq 0\}} \left(\ln\left(1 - z_i\right)+\ln \phi(\gamma_{hi}|\mu_i,\sigma_i)\right)\right)
+    \sum_{i}\left[ \ln(v^i_{t_i}) + \sum_{g} \left(\mathbf{1}_{\{\gamma_{hg}(\alpha, t_i) = 0\}}\ln\left(z_g\right) + \mathbf{1}_{\{\gamma_{hg}(\alpha, t_i) \neq 0\}} \left(\ln\left(1 - z_g\right)+\ln \phi(\gamma_{hg}(\alpha, t_i)|\mu_g,\sigma_g)\right)\right)\right]
 \end{equation}
 
-Once we have solved for the distribution parameters, we can move to the second stage. 
-Up to this point, I have not introduced the Heffetz vindex into the estimation. The vindex enters in the next step.
-Given a set of preference distribution parameters, we need to choose the most likely observation type for each household. I do this by maximizing the second-stage likelihood given below.
-P is the vector of vindex probabilities.  $\gamma_{hi}$ remains an implicit function as in \eqref{lik1} above:
+\subsection{Nuisance parameter maximization}
+
+Given a utility weight $\alpha$ and a set of preference distribution parameters, we need to choose the most likely observation type for each household. Let P is the vector of vindex probabilities.  $\gamma_{hi}$ remains an implicit function as in \eqref{lik1} above:
 \begin{equation}
     \label{lik2}
     l_h^2(i) = \ln(p_i) + \sum_{i} \left(\mathbf{1}_{\{\gamma_{hi} = 0\}}\ln\left(z_i\right) + \mathbf{1}_{\{\gamma_{hi} \neq 0\}} \left(\ln\left(1-z_i\right)+\ln \phi(\gamma_{hi}|\mu_i,\sigma_i)\right)\right)
