@@ -69,26 +69,49 @@ An equilibrium is a social belief function $C_b$ and a vector-valued consumption
 \end{enumerate}
 The first condition says that a consumer chooses an optimum consumption bundle, and the second condition says that Consumer $i$'s peer group learns his true type.
 
-\section{Data}
-This project requires three types of data.  We need consumer expenditure data at the household level, we need relative price data, and we need demographicly differentiated information about how visible different good categories are relative to each other. 
-\subsection{Household Expenditures}
-Household expenditure survey data is from the \citet{NBERCEX2011}.    
-This dataset is publicly available, and features a large random sample of American household consumption decisions for selected years between 1981 and 2002, with 18 years available all together.  
-The dataset is based on more detailed and proprietary dataset collection by the United States Department of Labor. 
-In addition to household expenditures, the NBER dataset contains some demographic data on household members such as age, race, sex, and location of the interviewee.  
-There are 47 good categories available in the NBER data set.
-Following \citet{Heffetz2011} exactly (Heffetz was kind enough to give me his STATA code), I aggregate into the 29 categories used in the vindex.
-All together, the my dataset contains 160,617 household observations.
-This number is so high that I have trouble looping through the whole dataset when I maximize the likelihood (details below)!
+\subsection{Specializing to Cobb-Douglas}
 
-To give the reader some idea about what the data look like, I have chopped up the data a bit and included a couple of figures.  
-In Figure \ref{fig:shr}, I scatter plot the log budget shares by log expenditures, and in Figure \ref{fig:lev} I scatter plot log category expenditures by log expenditures.  
-I also included a histogram of log expenditures in Figure \ref{fig:exphist}.  
-All of these plots are using only one year of the data (2001), just to keep the number of points in the scatter plots managable. 
-The point I want to emphasize about these plots is that they are very noisy.
-If we were to take the naive Heffetz or Ireland model at face value, all consumers of the same expenditure level should make the same consumption decisions.
-\footnote{To be fair, Heffetz goes to great lengths in his paper to make this same point.}
-By adding 29 latent observation types and preference heterogeneity, the version of model estimated in this paper can match this sort of noisy data quite well.
+Let the fundamental utility function be Cobb-Douglas:
+\[u(\mathbf{C}) = \sum_{g=1}^{G} \gamma_g \ln(c_g)\]
+The model can then be written as a generalization of the Heffetz model to many goods and preference heterogeneity.\footnote{ In the Heffetz version, there are only two goods, one visible and the other invisible to society. In my version, there is one visible good for each observation type, and all the other goods are invisible.}
+In what follows I drop subscripts for Consumer $i$ to simplify notation. Let $t \in G$ be Consumer $i$'s observation type, and let $c_{t}^*$ be Consumer $i$'s equilibrium consumption of the visible good.  Equilibrium demand for good $g\neq t$ conditional on spending on the visible good is the standard Cobb-Douglas constant expenditure share:
+\[p_g c_g^* = \gamma_g\left(\sum_{j\neq t} \gamma_j\right)^{-1}\left(w-p_t c_t^* \right)\]
+
+Using the demands, we can write the utility function as a function of visible good consumption.
+\begin{equation}
+    \label{eq:ufun}
+    U(c_t) = (1-\alpha) \left(\hat{\gamma} \ln \left(w-p_t c_t\right) + \gamma_t \ln \left(c_t \right)\right) + \alpha \left(\gamma_t \ln \left(s(c_t)\right) + \gamma_t \ln \left(c_t\right) \right) + \zeta(\mathbf{p},\mathbf{\gamma})
+\end{equation}
+Here $\hat{\gamma} = \sum_{g\neq t} \gamma_g$ and $\zeta(\mathbf{p},\mathbf{\gamma})$ is a constant which depends only on utility parameters and prices.  The single-valued function $s(c_t)$ is the belief of the peer group about spending on non-visible goods $w-p_t c_t$. 
+
+Consumer $i$ maximizes utility function \eqref{eq:ufun} subject to his budget constraint.  The first order condition for an interior solution to his problem can be written:
+\begin{equation}
+	\label{foc}
+s'(c_t^*) = \frac{1}{\alpha}\left( \left( 1-\alpha\right) p_t - \frac{\gamma_t}{\hat{\gamma}}\frac{s(c_t^*)}{c_t^*}\right)
+\end{equation}
+This differential equation has the solution:
+\begin{equation}
+	\label{eq:difsol}
+    s(c_t^*) = \frac{\hat{\gamma}\left(1-\alpha\right)}{\gamma_t +\alpha \hat{\gamma}} p_t c_t^* +  \frac{\hat{\gamma} \alpha }{\gamma_t + \alpha \hat{\gamma}} \underbar{W}\frac{p_t c_t^*}{p_t \underbar{c}}^{-\frac{\gamma_t}{\alpha \hat{\gamma}}}
+\end{equation}
+The constant in the solution \eqref{eq:difsol} is pinned down because the lowest possible wealth type $\underbar{W}$ has no reason to signal in a separating equilibrium.  His expenditure on the visible good $\underbar{c}$ is the fraction $\frac{\gamma_t}{\sum_j \gamma_j}$ of his wealth.  As one might expect, the function $s$ is jointly homothetic in $c_t$ and $\underbar{W}$.
+
+Define equilibrium expenditure share on the visible good category $r = p_t c_t^* / w$, the ratio $\gamma = \gamma_t / \hat{\gamma}$, and the ratio of minimum wealth to own wealth $\hat{w} = \underbar{W} / w$.  Substituting in for the $s$ function and dividing by wealth, we have a simplified equilibrium condition:
+
+\begin{equation}
+	\label{eq:eq_cond}
+    (1 - r)(1 + \frac{\gamma}{\alpha}) = \frac{\left(1-\alpha\right)}{\alpha} r +  \left(r\left(1 + \gamma^{-1}\right)\right)^{-\frac{\gamma}{\alpha}}\hat{w}^{1+\frac{\gamma}{\alpha}}
+\end{equation}
+\section{Data}
+This project requires two types of data.  We need household-level consumer expenditure data, and we need information about how visible different good categories are relative to each other.  Household expenditure data is widely available from national statistical agencies.  Information on the visibility of different good categories is taken from a survey conducted in \citet{Heffetz2011}.
+
+\subsection{Household Expenditures}
+American household expenditure data is taken from the \citet{NBERCEX2011}.  This dataset is publicly available, and features a large random sample of American household consumption decisions for selected years between 1981 and 2002.  In addition to detailed information on household income and expenditures, the NBER dataset contains demographic data on household members such as age, race, sex, and location of the interviewee.
+There are 47 good categories available in the NBER data set.
+Following \citet{Heffetz2011} exactly (Heffetz was kind enough to give me his STATA code), I aggregate into the 29 expenditure categories.
+The NBER data set contains 160,617 household observations across 18 years.
+
+Households display widely varying consumption behavior.  Figure \ref{fig:shr} is a scatter plot the 2001 log budget shares by log expenditures, and Figure \ref{fig:lev} is a scatter plot of log category expenditures by log expenditures.  I also included a histogram of log expenditures in Figure \ref{fig:exphist}.  Representative household models in the literature such as those by Heffetz and Ireland cannot replicate this heterogeneity.\footnote{\citet{Heffetz2011} contains a discussion of this issue.} The heterogenous preference model estimated in this paper can potentially replicate the noise observed in the data.
 
 \begin{figure}
 	\centering
@@ -109,7 +132,7 @@ By adding 29 latent observation types and preference heterogeneity, the version 
 	\caption{Histogram of  Log Expenditure}
 \end{figure}
 
-For the Chinese household expenditures, I used publicly available data from the Chinese Household Income Project (CHIP) \citep{CHIP2002}. Like the American household expenditure data, the CHIP data comprises of repeated cross-sections of Chinese households.  In this study I use urban households surveyed in 1995 and 2002 for a total of 13,767 observations.  I use 14 good categories which correspond to aggregates of those in the American household expenditure survey.   The Table \ref{tab:chncons} describes how aggregation was done.  
+For the Chinese household expenditures, I used publicly available data from the Chinese Household Income Project (CHIP) \citep{CHIP2002}. Like the American household expenditure data, the CHIP data comprises of repeated cross-sections of Chinese households.  In this study I use urban households surveyed in 1995 and 2002 for a total of 13,767 observations.  I use 14 good categories which correspond to aggregates of those in the American household expenditure survey.   Table \ref{tab:chncons} describes how aggregation was done.
 \begin{table}
     \centering
     \footnotesize
@@ -152,244 +175,65 @@ For the Chinese household expenditures, I used publicly available data from the 
     \label{tab:chncons}
 \end{table}
 
-\subsection{Vindex}
-Data about the relative visibility of  various types of goods is taken from \citet{Heffetz2011}.  
+\subsection{Visibility Indexes}
+Data about the relative visibility of goods is taken from \citet{Heffetz2011}.  
 Heffetz bases the index on randomized telephone surveys conducted in the United States in several waves around 2004.
-The main question of interest was about good categories.
 Heffetz asked respondents how long it would take them to notice if a new acquaintance similar to themselves spent more than average on a particular good category.
-Repondents were able to choose from five time periods ranging from almost immediately to almost never.  
-Basic demographics were also recorded for respondents.  
+Respondents chose from five time periods ranging from almost immediately to almost never.
+Basic demographics were also recorded for respondents.
 
 From the survey responses, Heffetz creates indexes (called vindexes) between zero and one for each category of goods by averaging over survey results.  
 A higher index implies that a good category is  more conspicuous. 
 A result of this aggregation methodology is that the index is cardinal rather than ordinal.  Two goods with similar index values are similar in visibility.  Details on the implementation of the survey and calculation of the index are available in the original paper.
-Table \ref{tab:vintab} below is an example of a vindex table for non-blacks under 40.
+Table \ref{tab:vintab} below is the aggregated vindex.
+
 \begin{table}
     \centering
-\begin{tabular}{|l|c|c|}
+\begin{tabular}{lcc}
 	\hline
 	\textbf{Category} & \textbf{Vindex} & \textbf{SE} \\
-	\hline
-Clo (clothing) & 0.78 & (0.02)\\ 
-	\hline
-Cig (cigarettes) & 0.75 & (0.02)\\ 
-	\hline
-Car (cars) & 0.72 & (0.02)\\ 
-	\hline
-Fur (furniture) & 0.69 & (0.02)\\ 
-	\hline
-Ot1 (recreation 1) & 0.68 & (0.02)\\ 
-	\hline
-Jwl (jewelry) & 0.68 & (0.03)\\ 
-	\hline
-FdO (food out) & 0.67 & (0.02)\\ 
-	\hline
-AlH (alcohol home) & 0.66 & (0.03)\\ 
-	\hline
-AlO (alcohol out) & 0.65 & (0.02)\\ 
-	\hline
-Ot2 (recreation 2) & 0.61 & (0.02)\\ 
-	\hline
-Brb (barbers etc) & 0.6 & (0.03)\\ 
-	\hline
-Bks (books etc) & 0.58 & (0.02)\\ 
-	\hline
-Edu (education) & 0.55 & (0.03)\\ 
-	\hline
-Hom (rent/home) & 0.54 & (0.03)\\ 
-	\hline
-FdH (food home) & 0.51 & (0.03)\\ 
-	\hline
-Cel (cell phone) & 0.47 & (0.03)\\ 
-	\hline
-Htl (hotels etc) & 0.46 & (0.02)\\ 
-	\hline
-Air (air travel) & 0.44 & (0.03)\\ 
-	\hline
-Bus (public trans.) & 0.44 & (0.03)\\ 
-	\hline
-CMn (car repair) & 0.38 & (0.03)\\ 
-	\hline
-Cha (charities) & 0.36 & (0.03)\\ 
-	\hline
-Gas (gasoline) & 0.34 & (0.03)\\ 
-	\hline
-Lry (laundry) & 0.32 & (0.03)\\ 
-	\hline
-Med (health care) & 0.32 & (0.02)\\ 
-	\hline
-Tel (home phone) & 0.25 & (0.03)\\ 
-	\hline
-Utl (home utilities) & 0.25 & (0.03)\\ 
-	\hline
-Fee (legal fees) & 0.24 & (0.02)\\ 
-	\hline
-CIn (car insur.) & 0.22 & (0.03)\\ 
-	\hline
-LIn (life insur.) & 0.15 & (0.02)\\ 
-	\hline
-Und (underwear) & 0.14 & (0.02)\\ 
-	\hline
-HIn (home insur.) & 0.13 & (0.02)\\ 
-	\hline
+	\hline \hline
+cigarettes       & 0.76 & 0.014 \\
+cars             & 0.72 & 0.012 \\
+clothing         & 0.70 & 0.013 \\
+furniture        & 0.68 & 0.012 \\
+jewelry          & 0.67 & 0.015 \\
+recreation 1     & 0.66 & 0.012 \\
+food out         & 0.61 & 0.012 \\
+alcohol home     & 0.60 & 0.014 \\
+barbers etc      & 0.60 & 0.014 \\
+alcohol out      & 0.59 & 0.014 \\
+recreation 2     & 0.57 & 0.013 \\
+books etc        & 0.57 & 0.013 \\
+education        & 0.56 & 0.014 \\
+food home        & 0.51 & 0.014 \\
+rent/home        & 0.49 & 0.016 \\
+cell phone       & 0.46 & 0.016 \\
+air travel       & 0.46 & 0.014 \\
+hotels etc       & 0.45 & 0.013 \\
+public trans     & 0.44 & 0.015 \\
+car repair       & 0.42 & 0.014 \\
+gasoline         & 0.39 & 0.016 \\
+health care      & 0.36 & 0.014 \\
+charities        & 0.34 & 0.014 \\
+laundry          & 0.33 & 0.015 \\
+home utilities   & 0.31 & 0.015 \\
+home phone       & 0.29 & 0.015 \\
+legal fees       & 0.26 & 0.013 \\
+car insur        & 0.22 & 0.014 \\
+home insur       & 0.16 & 0.012 \\
+life insur       & 0.16 & 0.011 \\
+underwear        & 0.12 & 0.011 \\
+\hline
 \end{tabular}
 \label{tab:vintab}
-\caption{Vindex for non-blacks under 40.}
+\caption{Aggregate Vindex}
 \vspace{-2in}
 \end{table}
-I do not have a vindex equilivalent for Chinese people, so I just use the overall American vindex data for the Chinese estimation. Since there are fewer good categories in the Chinese data, I aggregate the vindex by taking the mean over the aggregated good categories. 
-\subsection{Prices}
-I have a time-series of relative price data from the Bureau of Labor services.
-Most of the NBER household good categories were easy to match with the definitions used by the BLS.   
-Since prices are normalized to one in 1983, the units of each good which enter into the utility function are whatever one dollar could buy in 1983.
-The following page is a table showing the price category names I used compared with the NBER good categories:
-    \begin{table}
-	\footnotesize
-	\centering
-\begin{sideways}
-\begin{tabular}{|l|l|l|}
-\hline
-VinCat Abrev & Vindex Category & PriceCatName\\ 
-\hline
-Brb & barbershops, beauty parlors, hair dresser, health clubs, etc. & Personal Care Services\\ 
-\hline
-Clo & clothing and shoes, not including underwear, undergarments and nightwear & Apparel\\ 
-\hline
-Cig & tobacco products like cigarettes, cigars, and pipe tobacco & Tobacco and Smoking Products\\ 
-\hline
-Jwl & jewelry and watches & Jewelry and watches\\ 
-\hline
-Car & the purchase of new and used motor vehicles such as cars, trucks, and vans & New and used motor vehicles\\ 
-\hline
-FdO & dining out at restaurants, drive-thrus, etc, exl. Alcohol incl. Food at school & Food away from home\\ 
-\hline
-Ot1 & computers, games, TVs, video, audio, musical and sports equipment, tapes, CDs. & Televisions\\ 
-\hline
-FdH & food and nonalcoholic beverages at grocery, specialty and convenience stores. & Food at home\\ 
-\hline
-Edu & education, from nursery to college, like tuition and other school expenses. & Tuition, other school fees, and childcare\\ 
-\hline
-Cel & mobile phone services. & Wireless Telephone Services\\ 
-\hline
-AlO & alcoholic beverages at restaurants, bars, cafeterias, cafes, etc. & Alcoholic Beverages away from home\\ 
-\hline
-AlH & alcoholic beverages for home use. & Alcoholic Beverages at home\\ 
-\hline
-Fur & home furnishings and household items, like furniture, appliances, tools, linen. & Furniture and bedding\\ 
-\hline
-Ot2 & cable TV, pets and veterinarians, sports, country clubs, movies, and concerts. & Cable and satellite television\\ 
-\hline
-Bks & books incl. School books, newspapers and magazines, toys, games, and hobbies. & Recreational reading materials\\ 
-\hline
-Cmn & vehicle maintenance, mechanical and electrical repair and replacement. & Motor vehicle maintainance\\ 
-\hline
-Hom & rent, or mortgage, or purchase, of housing & Housing\\ 
-\hline
-Htl & lodging away from home on trips, and housing for someone away at school. & other lodging away from home\\ 
-\hline
-Bus & public transportation, both local and long distance, like busses and trains. & Public transportation\\ 
-\hline
-Air & airline fares for out-of-town trips. & Airline Fare\\ 
-\hline
-Gas & gasoline and diesel fuel for motor vehicles. & Motor Fuel\\ 
-\hline
-Tel & home telephone services, not including mobile phones. & Telephone Services\\ 
-\hline
-Cha & contributions to churches or other religious organizations, and other charities. & Missing\\ 
-\hline
-Lry & laundry and dry cleaning. & Laundry equipment\\ 
-\hline
-Utl & home utilities such as electricity, gas, and water, garbage collection. & Fuel and Utilities\\ 
-\hline
-Med & medical care, incl. Health insurance, drugs, dentists, doctors, hospitals, etc. & Medical care\\ 
-\hline
-Fee & legal fees, accounting fees, and occupational expenses like tools and licenses. & Professional services\\ 
-\hline
-Cin & vehicle insurance, like insurance for cars, trucks, and vans. & Motor vehicle insurance\\ 
-\hline
-Hin & homeowners insurance, fire insurance, and property insurance. & Tenants' and household insurance\\ 
-\hline
-Lin & life insurance, endowment, annuities, and other death-benefits insurance. & Health insurance\\ 
-\hline
-\end{tabular}
-\end{sideways}
-\end{table}
-Chinese prices are taken from the China Statistical Yearbook (\citep{CSY}).  The Chinese prices are denominated in Renminbi, and are normalized to one in 1995--my first year of data. The Chinese price category comparison is located in Table \ref{tab:chncons}. 
+
+I do not have a vindex equivalent for China, so I use the aggregated American vindex data for the Chinese estimation. Since there are fewer good categories in the Chinese data, I aggregate the vindex by taking the mean over the aggregated good categories.
 
 \section{Estimation}
-\subsection{Specializing to Cobb-Douglas}
-
-Let the fundamental utility function be Cobb-Douglas:
-\[u(\mathbf{C}) = \sum_{g=1}^{G} \gamma_g \ln(c_g)\]
-The model can then be written as a generalization of the Heffetz model to many goods and preference heterogeneity.\footnote{ In the Heffetz version, there are only two goods, one visible and the other invisible to society. In my version, there is one visible good for each observation type, and all the other goods are invisible.}
-In what follows I drop subscripts for Consumer $i$ to simplify notation. Let $t \in G$ be Consumer $i$'s observation type, and let $c_{t}^*$ be Consumer $i$'s equilibrium consumption of the visible good.  Equilibrium demand for good $g\neq t$ conditional on spending on the visible good is the standard Cobb-Douglas constant expenditure share:
-\[p_g c_g^* = \gamma_g\left(\sum_{j\neq t} \gamma_j\right)^{-1}\left(w-p_t c_t^* \right)\]
-
-Using the demands, we can write the utility function as a function of visible good consumption.
-\begin{equation}
-    \label{eq:ufun}
-    U(c_t) = (1-\alpha) \left(\hat{\gamma} \ln \left(w-p_t c_t\right) + \gamma_t \ln \left(c_t \right)\right) + \alpha \left(\gamma_t \ln \left(s(c_t)\right) + \gamma_t \ln \left(c_t\right) \right) + \zeta(\mathbf{p},\mathbf{\gamma})
-\end{equation}
-Here $\hat{\gamma} = \sum_{g\neq t} \gamma_g$ and $\zeta(\mathbf{p},\mathbf{\gamma})$ is a constant which depends only on utility parameters and prices.  The single-valued function $s(c_t)$ is the belief of the peer group about spending on non-visible goods $w-p_t c_t$. 
-
-Consumer $i$ maximizes utility function \eqref{eq:ufun} subject to his budget constraint.  The first order condition for an interior solution to his problem can be written:
-\begin{equation}
-	\label{foc}
-s'(c_t^*) = \frac{1}{\alpha}\left( \left( 1-\alpha\right) p_t - \frac{\gamma_t}{\hat{\gamma}}\frac{s(c_t^*)}{c_t^*}\right)
-\end{equation}
-This differential equation has the solution:
-% Now we can directly follow Heffetz and solve this differential equation:
-% \begin{equation}
-% 	\label{difsol}
-% 	s(c_t^*) = \frac{\hat{\gamma}\left(1-\alpha\right)}{\gamma_t +\alpha \hat{\gamma}} p_t c_t + K c_t^{-\frac{\gamma_t}{\alpha \hat{\gamma}}}
-% \end{equation}
-% To solve for the constant $K$, we use the idea that the lowest possible wealth type $\underbar{W}$ has no reason to signal in a separating equilibrium.
-% From his perspective, things are already as bad as they can be, so there is no reason for him to distort his consumption to signal.  His demand $\underbar{c}$ for $c_t$ will be given by:
-% \begin{equation}
-% 	\label{lowc}
-% 	\underbar{c} = \frac{\gamma_t}{p_t}\left(\sum_{j} \gamma_j\right)^{-1}\underbar{W} 
-% \end{equation}
-% Since in equilibrium $s(\underbar{c}) = \underbar{W} - p_t \underbar{c}$, we can plug into \eqref{difsol} and solve for $K$:
-% \[
-% K = \frac{\underbar{W}- \frac{\gamma_t + \hat{\gamma}}{\gamma_t + \alpha \hat{\gamma}}p_t \underbar{c}}{\underbar{c}^{-\frac{\gamma_t}{\alpha \hat{\gamma}}}}
-% \]
-\begin{equation}
-	\label{eq:difsol}
-    s(c_t^*) = \frac{\hat{\gamma}\left(1-\alpha\right)}{\gamma_t +\alpha \hat{\gamma}} p_t c_t^* +  \frac{\hat{\gamma} \alpha }{\gamma_t + \alpha \hat{\gamma}} \underbar{W}\frac{p_t c_t^*}{p_t \underbar{c}}^{-\frac{\gamma_t}{\alpha \hat{\gamma}}}
-\end{equation}
-The constant in the solution \eqref{eq:difsol} is pinned down by the fact that the lowest possible wealth type $\underbar{W}$ has no reason to signal in a separating equilibrium.  His expenditure on the visible good $\underbar{c}$ is the fraction $\frac{\gamma_t}{\sum_j \gamma_j}$ of his wealth.  As one might expect, the function $s$ is jointly homothetic in $c_t$ and $\underbar{W}$.
-\footnote{
-Below I show that $s$ is jointly homothetic of degree one in $\underbar{W}$ and $c_t$.  First, it is immediate from \eqref{lowc} that $\underbar{c}$ scales linearly with $\underbar{W}$.
-Now $K$ scales non-linearly with $\underbar{W}$:
-\begin{align*}
-	K(\xi\underbar{W}) &= \frac{\xi\underbar{W}- \frac{\gamma_t + \hat{\gamma}}{\gamma_t + \alpha \hat{\gamma}}p_t \xi \underbar{c}}{(\xi\underbar{c})^{-\frac{\gamma_t}{\alpha \hat{\gamma}}}} \\
-	&= \xi^{1 + \frac{\gamma_t}{\alpha \hat{\gamma}}}K(\underbar{W})
-\end{align*}
-The way $K$ scales, however, is just right to make $s$ scale linearly in $c_t$:
-\begin{align*}
-	s(\xi c_t,\underbar{W}) &= \frac{\hat{\gamma}\left(1-\alpha\right)}{\gamma_t +\alpha \hat{\gamma}} p_t \xi c_t + \xi^{1+\frac{\gamma_t}{\alpha \hat{\gamma}}} K(\underbar{w}) (\xi c_t)^{-\frac{\gamma_t}{\alpha \hat{\gamma}}} \\
-	&= \frac{\hat{\gamma}\left(1-\alpha\right)}{\gamma_t +\alpha \hat{\gamma}} p_t \xi c_t + \xi K(\underbar{w}) c_t^{-\frac{\gamma_t}{\alpha \hat{\gamma}}} \\
-	&= \xi s(c_t,\underbar{W})
-\end{align*}
-
-If $c^*$ is an interior maximizer of \eqref{ufun} for an individual of wealth $W$, then $\xi c^*$ is a solution to the  problem of an individual of wealth $\xi W$, as long as we also scale $\underbar{W}$ up by $\xi$ as well.
-If $c^*$ is an interior maximizer, then it solves the first order conditions of \eqref{ufun}:
-\[
-\frac{(1-\alpha)r_v \hat{\gamma}}{W-r_v c^*} = \frac{\alpha \gamma_v s'(c^*)}{s(c^*)} + \frac{\gamma_v}{c^*}
-\]
-Now divide both sides of the equation by $\xi$, and using the fact that $s$ is homothetic of degree one and $s'$ is homothetic of degree zero, we get:
-\[
-\frac{(1-\alpha)r_v \hat{\gamma}}{\xi W-r_v \xi c^*} = \frac{\alpha \gamma_v s'(\xi c^*)}{s(\xi c^*)} + \frac{\gamma_v}{\xi c^*}
-\]
-Thus, $\xi c^*$ solves the scaled problem.
-}
-
-Define equilibrium expenditure share on the visible good category $r = p_t c_t^* / w$, the ratio $\gamma = \gamma_t / \hat{\gamma}$, and the ratio of minimum wealth to own wealth $\hat{w} = \underbar{W} / w$.  Substituting in for the $s$ function and dividing by wealth, we have a simplified equilibrium condition:
-
-\begin{equation}
-	\label{eq:eq_cond}
-    (1 - r)(1 + \frac{\gamma}{\alpha}) = \frac{\left(1-\alpha\right)}{\alpha} r +  \left(r\left(1 + \gamma^{-1}\right)\right)^{-\frac{\gamma}{\alpha}}\hat{w}^{1+\frac{\gamma}{\alpha}}
-\end{equation}
 
 \subsection{Estimation Equations}
 We are interested in $\alpha$, the weight given to the peer-belief part of the utility function.  In order to estimate $\alpha$, we must jointly estimate the observation type of each household.  I use a two step 'hard' expectation maximization algorithm.  In the first stage, I condition on the observation type of each household and update $\alpha$ and preference parameter distributions.  In the second stage, I take $\alpha$ and the preference parameter distributions as given and find the most likely observation type of each household.  The algorithm stops when there is nearly no change in $\alpha$.
