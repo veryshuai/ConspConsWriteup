@@ -44,11 +44,10 @@ I should mention that there is a relatively large and old related literature est
 There are six sections below.  First I set out the environment and preferences, and define the equilibrium concept.  The second section describes the data and discusses identification.  The third section specializes the model, derives estimation equations, and discusses identification.  I present the results of the estimation in the fourth section, and in the fifth section I discuss taxation.  A final section concludes. 
 
 \section{Model}
-\subsection{Environment and Preferences}
 
-There is a finite set of goods $G$.  Good $g \in G$ has an exogenous price $p_g$.  There is a continuum of heterogenous consumers $I$. Consumer $i \in I$ is endowed with wealth $w_i \in \left[ \underline{w},\overline{w} \right]$, preference type $\gamma_i \in \Gamma$, and observation type $t_i \in G$.  Consumer $i$ also has a good-specific visibility measures $\{v_{ig}\}_{g\in G}$
+There is a finite set of goods $G$.  Good $g \in G$ has an exogenous price $p_g$.  There is a continuum of consumers $I$. For each consumer $i \in I$, nature draws wealth $w_i \in \left[ \underline{w},\overline{w} \right]$, preference type $\gamma_i \in \Gamma$, observation type $t_i \in G$.
 
-A consumer decides how to allocate his wealth to buy goods in order to maximize his utility.  Following earlier theoretical literature (\citet{Heffetz2011},\citet{Ireland1994}), I assume a consumer's utility function consists of two additively separable parts.  We can then write the utility as in \eqref{eq:metautil}.  
+Endowed with wealth, a preference type, and an observation type, a consumer decides how to allocate his wealth to buy goods in order to maximize his utility.  Following earlier theoretical literature (\citet{Heffetz2011},\citet{Ireland1994}), I assume a consumer's utility function consists of two additively separable parts.  We can then write the utility as in \eqref{eq:metautil}.  
 
 \begin{equation}
     \label{eq:metautil}
@@ -57,8 +56,7 @@ A consumer decides how to allocate his wealth to buy goods in order to maximize 
 
 The first term on the right-hand side of \eqref{eq:metautil} is a fundamental utility $u:\mathbb{R}_+^{I}\rightarrow\mathbb{R}$.  
 Fundamental utility describes the pleasure a consumer gets directly from consuming a bundle of goods.
-The second term is the belief of a consumer's peer group over his utility.  Peer group belief over the utility level of Consumer $i$ is based on his expenditure on good category $t_i$.  $C_b$ maps consumption of the observable good, observation type, and preference type to the unobservable full consumption vector.  The preference type $\gamma_i$ of Consumer $i$ is known to his peer group.\footnote{Since preferences are completely known to the peer group, the only thing that the peer group does not know is the one-dimensional wealth of each member.  If I allow for more than one observed good (more than one dimension), then the equilibrium will be driven by beliefs off the equilibrium path, and there will be many possible equilibria.}
-The observation type $t_i$ of Consumer $i$ is random, with it's probability weighted by Consumer $i$'s good-specific visability measure $v_{ij}$.  
+The second term is the belief of a consumer's peer group over his utility.  Peer group belief over the utility level of consumer $i$ is based on his expenditure on good category $t_i$.  $C_b$ maps consumption of the observable good, observation type, and preference type to the unobservable full consumption vector.  The preference type and observation type of consumer $i$ are known to his peer group.\footnote{The peer-group infers the one-dimensional wealth of a consumer from the one-dimensional observed consumption choice of the observable good.  If I allow for more than one observed good, then one-dimensional would be inferred from multi-dimensional consumption.  As in a typical multi-dimensional screening model, the equilibrium will be driven by beliefs off the equilibrium path and there will be many possible equilibria.}
 
 \subsection{Equilibrium Concept}
 
@@ -102,6 +100,7 @@ Define equilibrium expenditure share on the visible good category $r = p_t c_t^*
 	\label{eq:eq_cond}
     (1 - r)(1 + \frac{\gamma}{\alpha}) = \frac{\left(1-\alpha\right)}{\alpha} r +  \left(r\left(1 + \gamma^{-1}\right)\right)^{-\frac{\gamma}{\alpha}}\hat{w}^{1+\frac{\gamma}{\alpha}}
 \end{equation}
+
 \section{Data}
 This project requires two types of data.  We need household-level consumer expenditure data, and we need information about how visible different good categories are relative to each other.  Household expenditure data is widely available from national statistical agencies.  Information on the visibility of different good categories is taken from a survey conducted in \citet{Heffetz2011}.
 
@@ -233,10 +232,28 @@ underwear        & 0.12 & 0.011 \\
 
 I do not have a vindex equivalent for China, so I use the aggregated American vindex data for the Chinese estimation. Since there are fewer good categories in the Chinese data, I aggregate the vindex by taking the mean over the aggregated good categories.
 
+\subsection{Identification}
+
+We are interested in $\alpha$, the weight given to the peer-belief part of the utility function.  The key identification issue is that, for a fixed $\alpha$, \emph{any} consumption bundle can be rationalized by a particular set of utility function parameters $\mathbf{\gamma}$.  In order to separate preferences and conspicuous consumption, we need to take a stand on how utility parameters might be distributed.  One natural assumption is that most people's preferences are broadly similar, while a few people have atypical preferences.  To operationalize this idea, I assume that preferences for each household and each good category are independently drawn from lognormal distributions.
+
+A second challenge is that the Cobb-Douglass base utility assumption implies that there are no luxury or inferior goods.  Absent any conspicuous consumption, expenditure shares are constant as household  wealth increases.  Figure \ref{fig:shr} shows that expenditure shares are changing on average as household wealth increases.  The combination of Cobb-Douglass utility and changing expenditure shares in principle identifies my model.
+
+The Cobb-Douglass assumption is too strong, however.  I want to allow goods like food at home to be inferior, even without conspicuous consumption effects.  To do this, I scale utility parameters by a function of wealth.  In particular, for individual $i$ and good $g$ the 'base' utility parameter $\gamma^b_{ig}$ is distributed lognormally. The parameter $\gamma_{ig}$ which enters the utility function is given by \eqref{eq:adj_util}.
+
+\begin{equation}
+    \label{eq:adj_util}
+    \gamma_{ig} = \frac{\gamma^b_{ig}}{\left(\frac{w_i}{\underbar{W}}\right)^{t_g}}
+\end{equation}
+
+This 'money-in-the-utility-function' specification is somewhat ad hoc, but it allows us to keep the simple solution condition \eqref{eq:eq_cond} as well as allowing for rich evolution of expenditure shares with wealth.  This form of utility parameters also breaks simple identification of my model from the correlation of household expenditure shares and wealth.
+
+In order to regain identification, I use differences in observed vindexes across demographics.  I assume that, while all utility parameters $\mathbf{\gamma}_i$ are drawn out of the same distribution, observation types $v_i$ are drawn with probability weighted by an individual's demographic specific vindex.  The size of differences in average consumption between demographic groups, then, are informative about the strength of $\alpha$, the parameter of interest.  Table  in Appendix characterizes ovservation-type probability distributions for different demographic groups.
+
+Since in China I currently have a single demographic category, so my identification strategy based on differences in demographic groups will fail.  In the Chinese estimation, I take the $t_g$'s in equation \eqref{eq:adj_util} as data from the American estimation.  This assumption implies that luxury and inferior good categories are the same in both China and the United States.  The size of deviations from the predicted Chinese expenditure share trends will provide information about the size of $\alpha$.
+
 \section{Estimation}
 
-\subsection{Estimation Equations}
-We are interested in $\alpha$, the weight given to the peer-belief part of the utility function.  In order to estimate $\alpha$, we must jointly estimate the observation type of each household.  I use a two step 'hard' expectation maximization algorithm.  In the first stage, I condition on the observation type of each household and update $\alpha$ and preference parameter distributions.  In the second stage, I take $\alpha$ and the preference parameter distributions as given and find the most likely observation type of each household.  The algorithm stops when there is nearly no change in $\alpha$.
+Since In order to estimate $\alpha$, we must jointly estimate the observation type of each household.  I use a two step 'hard' expectation maximization algorithm.  In the first stage, I condition on the observation type of each household and update $\alpha$ and preference parameter distributions.  In the second stage, I take $\alpha$ and the preference parameter distributions as given and find the most likely observation type of each household.  The algorithm stops when there is nearly no change in $\alpha$.
 
 \subsection{Likelihood function}
 
@@ -291,12 +308,6 @@ However, to save computation time, I am currently using only 10,000 randomly-cho
 The Chinese version of the model, the preference heterogeneity vectors are only 13 dimensions, so there are 40 parameters to be estimated.  My baseline Chinese estimate is done using 5000 randomly-chosen households, so again there are a little over 100 households per parameter.
 Since the preference heterogeneity is assumed to be independent, given observation types and an $\alpha$ I can use the (log) sample mean and variance to recover the likelihood maximizing $z$, $\mu$, and $\sigma$'s.
 Thus the numerical part of the maximization step above is really only over the single dimensional $\alpha$ parameter.
-\subsection{Identification}
-We can think of identification separately in the two stages of the EM estimation described above.  In the second stage, observation type is identified by abnormally large expenditures in a single good category.  Cigarettes are a great example.  Most households spend a very small amount on tobacco products.  Some households, however, spend a very large amount.  As will be seen in the results section below, this leads to many assignments of cigarettes to observation type.  The same is true of jewelry and education.
-
-In the first stage, while  I restrict all residents of a single country to share the same fundamental utility functional form, I allow vindex probabilities to differ across sub-populations.  Thus, if the data show that, say, blacks under 40 have significantly different consumption patterns (on average) compared with non-blacks under 40, the estimation will chalk it up to differences in the visibility of goods, which will lead to a large $\alpha$.  The more demographic categories I have and the more variation there is in average consumption between demographics, the better will this identification strategy work. 
-
-Since in China I currently have a single demographic category, the identification is going to be purely off of the functional form.  In particular, since fundamental utility is Cobb-Douglas, more curvy average Engel curves will result in larger $\alpha$'s.
 \section{Results}
 Tables \ref{tab:parest} and \ref{tab:chnparest} below respectively present American and Chinese parameter estimates.  
 The standard errors in the tables should be regarded somewhat cautiously, as these are done using the Fisher information from the first-stage likelihood alone.  In essence, they are the standard errors assuming that the observation types are known.  The proper way to get the standard errors would be to bootstrap.  The optimization routine is currently quite slow, however, and I have not done this yet.
