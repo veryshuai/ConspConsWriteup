@@ -7,6 +7,7 @@
 \usepackage{natbib}
 \usepackage{graphicx}
 \usepackage{rotating}
+\usepackage{appendix}
 %\usepackage{wrapfig}
 %\usepackage[nolists]{endfloat}
 
@@ -35,7 +36,7 @@ I estimate the model separately using American and Chinese consumption expenditu
 In this paper as well as the literature I am following, people care about the beliefs of their peers ``just because''.  I put peer group beliefs about welfare directly into the utility function.  Some might argue that people only care about peer group beliefs as the means to an ultimate consumptive end--wearing a nice watch makes people trust you more, so you are more likely to get a loan, or secure a business deal.  I am sympathetic to this point of view, and I sure this sort of signaling is going on to some degree.  However, the two points of view about peer beliefs are complementary.  From a long perspective, our brains might have been selected to care about peer group beliefs precisely because good standing makes successful reproduction more likely. In this case, the utils we get from positive peer group beliefs are like an evolutionary rule of thumb.\footnote{See \citep{RobsonSamuelson2010} for a recent survey on the literature related to the evolution of preferences).}
 
 There are several strands of empirical literature that support the presence of a social component in the utility function.  Consider the famous ultimatum game in which one player proposes a split of a sum of money, and the other player decides whether to accept or reject.  If the second player accepts, the money is allocated according to the split, and if the second player rejects, neither player gets anything.  There is a long and robust experimental literature showing that if people only care about immediate monetary payoffs, the splits they propose are ``too fair''.  Researchers have been careful to pair subjects which do not know each other and are unlikely to have interaction after the experiment, and the result still holds.  One explanation for this behavior is that there is some sort of social component in the utility function\citep{FehrSchmidt1999,BoltonOckenfels2000}.  A second defense comes from the literature on self-reported happiness and relative wealth.  \citet{Luttmer2004} finds that relative wealth compared with neighbors has a robust positive correlation  with self-reported happiness, controlling for absolute wealth level.  On the face of it, it seems hard to explain this fact without some sort of social component in the utilty function.  If you are still not convinced that there is a fundamental social belief component in the utility function, then you can think of this paper as estimating a reduced form model.
-As mentioned above, this is not the first paper to take an empirical look at conspicuous consumption  \citep{Blochetal2004,Charlesetal2009,MoavNeeman2010,MoavNeeman2012}.  My paper borrows both data and functional forms from \citet{Heffetz2011}, which conducts a telephone survey in the United States to determine the visibility of consumption goods.  Heffetz then analyzes household budget survey data, and finds evidence that the relatively visible goods identified by the survey are being used as a means to signal wealth.  To my knowledge, the only other structural estimation of a utility function including conspicuous consumption is \citet{perez2012measuring}.  Perez-Truglia follows earlier literature in using a two-good functional form, and a variety of specifications for how non-market goods like status enter utility.  My specification below differs from Perez-Truglia's in a few important ways.  Some cosmetic differences include that I allow for individual level preference heterogeneity and estimate a many good utility function.  Any good can be used for signaling in my model, while in Perez-Truglia's model cars and clothes are the visible goods.  More substantively, while Perez-Truglia is focused on the provision of unobservable non-market goods (status), I assume that society cares only about an individual's unobservable welfare.  This allows me to consider peer-group beliefs more explicitly, rather than assume a functional form for the provision of a non-market good.  In his framework, Perez-Truglia finds that a tax on luxury goods can create welfare gains significantly larger than those I find in my estimation.
+As mentioned above, this is not the first paper to take an empirical look at conspicuous consumption  \citep{Blochetal2004,Charlesetal2009,MoavNeeman2010,MoavNeeman2012}.  My paper borrows both data and functional forms from \citet{Heffetz2011}, which conducts a telephone survey in the United States to determine the visibility of consumption goods.  Heffetz then analyzes household budget survey data, and finds evidence that the relatively visible goods identified by the survey are being used as a means to signal wealth.  To my knowledge, the only other structural estimation of a utility function including conspicuous consumption is \citet{perez2013measuring}.  Perez-Truglia follows earlier literature in using a two-good functional form, and a variety of specifications for how non-market goods like status enter utility.  My specification below differs from Perez-Truglia's in a few important ways.  Some cosmetic differences include that I allow for individual level preference heterogeneity and estimate a many good utility function.  Any good can be used for signaling in my model, while in Perez-Truglia's model cars and clothes are the visible goods.  More substantively, while Perez-Truglia is focused on the provision of unobservable non-market goods (status), I assume that society cares only about an individual's unobservable welfare.  This allows me to consider peer-group beliefs more explicitly, rather than assume a functional form for the provision of a non-market good.  In his framework, Perez-Truglia finds that a tax on luxury goods can create welfare gains significantly larger than those I find in my estimation.
 
 Using a structural estimation, I can examine both the absolute and relative magnitude of the motive for conspicuous consumption, and I can gauge the welfare gains from an excise tax on the most visible good categories.  To explain how an excise tax can raise everyone's welfare, first note that if everyone's wealth was directly observable by their peer group, then there would be no reason to distort consumption towards conspicuous goods.  One way to get people closer to the complete information allocation is to raise the price of the visible good, and then redistribute the proceeds of the tax regressively.  If things work out the right way, the rich are better off because they distort less, and the poor are better off because they are getting a subsidy from the rich.  If people care deeply about peer group belief, then the welfare gains from this sort of tax can be large.\footnote{Signaling distortions are particularly worrying when considering the economic lives of the poor.  A recent study reports that in parts of India, the \emph{median} household making under a dollar a day spends 10\% of its income on festivals--this while 43\% of such households did not have enough to eat throughout the year \citep{BanerjeeDuflo2007}.  } 
 
@@ -127,7 +128,7 @@ For the Chinese household expenditures, I used publicly available data from the 
     \footnotesize
  \begin{tabular}{llll}
         \hline
-        \textbf{US Cat} & \textbf{1995 Chn Cat} & \textbf{2002 Chn Cat} & \textbf{Chn Cat Name}  \\
+        US Cat & 1995 Chn Cat & 2002 Chn Cat & Chn Cat Name  \\
         \hline \hline
         Fdh,Fdo     & h27        & e1-e152-e153 & Food-Cig.-Alcohol\\
         Alh,Alo     & h30-h31    & e153         & Alcohol\\
@@ -232,7 +233,7 @@ In the previous two subsections, I have shown how, given observation types, it i
 
 Likelihood \eqref{lik1} is the objective function used by the numerical solver in the search for $\alpha$.  This completes the characterization of the maximization step in the algorithm.
 
-\subsection{Expectation step: Updating observation type $t_i$} 
+\subsection{Expectation: Updating observation type $t_i$} 
 
 Given the utility weight of social beliefs $\alpha$ and a set of preference distribution parameters, we find the most likely observation type for each household. Now preference parameters $\gamma_{ig}$ are a function of observation type $t$ and are calculated exactly as in Section \ref{sec:upd_prefs}. $\mathbf{v}_i$ is the household-specific vector of observation type probabilities.  Household $i$'s likelihood of observation type $t \in G$ is given by \eqref{lik2}.
 
@@ -314,17 +315,15 @@ This paper develops a structural conspicuous consumption model with preference h
 
 The results of the estimation show that:
 \begin{enumerate}
-    \item Signaling plays a role in consumption decisions.  Chinese consumers value peer group belief about three percent as much as they value the direct utility from consumption.
+    \item Peer group belief plays a small role in overall consumption decisions.  American and Chinese consumers value peer group belief under five percent as much as they value the direct utility from consumption.
     \item Chinese consumers value peer group belief 20\% more than American consumers.
-    \item Simple luxury taxes can lead to small welfare gains for most households.
+    \item Simple luxury taxes can lead to small welfare gains for nearly all households.
 \end{enumerate}
 
-The strongest assumption in the model is that a household's peer group sees only consumption expenditures on one good category.  While a single-dimensional signal generates the unique and simple equilibrium solution to the model, it is clearly counterfactual.  In the real world, one's peer group sees a full vector of consumption expenditures, but with some noise.
-An earlier version of this paper had a model with this feature, but estimation involved numerically calculating a thirty dimensional integral for each consumer for each parameter trial.
-Future research might focus on relaxing this stark assumption about the observability of consumption.
+The strongest assumption in the model is that a household's peer group sees only consumption expenditures on one good category.  While a single-dimensional signal generates the unique and simple equilibrium solution to the model, it is clearly counterfactual.  In the real world, one's peer group sees a full, noisy vector of consumption expenditures.  An earlier version of this paper had a model with this feature, but estimation involved numerically calculating a thirty dimensional integral for each consumer for each parameter trial.  Future research might focus on relaxing this stark assumption about the observability of consumption.
 
 \bibliographystyle{plainnat}
-\bibliography{../../bib/biglist.bib}
+\bibliography{/home/veryshuai/Documents/bib/biglist.bib}
 
 \newpage
 
@@ -333,12 +332,11 @@ Future research might focus on relaxing this stark assumption about the observab
 \section{Appendix Tables}
 \label{sec:det_res}
 
-\begin{table}
+\begin{table}[!h]
     \centering
-    \footnotesize
 \begin{tabular}{lcc}
 	\hline
-	\textbf{Category} & \textbf{Vindex} & \textbf{SE} \\
+	Category & Vindex & SE \\
 	\hline \hline
 cigarettes       & 0.76 & (0.014) \\
 cars             & 0.72 & (0.012) \\
