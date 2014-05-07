@@ -8,7 +8,7 @@
 \usepackage{graphicx}
 \usepackage{rotating}
 %\usepackage{wrapfig}
-\usepackage[nolists]{endfloat}
+%\usepackage[nolists]{endfloat}
 
 \title{Conspicuous Consumption in the United States and China}
 \author{David Jinkins
@@ -20,7 +20,7 @@
 \maketitle
 
 \begin{abstract}
-    I modify a recent theoretical model of conspicuous consumption to measure the the importance of peer beliefs to Americans and Chinese.  Estimating the model on household budget surveys, I find that Chinese consumers care 20\% more than American consumers about the beliefs of their peer group.  I use the estimated model to evaluate the welfare effect of the 1990-2003 American luxury tax on automobiles. \end{abstract}
+    I modify a recent theoretical model of conspicuous consumption to measure the the importance of peer beliefs to Americans and Chinese.  Estimating the model on household budget surveys, I find that Chinese consumers care 20\% more than American consumers about the beliefs of their peer group.  I use the estimated model to evaluate the welfare effect of the 1990-2002 American luxury tax on automobiles. \end{abstract}
 
 \section{Introduction}
 
@@ -30,7 +30,7 @@ When buying a car or a suit, a woman considers how her social group will view th
 
 The structural model I develop closely follows recent reduced-form empirical work on conspicuous consumption \citep{Heffetz2011}.  In order to estimate the model, I use a survey on the relative visibility of different categories of goods, and household-level consumption expenditure data.  As it is used to calculate purchasing power, expenditure data is available for many countries and time periods.  This is primarily a \emph{measurement} paper.
 
-I estimate the model separately using American and Chinese consumption expenditure data.  The fit between the estimated model and the data is excellent.  I find that the Chinese consumers care 20\% more than American consumers about peer group beliefs.  Using the estimated model, I find that the 1990-2003 American luxury tax on automobiles had a small but positive welfare effect on all but around 2 in 10,000 American households.  The households hurt by the tax were the extreme Jeremy Clarkson fans, gearheads that get a large amount of pleasure from automobile purchases.
+I estimate the model separately using American and Chinese consumption expenditure data.  The estimated model fits the data very well.  I find that the Chinese consumers care 20\% more than American consumers about peer group beliefs.  Using the estimated model, I find that the 1990-2002 American luxury tax on automobiles had a small but positive welfare effect on all but around 2 in 10,000 American households.  The households hurt by the tax were the extreme Jeremy Clarkson fans, gearheads that get a large amount of pleasure from automobile purchases.
 
 In this paper as well as the literature I am following, people care about the beliefs of their peers ``just because''.  I put peer group beliefs about welfare directly into the utility function.  Some might argue that people only care about peer group beliefs as the means to an ultimate consumptive end--wearing a nice watch makes people trust you more, so you are more likely to get a loan, or secure a business deal.  I am sympathetic to this point of view, and I sure this sort of signaling is going on to some degree.  However, the two points of view about peer beliefs are complementary.  From a long perspective, our brains might have been selected to care about peer group beliefs precisely because good standing makes successful reproduction more likely. In this case, the utils we get from positive peer group beliefs are like an evolutionary rule of thumb.\footnote{See \citep{RobsonSamuelson2010} for a recent survey on the literature related to the evolution of preferences).}
 
@@ -115,7 +115,7 @@ Households display widely varying consumption behavior.  Figure \ref{fig:shr} is
 
 \begin{figure}
 	\centering
-		\includegraphics[scale=1]{pics/shr_plot.pdf}
+		\includegraphics[scale=1]{pics/shr_plot.png}
 	\label{fig:shr}
 	\caption{Log expenditure shares (y-axis) by log expenditure (x-axis)
 for selected goods}
@@ -125,42 +125,26 @@ For the Chinese household expenditures, I used publicly available data from the 
 \begin{table}
     \centering
     \footnotesize
-    \begin{sideways}
-	\begin{tabular}{|l|l|l|l|l|}
-	    	\hline
-		\textbf{US Cat}			 & \textbf{1995 Chn Cat}  & \textbf{2002 Chn Cat}  & \textbf{Chn Cat Name} & \textbf{Chn Price Name}\\
-		\hline
-		Fdh,Fdo	 		 & h27	 	 & e1-e152-e153	 & Food-Cig.-Alcohol	 		 	 & Food\\ 
-		\hline
-		Alh,Alo	 		 & h30-h31	 & e153	 	 & Alcohol	 				 & Liquor \& beverage\\
-		\hline
-		Cig	 		 & h31	 	 & e152	 	 & Cigarettes	 				 & Tobacco\\ 
-		\hline
-		Bks	 		 & h37	 	 & f631	 	 & Textbooks	 				 & Teaching mat. \& ref books\\ 
-		\hline
-		Edu	 		 & h38 to h42	 & f63-f631	 & Education-Textbooks	 	 		 & Education fares\\ 
-		\hline
-		Bus,Car*		 & h44	 	 & f514	 	 & Transportation	 			 & Transport. fares\\ 
-		\hline
-		Utl	 		 & h45 to h46	 & f72	 	 & Water, Elec., Fuel, \& other	 	 	 & Water, Elec., \& Fuel\\ 
-		\hline
-		Tel	 		 & h47	 	 & f522	 	 & Communication	 			 & Communication fares\\ 
-		\hline
-		Clo,Jwl	 		 & h32	 	 & f2 	  	 & Clothes	 				 & Clothing\\ 
-		\hline
-		Ot1,Ot2	 		 & h33	 	 & f6-f63	 & Entertain. \& Cultur. Serv.		 	 & Recreation fares\\ 
-		\hline
-		Fur,Lry,Brb	 	 & h34,h36	 & f3 	 	 & Home Equip., Facil., \& Serv.		 & Washing \& Haircut\\ 
-		\hline
-		Med,Lin	 		 & h48	 	 & f4 	 	 & Health \& Med. 			 	 & Medicine \& Med. serv.\\ 
-		\hline
-		Hom,Htl	 		 & h64	 	 & f71	 	 & Housing	 			 	 & Housing\\ 
-		\hline
-		Fee,Cha	 		 & h35	 	 & f8 	 	 & Misc. Goods \& Serv.			 	 & -\\ 
-		\hline
-	\end{tabular}
-	\end{sideways}
-    \caption{Chinese Consumption and Price Categories \scriptsize{*Air,Gas,Cmn,Cin}}
+ \begin{tabular}{llll}
+        \hline
+        \textbf{US Cat} & \textbf{1995 Chn Cat} & \textbf{2002 Chn Cat} & \textbf{Chn Cat Name}  \\
+        \hline \hline
+        Fdh,Fdo     & h27        & e1-e152-e153 & Food-Cig.-Alcohol\\
+        Alh,Alo     & h30-h31    & e153         & Alcohol\\
+        Cig         & h31        & e152         & Cigarettes\\
+        Bks         & h37        & f631         & Textbooks\\
+        Edu         & h38 to h42 & f63-f631     & Education-Textbooks\\
+        Bus,Car*    & h44        & f514         & Transportation\\
+        Utl         & h45 to h46 & f72          & Water,Elec.,Fuel\\
+        Tel         & h47        & f522         & Communication\\
+        Clo,Jwl     & h32        & f2           & Clothes\\
+        Ot1,Ot2     & h33        & f6-f63       & Entertain.\\
+        Fur,Lry,Brb & h34,h36    & f3           & HomeEquip.,Facil.,\\
+        Med,Lin     & h48        & f4           & Health\\
+        Hom,Htl     & h64        & f71          & Housing\\
+        Fee,Cha     & h35        & f8           & Misc.Goods\\\hline
+ \end{tabular}
+    \caption{Chinese Consumption Categories \scriptsize{*Air,Gas,Cmn,Cin}}
     \label{tab:chncons}
 \end{table}
 
@@ -174,10 +158,184 @@ Basic demographics were also recorded for respondents.
 From the survey responses, Heffetz creates indexes (called vindexes) between zero and one for each category of goods by averaging over survey results.  
 A higher index implies that a good category is  more conspicuous. 
 A result of this aggregation methodology is that the index is cardinal rather than ordinal.  Two goods with similar index values are similar in visibility.  Details on the implementation of the survey and calculation of the index are available in the original paper.
-Table \ref{tab:vintab} below is the aggregated vindex.
+Table \ref{tab:vintab} in the appendix is the aggregated vindex survey data.
+
+
+I do not have a vindex equivalent for China, so I use the aggregated American vindex data for the Chinese estimation. Since there are fewer good categories in the Chinese data, I collapse the American vindex by taking the mean over aggregated good categories.
+
+\section{Identification}
+
+We are interested in $\alpha$, the weight given to the peer-belief part of the utility function.  The key identification issue is that, for a fixed $\alpha$, \emph{any} consumption bundle can be rationalized by a particular set of utility function parameters $\mathbf{\gamma}_i$.  In order to separate preferences and conspicuous consumption, we need to take a stand on how utility parameters might be distributed.  One natural assumption is that most people's preferences are broadly similar, while a few people have atypical preferences.  To operationalize this idea, I assume that preferences for each household and each good category are independently drawn from lognormal distributions.  In addition, to rationalize zero expenditure in a good categories I assume that with some probability a consumer doesn't care at all about a particular category ($\gamma_{ig} = 0$).
+
+A second challenge is that the Cobb-Douglass base utility assumption implies that there are no luxury or inferior goods.  Absent any conspicuous consumption, expenditure shares are constant as household  wealth increases.  Figure \ref{fig:shr} shows that expenditure shares are changing on average as household wealth increases.  The combination of Cobb-Douglass utility and changing expenditure shares in principle identifies my model.
+
+The Cobb-Douglass assumption is too strong, however.  I want to allow a good like ``food at home'' to be inferior even without conspicuous consumption effects.  To do this, I allow the location of the distribution of utility parameters to drift as a function of wealth.  In particular, the location parameter $\hat{\mu}_g(w_i)$ of the lognormal distribution for good category $g$ is given by \eqref{eq:adj_util}.
+
+\begin{equation}
+    \label{eq:adj_util}
+    \hat{\mu}_g(w_i) = \psi_g \ln \left(\frac{w_i}{\underbar{W}}\right) - \mu_g
+\end{equation}
+
+This 'money-in-the-utility-function' specification is somewhat ad hoc, but it allows us to keep the simple solution condition \eqref{eq:eq_cond} as well as allowing for rich evolution of expenditure shares with wealth.  This distribution of utility parameters also breaks simple identification of my model from the correlation of household expenditure shares and wealth.
+
+In order to regain identification, I use differences in observed vindexes across demographics.  I assume that, while all utility parameters $\mathbf{\gamma}_i$ are drawn out of the same distribution, observation types $v_i$ are drawn with probability weighted by an individual's demographic specific vindex.  The size of differences in average consumption between demographic groups, then, are informative about the strength of $\alpha$, the parameter of interest.  Table  in Appendix characterizes ovservation-type probability distributions for different demographic groups.
+
+I have only a single Chinese demographic category, so when estimating Chinese preference parameters I cannot use an identification strategy based on differences in demographic groups.  In the Chinese estimation, I take the $\psi_g$'s in equation \eqref{eq:adj_util} as data from the American estimation.  This assumption implies that luxury and inferior good categories are the same in both China and the United States.  Deviations from Chinese expenditure share trends along with vindex probabilities identify $\alpha$.
+
+\section{Estimation} 
+
+In order to estimate the parameter of interest $\alpha$, we must jointly estimate the observation type of each household and four preference distribution parameters for each good category.  This is a large problem, so I split the estimation into two steps by using a 'hard' expectation maximization algorithm.  In the first step (maximization), I condition on the observation type of each household and update $\alpha$ and preference distribution parameters.  In the second stage, I take $\alpha$ and the preference distribution parameters as given and find the most likely observation type of each household (expectation).  The algorithm stops when there is no change in $\alpha$.
+
+\subsection{Maximization: Updating $\alpha$ and preference distribution parameters} 
+
+In the maximization step, I condition the likelihood function on the observation type $t_i$ of each household and update $\alpha$ and lognormal preference distribution parameters $\mu_g$, $\sigma_g$, wealth-scaling parameter $\psi_g$, and a zero probability $z_g$.  Given $\alpha$, the preference parameters $\mathbf{\gamma}_i$ of each household can be calculated using observed consumption shares.  Once we have preference parameters for each household, we can analytically calculate the most likely lognormal distribution and zero parameters.  The outer structure of the maximization step is to let a numerical optimizer maximize the conditional likelihood over $\alpha$, and to treat the likelihood-maximizing preference parameters as functions of $\alpha$.
+
+\subsubsection{Recovering Household Preference Parameters given $\alpha$}
+\label{sec:upd_prefs}
+
+Taking observation type $t_i$ and $\alpha$ as given, there is a mapping from observed consumption shares directly to household preference parameters.  Consider a household of observed wealth type $w$, observed consumption vector $C$, and observation type $t$.  Rearranging \eqref{eq:opt_cobb}, $\gamma_g$ for $g\neq t$ are given by :
+\begin{align}
+	\label{eq:sgd}
+	p_gc_g &= \frac{\gamma_g}{\sum_{g\neq t}\gamma_g}  \left(w-  p_t c_t\right)\\
+	\label{eq:sgdsol}
+	\gamma_g &= \frac{p_g c_g}{\left(w- p_t c_t\right)} \sum_{g\neq t}\gamma_g\\
+	\label{eq:gamsol}
+	\gamma_g &= \frac{p_g c_g}{\left(w- p_t c_t\right)} 
+\end{align}
+
+We can solve for the 28 non-observation type $\gamma_g$'s up to a scaling factor $\sum_{g\neq t}\gamma_g = 1$.  Using \eqref{eq:gamsol} and \eqref{foc} we can then solve for $\gamma_t$.  Unfortunately, \eqref{foc} is non-linear and in principle needs to be solved numerically for each household.  To decrease estimation time, in practice I solve \eqref{foc} on a 1000 point grid of visible consumption shares and wealths, and then linearly interpolate to find household specific $\gamma_t$'s.
+
+\subsubsection{Updating Preference Distribution Parameters}
+
+Given $\alpha$, we have now recovered $\mathbf{\gamma}_i$ for each household.  The most likely zero probability $z_g^*$ for good category $g$ is the fraction of zero $\gamma_{ig}$'s:
+
+\begin{equation}
+    z_g^* = \frac{1}{|I|} \sum_{i} \mathbf{1}_{\gamma_{ig} = 0} \nonumber
+\end{equation}
+
+Let an upper bar denote sample means over non-zero $\gamma_i$'s, and let $m_i$ refers to the multiple of lowest possible income, $m_i = w_i/\underbar{W}$.  The other likelihood-maximizing preference parameters are:
+
+\begin{align}
+    \psi_g^* &= \frac{\hat{\mbox{cov}}(\ln m, \ln \gamma)}{\hat{\mbox{var}}(\ln m)} \nonumber \\
+    \mu_g^* &= \overline{\ln \gamma} - \psi_g^* \overline{\ln m} \nonumber \\
+    \sigma_g^{2*} &= \overline{\left(\ln \gamma - t_g^* \ln m - \mu_g^*\right)^2}
+\end{align}
+
+\subsubsection{Full conditional likelihood function}
+
+In the previous two subsections, I have shown how, given observation types, it is straight-forward to calculate preference parameters and likelihood maximizing preference distribution parameters as a function of $\alpha$.  Let $\phi$ be the log-normal probability density function.   The the maximization step conditional log-likelihood function is given in \eqref{lik1}.  All preference parameters and preference distribution parameters are implicitly functions of $\alpha$.
+
+\begin{equation}
+	\label{lik1}
+    l^1(\alpha) = \sum_{ig} \left(\mathbf{1}_{\{\gamma_{ig} = 0\}}\ln\left(z_g\right) + \mathbf{1}_{\{\gamma_{ig} \neq 0\}} \left(\ln\left(1 - z_g\right)+\ln \phi(\gamma_{ig},m_i|\mu_g,\sigma_g,t_g)\right)\right)
+\end{equation}
+
+Likelihood \eqref{lik1} is the objective function used by the numerical solver in the search for $\alpha$.  This completes the characterization of the maximization step in the algorithm.
+
+\subsection{Expectation step: Updating observation type $t_i$} 
+
+Given the utility weight of social beliefs $\alpha$ and a set of preference distribution parameters, we find the most likely observation type for each household. Now preference parameters $\gamma_{ig}$ are a function of observation type $t$ and are calculated exactly as in Section \ref{sec:upd_prefs}. $\mathbf{v}_i$ is the household-specific vector of observation type probabilities.  Household $i$'s likelihood of observation type $t \in G$ is given by \eqref{lik2}.
+
+\begin{equation}
+    \label{lik2}
+    l_i^2(t) = \ln(v_{it}) + \sum_{g} \left(\mathbf{1}_{\{\gamma_{ig} = 0\}}\ln\left(z_g\right) + \mathbf{1}_{\{\gamma_{ig} \neq 0\}} \left(\ln\left(1-z_g\right)+\ln \phi(\gamma_{ig}, m_i|\mu_g,\sigma_g,t_g)\right)\right)
+\end{equation}
+
+For each household, I assign the observation type giving the highest likelihood.
+
+In practice, in the United States I have visibility indexes for eight different types of households.  One dimension of differentiation is the age of the survey respondent (over/under age 40). The other dimension of differention is region in the United States (Northeast, Midwest, West, and South).  The visibility probabilities are taken directly from Heffetz and normalized so that they sum to one.
+
+In the American data, $\mathbf{\mu}$ , $\mathbf{\sigma}$, $\mathbf{z}$, and $\mathbf{t}$ are each 28 dimensional vectors. Adding $\alpha$ gives us a total of 118 parameters to be estimated, giving me more than 1000 observations per parameter.  In the Chinese version of the model, the preference heterogeneity vectors are 14 dimensions and I take the $\mathbf{t}$ vector as data from the American estimation, so there are 43 parameters to be estimated.  The Chinese estimation has over 300 observations per parameter.
+
+\section{Results}
+\label{sec:results}
+
+Chinese care about 20\% more than Americans about social beliefs.  The weight of social beliefs $\alpha$ in American utility is 0.027 with standard error $1\times10^{-4}$.  In Chinese utility, the weight of social beliefs is 0.033 with standard error 0.001.  Standard errors are bootstrapped by repeatedly redrawing from the data and reestimating the model.  All estimated parameters are presented in Appendix \ref{sec:det_res}.
+
+The model is capable of simulating data similar to the real data set. In Figure \ref{fig:shares_fake} is a scatter plot of simulated US data, made in the same way as and superimposed on top of the scatter plots of the actual US data in figures \ref{fig:shr}.
+\begin{figure}
+	\centering
+		\includegraphics[scale=1]{pics/shr_plot_sim.png}
+	\caption{Log expenditure share (y-axis) by total log expenditure (x-axis), simulated=red, data=blue}
+	\label{fig:shares_fake}
+\end{figure}
+
+The estimation also does well fitting observation types.
+The observation type distribution (for a particular demographic) should be the same as the vindex probability distribution.
+Figure \ref{fig:vinmatch} is a scatter plot of the vindex probabilities and the estimated observation type densities.  Each point is labeled with the relevant good category, and the colors represent different demographic types (region and age). Although there is not a perfect correlation between vindex probabilities and observation type frequencies, there is clearly a trend in the right direction.  The model misses the most on good categories ``car'' and ``jewelry''.  I suspect the problem is that these are durable goods, so that a single year of expenditure is a poor reflection of average expenditure in those categories.
+\begin{figure}
+    \centering
+	\includegraphics[scale=.8]{pics/obs_vin_scat.png}
+    \caption{Estimated observation type frequencies vindex probabilities, by demographic}
+    \label{fig:vinmatch}
+\end{figure}
+
+\subsection{Policy analysis: luxury tax}
+
+In the model developed above, a consumer distorts his full-information utility-maximizing consumption bundle in order to signal his wealth.  The signal is on expenditures, however, not on physical goods.  In principle, a social planner could impose a sales tax on a highly visible good category in order to reduce physical consumption.  In the real world, such a tax is known as a luxury tax.  In this section I consider the welfare implications of two such tax schemes, one in the United States, and one in China.
+
+\subsubsection{Application: Welfare effect of US automotive luxury taxes}
+
+In 1990, President George H.W. Bush signed the Omnibus Budget Reconciliation Act into law.\footnote{Some readers might remember that this act proved television to be a poor medium for lip-reading.}  The OBRA contained a provision for a luxury tax on automobiles, as well as jewelry, furs, yachts, and personal aircraft.  The tax on autos was 10\% of the price exceeding \$30,000.  As one might imagine, the luxury tax did not go over well at campaign fundraisers and was repealed in 1993 for all goods except automobiles.\footnote{A cynical political realist might observe that luxury vehicles are often imported from Europe.}  Congress finally scrapped the auto tax in 2002.
+
+In this section, I measure the welfare effects of a 10\% tax on automobiles, redistributed lumpsum as a proportion of wealth.  Redistributing the tax proportionally to wealth is conveniently abstracts from the welfare effect of a transfer from the rich to the poor.  In addition, taxes redistributed this way change neither the individual nor aggregate fraction of wealth optimally allocated to any particular good category, as relative wealth remains unchanged.
+
+My luxury tax will be 10\% of spending on automobiles.  Let $u = 0.1 / 1.1$ be the fraction of spending on autos taken by the government, let $s$ be the share by which the government increases wealth levels, let $l_i$ be the equilibrium fraction of luxuries in consumer $i$'s total expenditures, and let $L$ be the aggregate fraction of spending on luxuries.  Condition \eqref{eq:lux_bb} balances the budget.
+
+\begin{align}
+    (1 + s) u \sum_i w_i l_i &= s \sum_i w_i \nonumber \\
+    s &= \frac{u \sum_i w_i l_i}{s \sum_i w_i - u \sum_i w_i l_i} \nonumber \\
+    \label{eq:lux_bb}
+    s &= \frac{u L}{1 - uL}
+\end{align}
+
+Welfare change under the tax scheme is as in \eqref{eq:us_wel_change}.
+
+\begin{equation}
+    \label{eq:us_wel_change}
+    \Delta u_i = \sum_{g\in G} \gamma_{ig} \ln(1 + s) + \sum_{g\in l} \gamma_{ig} \ln (1 - u)
+\end{equation}
+
+It can be shown that $\ln(1+s) + \ln(1 - u) < 0$, so it is impossible to have a truly Pareto tax scheme.  That is, it is always possible that some unlucky consumer will draw all zeros in non-luxury good category parameters, ensuring he will be harmed by luxury taxes.  We can, however, potentially design taxes which benefit all but a vanishly small fraction of consumers.
+
+The relationship between $\alpha$ and the tax scheme here is through the link from the tax level to government subsidies.  Fixing preference parameters and the tax level $u$, the higher $\alpha$ the higher government subsidies $s$ to consumers.
+
+Figure \ref{fig:wel_change_10} displays a histogram of welfare changes resulting from a 10\% luxury tax, calculated for one million American households simulated using estimated model parameters from Section \ref{sec:results}.  About 0.02\%, or two in 10,000 households are harmed by the auto luxury tax.  The vast majority of households benefit from the automobile luxury tax.  In contrast, a similar 10\% sales tax on food at home harms 90\% of households.
+
+\begin{figure}
+    \centering
+	\includegraphics[scale=.6]{pics/tax_hist_Car10.png}
+    \caption{Histogram of welfare changes from a 10\% luxury auto tax}
+    \label{fig:wel_change_10}
+\end{figure}
+
+\section{Conclusion}
+This paper develops a structural conspicuous consumption model with preference heterogeneity estimable from widely available consumption expenditure data.  In an application, I show how the estimated model can be used to measure the welfare implications of a tax on luxury goods.
+
+The results of the estimation show that:
+\begin{enumerate}
+    \item Signaling plays a role in consumption decisions.  Chinese consumers value peer group belief about three percent as much as they value the direct utility from consumption.
+    \item Chinese consumers value peer group belief 20\% more than American consumers.
+    \item Simple luxury taxes can lead to small welfare gains for most households.
+\end{enumerate}
+
+The strongest assumption in the model is that a household's peer group sees only consumption expenditures on one good category.  While a single-dimensional signal generates the unique and simple equilibrium solution to the model, it is clearly counterfactual.  In the real world, one's peer group sees a full vector of consumption expenditures, but with some noise.
+An earlier version of this paper had a model with this feature, but estimation involved numerically calculating a thirty dimensional integral for each consumer for each parameter trial.
+Future research might focus on relaxing this stark assumption about the observability of consumption.
+
+\bibliographystyle{plainnat}
+\bibliography{../../bib/biglist.bib}
+
+\newpage
+
+\appendix
+
+\section{Appendix Tables}
+\label{sec:det_res}
 
 \begin{table}
     \centering
+    \footnotesize
 \begin{tabular}{lcc}
 	\hline
 	\textbf{Category} & \textbf{Vindex} & \textbf{SE} \\
@@ -219,176 +377,6 @@ underwear        & 0.12 & (0.011) \\
 \caption{Aggregate Vindex}
 \vspace{-2in}
 \end{table}
-
-I do not have a vindex equivalent for China, so I use the aggregated American vindex data for the Chinese estimation. Since there are fewer good categories in the Chinese data, I collapse the American vindex by taking the mean over aggregated good categories.
-
-\section{Identification}
-
-We are interested in $\alpha$, the weight given to the peer-belief part of the utility function.  The key identification issue is that, for a fixed $\alpha$, \emph{any} consumption bundle can be rationalized by a particular set of utility function parameters $\mathbf{\gamma}_i$.  In order to separate preferences and conspicuous consumption, we need to take a stand on how utility parameters might be distributed.  One natural assumption is that most people's preferences are broadly similar, while a few people have atypical preferences.  To operationalize this idea, I assume that preferences for each household and each good category are independently drawn from lognormal distributions.  In addition, to rationalize zero expenditure in a good categories I assume that with some probability a consumer doesn't care at all about a particular category ($\gamma_{ig} = 0$).
-
-A second challenge is that the Cobb-Douglass base utility assumption implies that there are no luxury or inferior goods.  Absent any conspicuous consumption, expenditure shares are constant as household  wealth increases.  Figure \ref{fig:shr} shows that expenditure shares are changing on average as household wealth increases.  The combination of Cobb-Douglass utility and changing expenditure shares in principle identifies my model.
-
-The Cobb-Douglass assumption is too strong, however.  I want to allow a good like ``food at home'' to be inferior even without conspicuous consumption effects.  To do this, I allow the location of the distribution of utility parameters to drift as a function of wealth.  In particular, the location parameter $\hat{\mu}_g(w_i)$ of the lognormal distribution for good category $g$ is given by \eqref{eq:adj_util}.
-
-\begin{equation}
-    \label{eq:adj_util}
-    \hat{\mu}_g(w_i) = \psi_g \ln \left(\frac{w_i}{\underbar{W}}\right) - \mu_g
-\end{equation}
-
-This 'money-in-the-utility-function' specification is somewhat ad hoc, but it allows us to keep the simple solution condition \eqref{eq:eq_cond} as well as allowing for rich evolution of expenditure shares with wealth.  This distribution of utility parameters also breaks simple identification of my model from the correlation of household expenditure shares and wealth.
-
-In order to regain identification, I use differences in observed vindexes across demographics.  I assume that, while all utility parameters $\mathbf{\gamma}_i$ are drawn out of the same distribution, observation types $v_i$ are drawn with probability weighted by an individual's demographic specific vindex.  The size of differences in average consumption between demographic groups, then, are informative about the strength of $\alpha$, the parameter of interest.  Table  in Appendix characterizes ovservation-type probability distributions for different demographic groups.
-
-I have only a single Chinese demographic category, so when estimating Chinese preference parameters I cannot use an identification strategy based on differences in demographic groups.  In the Chinese estimation, I take the $\psi_g$'s in equation \eqref{eq:adj_util} as data from the American estimation.  This assumption implies that luxury and inferior good categories are the same in both China and the United States.  Deviations from Chinese expenditure share trends along with vindex probabilities identify $\alpha$.
-
-\section{Estimation} 
-
-In order to estimate the parameter of interest $\alpha$, we must jointly estimate the observation type of each household and four preference distribution parameters for each good category.  This is a large problem, so I split the estimation into two steps by using a 'hard' expectation maximization algorithm.  In the first step (maximization), I condition on the observation type of each household and update $\alpha$ and preference distribution parameters.  In the second stage, I take $\alpha$ and the preference distribution parameters as given and find the most likely observation type of each household (expectation).  The algorithm stops when there is no change in $\alpha$.
-
-\subsection{Step 1: Updating $\alpha$ and preference distribution parameters} 
-
-In Step 1, I condition the likelihood function on the observation type $t_i$ of each household and update $\alpha$ and lognormal preference distribution parameters $\mu_g$, $\sigma_g$, wealth-scaling parameter $\psi_g$, and a zero probability $z_g$.  Given $\alpha$, the preference parameters $\mathbf{\gamma}_i$ of each household can be calculated using observed consumption shares.  Once we have preference parameters for each household, we can analytically calculate the most likely lognormal distribution and zero parameters.  The outer structure of Step 1 is to let a numerical optimizer maximize the conditional likelihood over $\alpha$, and to treat the likelihood-maximizing preference parameters as functions of $\alpha$.
-
-\subsubsection{Recovering Household Preference Parameters given $\alpha$}
-\label{sec:upd_prefs}
-
-Taking observation type $t_i$ and $\alpha$ as given, there is a mapping from observed consumption shares directly to household preference parameters.  Consider a household of observed wealth type $w$, observed consumption vector $C$, and observation type $t$.  Rearranging \eqref{eq:opt_cobb}, $\gamma_g$ for $g\neq t$ are given by :
-\begin{align}
-	\label{eq:sgd}
-	p_gc_g &= \frac{\gamma_g}{\sum_{g\neq t}\gamma_g}  \left(w-  p_t c_t\right)\\
-	\label{eq:sgdsol}
-	\gamma_g &= \frac{p_g c_g}{\left(w- p_t c_t\right)} \sum_{g\neq t}\gamma_g\\
-	\label{eq:gamsol}
-	\gamma_g &= \frac{p_g c_g}{\left(w- p_t c_t\right)} 
-\end{align}
-
-We can solve for the 28 non-observation type $\gamma_g$'s up to a scaling factor $\sum_{g\neq t}\gamma_g = 1$.  Using \eqref{eq:gamsol} and \eqref{foc} we can then solve for $\gamma_t$.  Unfortunately, \eqref{foc} is non-linear and in principle needs to be solved numerically for each household.  To decrease estimation time, in practice I solve \eqref{foc} on a 1000 point grid of visible consumption shares and wealths, and then linearly interpolate to find household specific $\gamma_t$'s.
-
-\subsubsection{Updating Preference Distribution Parameters}
-
-Given $\alpha$, we have now recovered $\mathbf{\gamma}_i$ for each household.  The most likely zero probability $z_g^*$ for good category $g$ is the fraction of zero $\gamma_{ig}$'s:
-
-\begin{equation}
-    z_g^* = \frac{1}{|I|} \sum_{i} \mathbf{1}_{\gamma_{ig} = 0} \nonumber
-\end{equation}
-
-Let an upper bar denote sample means over non-zero $\gamma_i$'s, and let $m_i$ refers to the multiple of lowest possible income, $m_i = w_i/\underbar{W}$.  The other likelihood-maximizing preference parameters are:
-
-\begin{align}
-    \psi_g^* &= \frac{\hat{\mbox{cov}}(\ln m, \ln \gamma)}{\hat{\mbox{var}}(\ln m)} \nonumber \\
-    \mu_g^* &= \overline{\ln \gamma} - \psi_g^* \overline{\ln m} \nonumber \\
-    \sigma_g^{2*} &= \overline{\left(\ln \gamma - t_g^* \ln m - \mu_g^*\right)^2}
-\end{align}
-
-\subsubsection{Full conditional likelihood function}
-
-In the previous two subsections, I have shown how, given observation types, it is straight-forward to calculate preference parameters and likelihood maximizing preference distribution parameters as a function of $\alpha$.  Let $\phi$ be the log-normal probability density function.   The Step 1 conditional log likelihood function is given in \eqref{lik1}.  All preference parameters and preference distribution parameters are implicitly functions of $\alpha$.
-
-\begin{equation}
-	\label{lik1}
-    l^1(\alpha) = \sum_{ig} \left(\mathbf{1}_{\{\gamma_{ig} = 0\}}\ln\left(z_g\right) + \mathbf{1}_{\{\gamma_{ig} \neq 0\}} \left(\ln\left(1 - z_g\right)+\ln \phi(\gamma_{ig},m_i|\mu_g,\sigma_g,t_g)\right)\right)
-\end{equation}
-
-Likelihood \eqref{lik1} is the objective function used by the numerical solver in the search for $\alpha$.  This completes the characterization of Step 1 in the likelihood maximization algorithm.
-
-\subsection{Step 2: Updating observation type $t_i$} 
-
-Given the utility weight of social beliefs $\alpha$ and a set of preference distribution parameters, we find the most likely observation type for each household. Now preference parameters $\gamma_{ig}$ are a function of observation type $t$ and are calculated exactly as in Section \ref{sec:upd_prefs}. $\mathbf{v}_i$ is the household-specific vector of observation type probabilities.  Household $i$'s likelihood of observation type $t \in G$ is given by \eqref{lik2}.
-
-\begin{equation}
-    \label{lik2}
-    l_i^2(t) = \ln(v_{it}) + \sum_{g} \left(\mathbf{1}_{\{\gamma_{ig} = 0\}}\ln\left(z_g\right) + \mathbf{1}_{\{\gamma_{ig} \neq 0\}} \left(\ln\left(1-z_g\right)+\ln \phi(\gamma_{ig}, m_i|\mu_g,\sigma_g,t_g)\right)\right)
-\end{equation}
-
-For each household, I assign the observation type giving the highest likelihood.
-
-In practice, in the United States I have visibility indexes for eight different types of households.  One dimension of differentiation is the age of the survey respondent (over/under age 40). The other dimension of differention is region in the United States (Northeast, Midwest, West, and South).  The visibility probabilities are taken directly from Heffetz and normalized so that they sum to one.
-
-In the American data, $\mathbf{\mu}$ , $\mathbf{\sigma}$, $\mathbf{z}$, and $\mathbf{t}$ are each 28 dimensional vectors. Adding $\alpha$ gives us a total of 118 parameters to be estimated, giving me more than 1000 observations per parameter.  In the Chinese version of the model, the preference heterogeneity vectors are 14 dimensions and I take the $\mathbf{t}$ vector as data from the American estimation, so there are 43 parameters to be estimated.  The Chinese estimation has over 300 observations per parameter.
-
-\section{Results}
-\label{sec:results}
-
-Chinese care about 20\% more than Americans about social beliefs.  The weight of social beliefs $\alpha$ in American utility is 0.027 with standard error $1\times10^{-4}$.  In Chinese utility, the weight of social beliefs is 0.033 with standard error 0.001.  Standard errors are bootstrapped by repeatedly redrawing from the data and reestimating the model.  All estimated parameters are presented in Appendix \ref{sec:det_res}.
-
-The model is capable of simulating data similar to the real data set. In Figure \ref{fig:shares_fake} is a scatter plot of simulated US data, made in the same way as and superimposed on top of the scatter plots of the actual US data in figures \ref{fig:shr}.
-\begin{figure}
-	\centering
-		\includegraphics[scale=1]{pics/shr_plot_sim.pdf}
-	\caption{Log expenditure share (y-axis) by total log expenditure (x-axis), simulated=red, data=blue}
-	\label{fig:shares_fake}
-\end{figure}
-
-The estimation also does well fitting observation types.
-The observation type distribution (for a particular demographic) should be the same as the vindex probability distribution.
-Figure \ref{fig:vinmatch} is a scatter plot of the vindex probabilities and the estimated observation type densities.  Each point is labeled with the relevant good category, and the colors represent different demographic types (region and age). Although there is not a perfect correlation between vindex probabilities and observation type frequencies, there is clearly a trend in the right direction.  The model misses the most on good categories ``car'' and ``jewelry''.  I suspect the problem is that these are durable goods, so that a single year of expenditure is a poor reflection of average expenditure in those categories.
-\begin{figure}
-    \centering
-	\includegraphics[scale=.8]{pics/obs_vin_scat.png}
-    \caption{Estimated observation type frequencies vindex probabilities, by demographic}
-    \label{fig:vinmatch}
-\end{figure}
-
-\subsection{Policy analysis: luxury tax}
-
-In the model developed above, a consumer distorts his full-information utility-maximizing consumption bundle in order to signal his wealth.  The signal is on expenditures, however, not on physical goods.  In principle, a social planner could impose a sales tax on a highly visible good category in order to reduce physical consumption.  In the real world, such a tax is known as a luxury tax.  In this section I consider the welfare implications of two such tax schemes, one in the United States, and one in China.
-
-\subsubsection{Application: Welfare effect of US automotive luxury taxes}
-
-In 1990, President George H.W. Bush signed the Omnibus Budget Reconciliation Act into law.\footnote{Some readers might remember that this act proved television to be a poor medium for lip-reading.}  The OBRA contained a provision for a luxury tax on automobiles, as well as jewelry, furs, yachts, and personal aircraft.  The tax on autos was 10\% of the price exceeding \$30,000.  As one might imagine, the luxury tax did not go over well at campaign fundraisers and was repealed in 1993 for all goods except automobiles.\footnote{A cynic might observe that luxury vehicles are often imported from Europe.}  Congress finally scrapped the auto tax in 2002.
-
-In this section, I measure the welfare effects of a 10\% tax on automobiles, redistributed lumpsum as a proportion of wealth.  Redistributing the tax proportionally to wealth is conveniently abstracts from the welfare effect of a transfer from the rich to the poor.  In addition, taxes redistributed this way change neither the individual nor aggregate fraction of wealth optimally allocated to any particular good category, as relative wealth remains unchanged.
-
-My luxury tax will be 10\% of spending on automobiles.  Let $u = 0.1 / 1.1$ be the fraction of spending on autos taken by the government, let $s$ be the share by which the government increases wealth levels, let $l_i$ be the equilibrium fraction of luxuries in consumer $i$'s total expenditures, and let $L$ be the aggregate fraction of spending on luxuries.  Condition \eqref{eq:lux_bb} balances the budget.
-
-\begin{align}
-    (1 + s) u \sum_i w_i l_i &= s \sum_i w_i \nonumber \\
-    s &= \frac{u \sum_i w_i l_i}{s \sum_i w_i - u \sum_i w_i l_i} \nonumber \\
-    \label{eq:lux_bb}
-    s &= \frac{u L}{1 - uL}
-\end{align}
-
-Welfare change under the tax scheme is as in \eqref{eq:us_wel_change}.
-
-\begin{equation}
-    \label{eq:us_wel_change}
-    \Delta u_i = \sum_{g\in G} \gamma_{ig} \ln(1 + s) + \sum_{g\in l} \gamma_{ig} \ln (1 - u)
-\end{equation}
-
-It can be shown that $\ln(1+s) + \ln(1 - u) < 0$, so it is impossible to have a truly Pareto tax scheme.  That is, it is always possible that some unlucky consumer will draw all zeros in non-luxury good category parameters, ensuring he will be harmed by luxury taxes.  We can, however, potentially design taxes which benefit all but a vanishly small fraction of consumers.
-
-The relationship between $\alpha$ and the tax scheme here is through the link from the tax level to government subsidies.  Fixing preference parameters and the tax level $u$, the higher $\alpha$ the higher government subsidies $s$ to consumers.
-
-Figure \ref{fig:wel_change_10} displays a histogram of welfare changes resulting from a 10\% luxury tax, calculated for one million American households simulated using estimated model parameters from Section \ref{sec:results}.  About 0.02\%, or two in 10,000 households are harmed by the auto luxury tax.  The vast majority of households benefit from the automobile luxury tax.  In contrast, a similar 10\% sales tax on food at home harms 90\% of households.
-
-\begin{figure}
-    \centering
-	\includegraphics[scale=.8]{pics/tax_hist_Car10.png}
-    \caption{Histogram of welfare changes from a 10\% luxury auto tax}
-    \label{fig:wel_change_10}
-\end{figure}
-
-\section{Conclusion}
-This paper develops a structural conspicuous consumption model with preference heterogeneity estimable from widely available consumption expenditure data.  In an application, I show how the estimated model can be used to measure the welfare implications of a tax on luxury goods.
-
-The results of the estimation show that:
-\begin{enumerate}
-    \item Signaling plays a role in consumption decisions.  Chinese consumers value peer group belief about three percent as much as they value the direct utility from consumption.
-    \item Chinese consumers value peer group belief 20\% more than American consumers.
-    \item Simple luxury taxes can lead to small welfare gains for most households.
-\end{enumerate}
-
-The strongest assumption in the model is that a household's peer group sees only consumption expenditures on one good category.  While a single-dimensional signal generates the unique and simple equilibrium solution to the model, it is clearly counterfactual.  In the real world, one's peer group sees a full vector of consumption expenditures, but with some noise.
-An earlier version of this paper had a model with this feature, but estimation involved numerically calculating a thirty dimensional integral for each consumer for each parameter trial.
-Future research might focus on relaxing this stark assumption about the observability of consumption.
-
-\bibliographystyle{plainnat}
-\bibliography{../../bib/biglist.bib}
-
-\appendix
-
-\section{Detailed results}
-\label{sec:det_res}
 
 \begin{table}
     \centering
@@ -463,4 +451,3 @@ Future research might focus on relaxing this stark assumption about the observab
 \end{table}
 
 \end{document}
-
