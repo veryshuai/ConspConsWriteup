@@ -10,38 +10,36 @@
 %\usepackage{wrapfig}
 \usepackage[nolists]{endfloat}
 
-\title{A Structural Comparison of Conspicuous Consumption in China and the United States
-}
+\title{Conspicuous Consumption in the United States and China}
 \author{David Jinkins
     \thanks{I thank the National Science Foundation EAPSI program for support.  I would also like to thank Jonathan Eaton, Ed Green, Jim Tybout, Venky Venkateswaran, Yaohui Zhao, and the participants in the Penn State I/O and Trade reading groups for helpful comments. Remaining errors are my own.}
 }
-\date{April 16, 2014}
+\date{May 7, 2014}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-    A man buys a good partly to influence how his peers think of him.  In this paper I modify a recent theoretical model of conspicuous consumption to measure the the importance of peer beliefs to Americans and Chinese.  Estimating the model on survey data on the visibility of different good categories along with household budget surveys, I find that Chinese consumers care X as much as American consumers about the beliefs of their peer group.  I use the parameter estimates to measure the optimality of American excise taxes on cigarettes, and recommend a Cigarette excise tax in China.
-\end{abstract}
+    I modify a recent theoretical model of conspicuous consumption to measure the the importance of peer beliefs to Americans and Chinese.  Estimating the model on household budget surveys, I find that Chinese consumers care 20\% more than American consumers about the beliefs of their peer group.  I use the estimated model to evaluate the welfare effect of the 1990-2003 American luxury tax on automobiles. \end{abstract}
 
 \section{Introduction}
 
-I wear a Seiko automatic watch.  Over the course of a month, it picks up about five minutes.  I knew it would do this before I bought it from online reviews, but even so I purchased it for about \$100 a few years ago.  I could have picked up a digital casio for \$5 which would run more reliably, would have probably been easier to read, and I wouldn't have had to worry about getting it wet.  For all the functions a watch performs, the Casio would have been superior, and yet, I still bought the relatively expensive Seiko.  Why did I do that?  Why did you buy your watch?
+I wear a Seiko automatic watch.  Over the course of a month, it picks up about five minutes.  I knew it would do this before I bought it from online reviews, but even so I purchased it for about \$100 a few years ago.  At the time, for \$5 I could have picked up a digital casio from Wal-Mart which would have run more reliably, been easier to read, and been more water resistant.  On just about any measure of watch performance the Casio would have outrun the Seiko, and yet there is the relatively expensive Seiko on my wrist.  Why did you buy your watch? 
 
-I take the point of view that a consumer bases part of her decision to buy a product on what society will infer about her after observing what she chooses.  
-My personal introspection supports this idea, and I will cite some papers below which find reduced form evidence for this sort of behavior in various data sets. This paper adds to this literature by writing down a structural model and estimating parameters, which allows us to measure just how much people care about social beliefs, and also figure out ballpark estimates for how much excise taxes might increase social welfare. This is primarily a \emph{measurement} paper.
+When buying a car or a suit, a woman considers how her social group will view the new purchase.  In addition to evidence from personal introspection, I will cite some papers below which find reduced form evidence of such consumer behavior. This paper adds to the empirical literature on conspicuous consumption by developing and estimating a partial-equilibrium heterogeneous-agent structural model in which a consumer's peers infer his wealth using only a subset of his purchases.  Inference about welfare by his peer group causes a consumer to distort his consumption toward the purchase of visible goods.
 
-In this paper as well as the literature I am following, people care about the beliefs of their peers ``just because''.  I am going to put peer group beliefs about personal welfare directly into the utility function.  Some might argue that people only care about peer group beliefs as the means to an ultimate consumptive end--wearing a nice watch makes people trust you more, so you are more likely to get a loan, or secure that business deal.  I am sympathetic to this point of view, and I sure this is going on to some degree.  However, note that the two points of view about peer beliefs are complementary.  From a long perspective, our brains might have been selected to care about peer group beliefs precisely because good standing makes successful reproduction more likely. In this case, the utils we get from positive peer group beliefs are like an evolutionary rule of thumb.\footnote{See \citep{RobsonSamuelson2010} for a recent survey on the very neat literature related to the evolution of preferences).}
+The structural model I develop closely follows recent reduced-form empirical work on conspicuous consumption \citep{Heffetz2011}.  In order to estimate the model, I use a survey on the relative visibility of different categories of goods, and household-level consumption expenditure data.  As it is used to calculate purchasing power, expenditure data is available for many countries and time periods.  This is primarily a \emph{measurement} paper.
 
-There are also several strands of empirical literature that support the presence of a social component in the utility function.  Consider the famous ultimatum game in which one player proposes a split of a sum of money, and the other player decides whether to accept or reject.  If the second player accepts, the money is allocated according to the split, and if the the second player rejects, neither player gets anything.  There is a long and robust experimental literature showing that if people only care about immediate monetary payoffs, the splits they propose are ``too fair''.  Researchers have been careful to pair subjects which do not know each other and are unlikely to have interaction after the experiment, and the result still holds.  One explanation for this behavior is that there is some sort of social component in the utility function\citep{FehrSchmidt1999,BoltonOckenfels2000}.  A second defense comes from the literature on self-reported happiness and relative wealth.  \citet{Luttmer2004} finds that relative wealth compared with neighbors has a robust positive correlation  with self-reported happiness, controlling for absolute wealth level.  On the face of it, it seems hard to explain this fact without some sort of social component in the utiltiy function.  If you still don't believe that there is a social belief component in the utility function, then you can think of this paper as estimating a reduced form model.  It is still novel to directly compare China and the United States.
+I estimate the model separately using American and Chinese consumption expenditure data.  The fit between the estimated model and the data is excellent.  I find that the Chinese consumers care 20\% more than American consumers about peer group beliefs.  Using the estimated model, I find that the 1990-2003 American luxury tax on automobiles had a small but positive welfare effect on all but around 2 in 10,000 American households.  The households hurt by the tax were the extreme Jeremy Clarkson fans, gearheads that get a large amount of pleasure from automobile purchases.
 
-As mentioned above, this is not the first paper to take an empirical look at conspicuous consumption  \citep{Blochetal2004,Charlesetal2009,MoavNeeman2010,MoavNeeman2012}.  My paper borrows both data and functional forms from \citet{Heffetz2011}, who conducts a telephone survey in the United States to determine the visibility of consumption goods.  Heffetz then analyzes household budget survey data, and finds evidence that the relitively visible goods identified by the survey are being used as a means to signal wealth.  To my knowledge, the only other structural estimation of a utility function including conspicuous consumption is \citet{Truglia2012}.  Truglia follows earlier literature in using a two-good functional form, and a variety of specifications for how non-market goods like status enter utility.  My specification below differs from Truglia's in a few important ways.  Some cosmetic differences include that I allow for individual level preference heterogeneity and estimate a many good utility function.  Any good can be used for signaling in my model, while in Truglia's model cars and clothes are the visible goods.  More substantively, while Truglia is focused on the provision of unobservable non-market goods (status), I assume that society cares only about an individual's unobservable welfare.  This allows me to consider peer-group beliefs more explicitly, rather than assume a functional form for the provision of a non-market good.  In agreement with my findings, Truglia finds that in his framework a tax on luxery goods creates large welfare gains.
+In this paper as well as the literature I am following, people care about the beliefs of their peers ``just because''.  I put peer group beliefs about welfare directly into the utility function.  Some might argue that people only care about peer group beliefs as the means to an ultimate consumptive end--wearing a nice watch makes people trust you more, so you are more likely to get a loan, or secure a business deal.  I am sympathetic to this point of view, and I sure this sort of signaling is going on to some degree.  However, the two points of view about peer beliefs are complementary.  From a long perspective, our brains might have been selected to care about peer group beliefs precisely because good standing makes successful reproduction more likely. In this case, the utils we get from positive peer group beliefs are like an evolutionary rule of thumb.\footnote{See \citep{RobsonSamuelson2010} for a recent survey on the literature related to the evolution of preferences).}
+
+There are several strands of empirical literature that support the presence of a social component in the utility function.  Consider the famous ultimatum game in which one player proposes a split of a sum of money, and the other player decides whether to accept or reject.  If the second player accepts, the money is allocated according to the split, and if the second player rejects, neither player gets anything.  There is a long and robust experimental literature showing that if people only care about immediate monetary payoffs, the splits they propose are ``too fair''.  Researchers have been careful to pair subjects which do not know each other and are unlikely to have interaction after the experiment, and the result still holds.  One explanation for this behavior is that there is some sort of social component in the utility function\citep{FehrSchmidt1999,BoltonOckenfels2000}.  A second defense comes from the literature on self-reported happiness and relative wealth.  \citet{Luttmer2004} finds that relative wealth compared with neighbors has a robust positive correlation  with self-reported happiness, controlling for absolute wealth level.  On the face of it, it seems hard to explain this fact without some sort of social component in the utilty function.  If you are still not convinced that there is a fundamental social belief component in the utility function, then you can think of this paper as estimating a reduced form model.
+As mentioned above, this is not the first paper to take an empirical look at conspicuous consumption  \citep{Blochetal2004,Charlesetal2009,MoavNeeman2010,MoavNeeman2012}.  My paper borrows both data and functional forms from \citet{Heffetz2011}, which conducts a telephone survey in the United States to determine the visibility of consumption goods.  Heffetz then analyzes household budget survey data, and finds evidence that the relatively visible goods identified by the survey are being used as a means to signal wealth.  To my knowledge, the only other structural estimation of a utility function including conspicuous consumption is \citet{perez2012measuring}.  Perez-Truglia follows earlier literature in using a two-good functional form, and a variety of specifications for how non-market goods like status enter utility.  My specification below differs from Perez-Truglia's in a few important ways.  Some cosmetic differences include that I allow for individual level preference heterogeneity and estimate a many good utility function.  Any good can be used for signaling in my model, while in Perez-Truglia's model cars and clothes are the visible goods.  More substantively, while Perez-Truglia is focused on the provision of unobservable non-market goods (status), I assume that society cares only about an individual's unobservable welfare.  This allows me to consider peer-group beliefs more explicitly, rather than assume a functional form for the provision of a non-market good.  In his framework, Perez-Truglia finds that a tax on luxury goods can create welfare gains significantly larger than those I find in my estimation.
 
 Using a structural estimation, I can examine both the absolute and relative magnitude of the motive for conspicuous consumption, and I can gauge the welfare gains from an excise tax on the most visible good categories.  To explain how an excise tax can raise everyone's welfare, first note that if everyone's wealth was directly observable by their peer group, then there would be no reason to distort consumption towards conspicuous goods.  One way to get people closer to the complete information allocation is to raise the price of the visible good, and then redistribute the proceeds of the tax regressively.  If things work out the right way, the rich are better off because they distort less, and the poor are better off because they are getting a subsidy from the rich.  If people care deeply about peer group belief, then the welfare gains from this sort of tax can be large.\footnote{Signaling distortions are particularly worrying when considering the economic lives of the poor.  A recent study reports that in parts of India, the \emph{median} household making under a dollar a day spends 10\% of its income on festivals--this while 43\% of such households did not have enough to eat throughout the year \citep{BanerjeeDuflo2007}.  } 
 
-I should mention that there is a relatively large and old related literature estimating what are known as interdependent preferences.  Beginning with James Duesenberry's 1949 doctoral thesis,\footnote{Later published as \citep{Duesenberry1949}} researchers have theorized that the consumption of neighbors affects own demand.  A typical econometric model in this literature lets household demand parameters depend linearly on the (weighted) average of the consumption of a reference group. A relationship between neighbor consumption and own consumption is taken to mean that preferences are interdependent.  The literature, however, does not take a stance on why consumption neighborhood consumption should be linked in this particular way. \footnote{To cite one of the first econometric papers in this literature, \citet{Pollak1976} speculates that exposure to the consumption of ``superior'' goods leads one to develop a taste for them.}  
-
-There are six sections below.  First I set out the environment and preferences, and define the equilibrium concept.  The second section describes the data and discusses identification.  The third section specializes the model, derives estimation equations, and discusses identification.  I present the results of the estimation in the fourth section, and in the fifth section I discuss taxation.  A final section concludes. 
+There is a relatively large and old related literature estimating what are known as interdependent preferences.  Beginning with James Duesenberry's 1949 doctoral thesis,\footnote{Later published as \citep{Duesenberry1949}} researchers have theorized that the consumption of neighbors affects own demand.  A typical econometric model in this literature lets household demand parameters depend linearly on the average of the consumption of a reference group. A relationship between neighbor consumption and own consumption is taken to mean that preferences are interdependent.  The literature, however, does not take a stand on why consumption neighborhood consumption should be linked in this particular way.
 
 \section{Model}
 
@@ -224,7 +222,7 @@ underwear        & 0.12 & (0.011) \\
 
 I do not have a vindex equivalent for China, so I use the aggregated American vindex data for the Chinese estimation. Since there are fewer good categories in the Chinese data, I collapse the American vindex by taking the mean over aggregated good categories.
 
-\subsection{Identification}
+\section{Identification}
 
 We are interested in $\alpha$, the weight given to the peer-belief part of the utility function.  The key identification issue is that, for a fixed $\alpha$, \emph{any} consumption bundle can be rationalized by a particular set of utility function parameters $\mathbf{\gamma}_i$.  In order to separate preferences and conspicuous consumption, we need to take a stand on how utility parameters might be distributed.  One natural assumption is that most people's preferences are broadly similar, while a few people have atypical preferences.  To operationalize this idea, I assume that preferences for each household and each good category are independently drawn from lognormal distributions.  In addition, to rationalize zero expenditure in a good categories I assume that with some probability a consumer doesn't care at all about a particular category ($\gamma_{ig} = 0$).
 
@@ -311,9 +309,9 @@ In the American data, $\mathbf{\mu}$ , $\mathbf{\sigma}$, $\mathbf{z}$, and $\ma
 \section{Results}
 \label{sec:results}
 
-Chinese care about 20\% more than Americans about social beliefs.  The weight of social beliefs $\alpha$ in American utility is 0.027 with standard error $1\times10^{-4}$.  In Chinese utility, the weight of social beliefs is 0.033 with standard error \textbf{INSERT HERE!}.  Standard errors are bootstrapped by repeatedly redrawing from the data and reestimating the model.  All estimated parameters are presented in Appendix \ref{sec:det_res}.
+Chinese care about 20\% more than Americans about social beliefs.  The weight of social beliefs $\alpha$ in American utility is 0.027 with standard error $1\times10^{-4}$.  In Chinese utility, the weight of social beliefs is 0.033 with standard error 0.001.  Standard errors are bootstrapped by repeatedly redrawing from the data and reestimating the model.  All estimated parameters are presented in Appendix \ref{sec:det_res}.
 
-The model does a good job of simulating data similar to the real data set. In Figure \ref{fig:shares_fake} is a scatter plot of simulated US data, made in the same way as and superimposed on top of the scatter plots of the actual US data in figures \ref{fig:shr}.
+The model is capable of simulating data similar to the real data set. In Figure \ref{fig:shares_fake} is a scatter plot of simulated US data, made in the same way as and superimposed on top of the scatter plots of the actual US data in figures \ref{fig:shr}.
 \begin{figure}
 	\centering
 		\includegraphics[scale=1]{pics/shr_plot_sim.pdf}
@@ -335,9 +333,9 @@ Figure \ref{fig:vinmatch} is a scatter plot of the vindex probabilities and the 
 
 In the model developed above, a consumer distorts his full-information utility-maximizing consumption bundle in order to signal his wealth.  The signal is on expenditures, however, not on physical goods.  In principle, a social planner could impose a sales tax on a highly visible good category in order to reduce physical consumption.  In the real world, such a tax is known as a luxury tax.  In this section I consider the welfare implications of two such tax schemes, one in the United States, and one in China.
 
-\subsubsection{Welfare effect of US automotive luxury taxes}
+\subsubsection{Application: Welfare effect of US automotive luxury taxes}
 
-In 1990, President George H.W. Bush signed the Omnibus Budget Reconcilliation Act into law.\footnote{Some readers might remember that this act proved television to be a poor medium for lip-reading.}  The OBRA contained a provision for a luxury tax on automobiles, as well as jewelry, furs, yachts, and personal aircraft.  The tax on autos was 10\% of the price exceeding \$30,000.  As one might imagine, the luxury tax did not go over well at campaign fundraisers and was repealed in 1993 for all goods except automobiles.\footnote{A cynic might observe that luxury vehicles are often imported from Europe.}  Congress finally scrapped the auto tax in 2002.
+In 1990, President George H.W. Bush signed the Omnibus Budget Reconciliation Act into law.\footnote{Some readers might remember that this act proved television to be a poor medium for lip-reading.}  The OBRA contained a provision for a luxury tax on automobiles, as well as jewelry, furs, yachts, and personal aircraft.  The tax on autos was 10\% of the price exceeding \$30,000.  As one might imagine, the luxury tax did not go over well at campaign fundraisers and was repealed in 1993 for all goods except automobiles.\footnote{A cynic might observe that luxury vehicles are often imported from Europe.}  Congress finally scrapped the auto tax in 2002.
 
 In this section, I measure the welfare effects of a 10\% tax on automobiles, redistributed lumpsum as a proportion of wealth.  Redistributing the tax proportionally to wealth is conveniently abstracts from the welfare effect of a transfer from the rich to the poor.  In addition, taxes redistributed this way change neither the individual nor aggregate fraction of wealth optimally allocated to any particular good category, as relative wealth remains unchanged.
 
@@ -357,7 +355,7 @@ Welfare change under the tax scheme is as in \eqref{eq:us_wel_change}.
     \Delta u_i = \sum_{g\in G} \gamma_{ig} \ln(1 + s) + \sum_{g\in l} \gamma_{ig} \ln (1 - u)
 \end{equation}
 
-It can be shown that $\ln(1+s) + \ln(1 - u) < 0$, so it is impossible to have a truly pareto tax scheme.  That is, it is always possible that some unlucky consumer will draw all zeros in non-luxury good category parameters, ensuring he will be harmed by luxury taxes.  We can, however, potententially design taxes which benefit all but a vanishly small fraction of consumers.
+It can be shown that $\ln(1+s) + \ln(1 - u) < 0$, so it is impossible to have a truly Pareto tax scheme.  That is, it is always possible that some unlucky consumer will draw all zeros in non-luxury good category parameters, ensuring he will be harmed by luxury taxes.  We can, however, potentially design taxes which benefit all but a vanishly small fraction of consumers.
 
 The relationship between $\alpha$ and the tax scheme here is through the link from the tax level to government subsidies.  Fixing preference parameters and the tax level $u$, the higher $\alpha$ the higher government subsidies $s$ to consumers.
 
@@ -370,142 +368,22 @@ Figure \ref{fig:wel_change_10} displays a histogram of welfare changes resulting
     \label{fig:wel_change_10}
 \end{figure}
 
-\subsubsection{Optimal Chinese Cigarette Tax}
-
-There is scope in this environment for welfare-increasing taxes.  
-Although this whole model is utilitarian to some degee, for a moment I want to show that I can numerically find a tax that is welfare increasing in a pareto sense.  
-The tax I consider is an excise tax, the revenue of which is passed back to consumers in proportion to their wealth.
-This sort of tax is convenient because the homotheticity result at the end of Section 2 implies that this redistribution scheme does not change budget shares.
-I do not want to introduce the supply side into this model.
-The operating assumption is that taxes affect neither firm pricing decisions nor worker wages.
-\footnote{
-    A cheap and totally uninteresting way to embed this assumption in general equilibrium would be to assume that inelastically supplied effective labor is the only input into a linear production function, and that there is perfect competition between firms.
-    Since the prices paid to firms do not change if we impose taxes, wages do not adjust.
-    Production is just scaled up or down depending on the demand effect of the taxes.
-}
-A tax assessed on a relatively visible good has two effects.
-Intuitively, rich people ``overconsume'' visible goods in order to signal well-being.
-As a visible good increases in price, a smaller amount of the visible good is needed to signal wealth.
-Since taxes are passed back lumpsum, this leads to less distortion in equilibrium.
-
-With the tax scheme I am implementing, there is also a redistributive effect.
-Since the rich distort consumption the most in order to signal but taxes are passed back in proportion to wealth, since the visible goods are more heavily taxed the rich ultimately end up losing some of their wealth.
-The poor, on the other hand, signal much less, so they actually pay less than they receive back from the tax scheme.  
-The goal is to find a set of non-negative excise taxes that weakly increase the welfare of all individuals in a society.
-
-Once we have the distribution of utility parameters, it is straightforward to numerically solve for the optimal tax.
-First I simulate a thousand individuals.
-Utility parameters are randomly drawn from the estimated distributions.
-Wealth levels are drawn from the total expenditure distribution in the data for a single year, the year 2000.
-Prices are also those from the year 2000.
-Observation types are drawn from estimated distribution of a single type (non-black, under 40).
-I use a numerical solver to search over good category specific taxes in order to maximize the unweighted sum of each individual's utility, subject to the constraint that no individual is made worse off.
-
-In an inner loop, I use the prices implied by a set of taxes to numerically solve for optimal consumption for each consumer.
-This is where the homotheticity result comes in handy. The spending shares before the tax revenue is passed back will be the same as the shares after the lumpsum transfer, so I just need to scale to find the optimal expenditures post transfer. 
-\footnote{It is a little more subtle than this, since some of what is redistributed back to consumers is again collected in taxes.
-    Thus expenditures are actually scaled up by a geometric sum of the proportion of total expenditure which is collected as taxes. 
-}
-Utility is then calculated and passed back to the outer loop.
-
-The pareto efficient taxes I found are expressed as a multiple of base prices in Table \ref{tab:opttax}. I restricted the taxes to be no more than the base price.
-\begin{table}
-    \centering
-	\begin{tabular}{|l|c|}
-	    \hline
-	    \textbf{Good Cat} & \textbf{Tax} \\
-	    \hline
-	    FdH &  1.0000\\
-	    \hline
-	    FdO &  0.5000\\ 
-	    \hline
-	    Cig &  0.3208\\ 
-	    \hline
-	    AlH &  0.0000\\ 
-	    \hline
-	    AlO &  0.0000\\ 
-	    \hline
-	    Clo &  0.6199\\ 
-	    \hline
-	    Lry &  0.0000\\ 
-	    \hline
-	    Jwl &  1.0000\\ 
-	    \hline
-	    Brb &  0.0000\\ 
-	    \hline
-	    Hom &  0.9955\\ 
-	    \hline
-	    Htl &  0.0000\\ 
-	    \hline
-	    Fur &  0.5000\\ 
-	    \hline
-	    Utl &  0.5865\\ 
-	    \hline
-	    Tel &  0.5000\\ 
-	    \hline
-	    HIn &  0.1714\\ 
-	    \hline
-	    Med &  0.0000\\ 
-	    \hline
-	    Fee &  0.0000\\ 
-	    \hline
-	    LIn &  0.0000\\ 
-	    \hline
-	    Car &  0.0000\\ 
-	    \hline
-	    CMn &  0.5000\\ 
-	    \hline
-	    Gas &  0.5003\\ 
-	    \hline
-	    CIn &  0.4264\\ 
-	    \hline
-	    Bus &  0.3035\\ 
-	    \hline
-	    Air &  0.5000\\ 
-	    \hline
-	    Bks &  0.0000\\ 
-	    \hline
-	    Ot1 &  0.0000\\ 
-	    \hline
-	    Ot2 &  1.0000\\ 
-	    \hline
-	    Edu &  1.0000\\ 
-	    \hline
-	    Cha &  0.2849\\ 
-	    \hline
-	\end{tabular}
-    \caption{Pareto taxes as multiple of base price}
-    \label{tab:opttax}
-\end{table}
-I present the simulated utility gain for each of the thousand simulated consumers in Figure \ref{fig:taxscatter}.
-\begin{figure}
-    \centering 
-	\includegraphics[scale=.8]{pics/taxscat_cropped.jpg}
-    \caption{Welfare gains in utils under pareto tax regime by log wealth}
-    \label{fig:taxscatter}
-\end{figure}
-There is a correlation coefficient of $0.179$ between the vindex levels and the pareto taxes presented above.  This is positive, as one might expect, meaning that more visible goods are more heavily taxed.
-The mean pre-tax utility level is 92, and the median is 94.  The mean welfare increase in utils is 2.517, and the median increase is 2.547.  The point I want to make in this section is not that these are the actual optimal taxes from a pareto perspective.  Instead I just want to point out that it is easy to generate taxes which benifit all of society and provide large welfare gains.
-
 \section{Conclusion}
-This paper takes a conspicuous consumption model from the theory literature seriously by adding preference heterogeneity and estimating parameters from data.
+This paper develops a structural conspicuous consumption model with preference heterogeneity estimable from widely available consumption expenditure data.  In an application, I show how the estimated model can be used to measure the welfare implications of a tax on luxury goods.
+
 The results of the estimation show that:
 \begin{enumerate}
-    \item Signaling plays an important role in consumption decisions.  Chinese consumers value peer group belief about well-being more than a third as much as they value direct utility from consumption.
-    \item Chinese consumers value signaling more than American consumers.  American consumers value peer group belief about a sixth as much as they value direct utility.
-    \item It is easy to find excise taxes which lead to large welfare gains, and do not hurt anyone.
+    \item Signaling plays a role in consumption decisions.  Chinese consumers value peer group belief about three percent as much as they value the direct utility from consumption.
+    \item Chinese consumers value peer group belief 20\% more than American consumers.
+    \item Simple luxury taxes can lead to small welfare gains for most households.
 \end{enumerate}
-	These results indicate that, in India, a tax on festival spending may significantly increase welfare.
-In the United States, I suggest a large tax on Apple products.
 
-In order to get an estimable model, I had to make quite a few unrealistic assumptions.
-One's peer group sees only consumption expenditures in one good category. 
-This is clearly counterfactual.
-In the real world, one's peer group sees a full vector of consumption expenditures, but with some noise.
+The strongest assumption in the model is that a household's peer group sees only consumption expenditures on one good category.  While a single-dimensional signal generates the unique and simple equilibrium solution to the model, it is clearly counterfactual.  In the real world, one's peer group sees a full vector of consumption expenditures, but with some noise.
 An earlier version of this paper had a model with this feature, but estimation involved numerically calculating a thirty dimensional integral for each consumer for each parameter trial.
-Future research might focus on finding a tractible model to estimate without such a stark assumption about the observability of consumption.
+Future research might focus on relaxing this stark assumption about the observability of consumption.
+
 \bibliographystyle{plainnat}
-\bibliography{biglist.bib}
+\bibliography{../../bib/biglist.bib}
 
 \appendix
 
