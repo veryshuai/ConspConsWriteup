@@ -14,7 +14,7 @@
 
 \title{Conspicuous Consumption in the United States and China}
 \author{David Jinkins
-    \thanks{I thank the National Science Foundation EAPSI program for support.  I would also like to thank Jonathan Eaton, Ed Green, Jim Tybout, Venky Venkateswaran, Yaohui Zhao, and the participants in the Penn State I/O and Trade reading groups for helpful comments. Remaining errors are my own.}
+    \thanks{I wish to acknowledge the National Science Foundation EAPSI program for generous support of this project.  I would also like to thank Jonathan Eaton, Ed Green, Jim Tybout, Venky Venkateswaran, Yaohui Zhao, and the participants in the Penn State I/O and Trade reading groups for helpful comments. Remaining errors are my own.}
 }
 \date{July 4, 2014}
 
@@ -22,15 +22,17 @@
 \maketitle
 
 \begin{abstract}
-I develop a model of conspicuous consumption to empirically measure the importance of peer beliefs to Americans and Chinese.  In the model, a consumer cares not only about the direct utility she receives from consumption, but also about the way her consumption pattern affects her peer group's belief about her well-being.  I estimate the model on household budget surveys. According to model estimates, a Chinese consumer cares 20\% more than an American consumer about peer beliefs.  The absolute size of the conspicuous consumption motive is significantly smaller than that found in previous literature.  I use the estimated model to evaluate the welfare effect of the 1990-2002 American luxury tax on automobiles.  The luxury tax benefited nearly all Americans a small amount, but hurt the small fraction of consumers who love automobiles the most. \end{abstract}
+I develop a model of conspicuous consumption to empirically measure the importance of peer beliefs to Americans and Chinese.  In the model, a consumer cares not only about the direct utility she receives from consumption, but also about the way her consumption pattern affects her peer group's belief about her well-being.  I estimate the model on household budget surveys. According to model estimates, a Chinese consumer cares 20\% more than an American consumer about peer beliefs.  The absolute size of the conspicuous consumption motive in both countries is relatively small.  I use the estimated model to evaluate the welfare effect of the 1990-2002 American luxury tax on automobiles.  The luxury tax benefited nearly all Americans a small amount, but hurt the small fraction of consumers who love automobiles the most. \end{abstract}
+
+\newpage
 
 \section{Introduction}
 
 I wear a Seiko automatic watch.  Over the course of a month, it picks up about five minutes.  I knew it would do this before I bought it from reading online reviews, but even so I purchased it for about \$100 a few years ago.  At the time, I could have picked up a much less expensive digital Casio from Wal-Mart which would have run more reliably, been easier to read, and been more water resistant.  On just about any measure of watch performance the Casio would have outrun the Seiko, and yet there is the relatively expensive Seiko on my wrist.
 
-When buying a car or a suit, a consumer considers how her social group will view the new purchase.  In addition to evidence from personal introspection, I will cite some papers below which find reduced form evidence of such consumer behavior. This paper adds to the empirical literature on conspicuous consumption by developing and estimating a partial-equilibrium heterogeneous-agent structural model in which a consumer's peers infer his wealth after observing a subset of his purchases.  Inference about welfare by his peer group causes a consumer to distort his consumption toward the purchase of visible goods.
+When buying a car or a suit, a consumer considers how her social group will view the new purchase.  This paper adds to the empirical literature on conspicuous consumption by developing and estimating a partial-equilibrium heterogeneous-agent structural model in which a consumer's peers infer his wealth after observing a subset of his purchases.  Inference about welfare by his peer group causes a consumer to distort his consumption toward the purchase of visible goods.
 
-This paper adds to the recent empirical literature on conspicuous consumption by developing and estimating a new structural model.  To identify the strength of the motive to conspiciuously consume, previous literature has either relied on strong assumptions about the functional form of utility or arbitrary assumptions about the way in which observable consumption enters utility.\citep{Heffetz2011, perez2013measuring}.  In the model developed below, households are allowed to have heterogenous, non-homethetic preferences.  A peer group forms beliefs about the household's welfare based on the observable part of the household's consumption.  The household cares about these peer group beliefs, and takes them into account when chosing how to allocate its income.  In order to identify this more flexible model, I use differences in the perception of the visibility of good categories across demographic groups, along with differences in how these demographic groups spend their incomes. The estimation uses both a survey on the relative visibility of different categories of goods, and household-level consumption expenditure data.  As it is used to calculate purchasing power, expenditure data is available for many countries and time periods.  This is primarily a \emph{measurement} paper.
+This paper adds to the recent empirical literature on conspicuous consumption by developing and estimating a new structural model.  To identify the strength of the motive to conspiciuously consume, previous literature has either relied on strong assumptions about the functional form of utility or arbitrary assumptions about the way in which observable consumption enters utility \citep{Heffetz2011, perez2013measuring}.  In the model developed below, households are allowed to have heterogenous, non-homethetic preferences.  A peer group forms beliefs about the household's welfare based on the observable part of the household's consumption.  The household cares about these peer group beliefs, and takes them into account when chosing how to allocate its income.  In order to identify this more flexible model, I use differences in the perception of the visibility of good categories across demographic groups, along with differences in how these demographic groups spend their incomes. The estimation uses both a survey on the relative visibility of different categories of goods, and household-level consumption expenditure data.  As it is used to calculate purchasing power, expenditure data is available for many countries and time periods.
 
 I estimate the model separately using American and Chinese consumption expenditure data.  The estimated model fits the data well.  I find that the Chinese consumers care 20\% more than American consumers about peer group beliefs.  Using the estimated model, I find that the 1990-2002 American luxury tax on automobiles had a small but positive welfare effect on all but around 2 in 10,000 American households.  The households hurt by the tax were gearheads that derived a large amount of pleasure from automobile purchases.
 
@@ -164,7 +166,7 @@ Table \ref{tab:vintab} in the appendix presents vindex survey data.
 
 As I do not have a vindex equivalent for China, I use the aggregated American vindex data for the Chinese estimation. Since there are fewer good categories in the Chinese data, I collapse the American vindex by taking the mean over aggregated good categories.
 
-\section{Discussion of Model Identification}
+\section{Discussion of Identification Assumptions}
 
 We are interested in $\alpha$, the weight given to the peer belief part of the utility function.  The key identification issue is that, for a fixed $\alpha$, \emph{any} consumption bundle can be rationalized by a particular set of utility function parameters $\boldsymbol{\gamma}_i$.  In order to separate preferences and conspicuous consumption, we need to take a stand on how utility parameters might be distributed.  One natural assumption is that most people's preferences are broadly similar.  To operationalize this idea, I assume that preferences for each household and each good category are independently drawn from lognormal distributions.  In addition, to rationalize zero expenditure in a good category I assume that with some probability a consumer doesn't derive any pleasure from consumption of a particular category ($\gamma_{ig} = 0$).
 
@@ -202,8 +204,6 @@ Taking observation type $t_i$ and $\alpha$ as given, there is a mapping from obs
 \begin{align}
 	%\label{eq:sgd}
 	p_gc_g &= \frac{\gamma_g}{\sum_{g\neq t}\gamma_g}  \left(w-  p_t c_t\right) \nonumber \\
-	%\label{eq:sgdsol}
-	\gamma_g &= \frac{p_g c_g}{\left(w- p_t c_t\right)} \sum_{g\neq t}\gamma_g \nonumber \\
 	\label{eq:gamsol}
 	\gamma_g &= \frac{p_g c_g}{\left(w- p_t c_t\right)} 
 \end{align}
@@ -282,8 +282,6 @@ My luxury tax will be 10\% of spending on automobiles.  Let $\tau = 0.1 / 1.1$ b
 
 \begin{align}
     (1 + s) \tau \sum_i w_i l_i &= s \sum_i w_i \nonumber \\
-    s &= \frac{\tau \sum_i w_i l_i}{\sum_i w_i - \tau \sum_i w_i l_i} \nonumber \\
-    \label{eq:lux_bb}
     s &= \frac{\tau L}{1 - \tau L}
 \end{align}
 
@@ -317,7 +315,7 @@ The results of the estimation show that:
     \item Simple luxury taxes can lead to small welfare gains for nearly all households.
 \end{enumerate}
 
-The strongest assumption in the model is that a household's peer group sees only consumption expenditures on one good category.  While a single-dimensional signal generates the unique and simple equilibrium solution to the model, it is clearly counterfactual.  In the real world, one's peer group sees a full, noisy vector of consumption expenditures.  An earlier version of this paper had a model with this feature, but estimation involved numerically calculating a thirty dimensional integral for each consumer for each parameter trial.  Future research might focus on relaxing this stark assumption about the observability of consumption.
+One strong assumption in the model is that a household's peer group sees only consumption expenditures on one good category.  While a single-dimensional signal generates the unique and simple equilibrium solution to the model, it is clearly counterfactual.  In the real world, one's peer group sees a full, noisy vector of consumption expenditures.  An earlier version of this paper had a model with this feature, but estimation involved numerically calculating a thirty dimensional integral for each consumer for each parameter trial.  Future research might focus on relaxing this stark assumption about the observability of consumption.
 
 \newpage
 
@@ -419,9 +417,35 @@ underwear        & 0.12 & (0.011) \\
     \label{tab:dem_vin}
 \end{table}
 
-\clearpage
-\section{Detailed Results}
-\label{det_res}
+% 0.04 & 0.03 & 0.05 & 0.05 & 0.04 & 0.02 & 0.03 & 0.04
+% 0.05 & 0.03 & 0.05 & 0.05 & 0.04 & 0.03 & 0.03 & 0.04
+% 0.04 & 0.03 & 0.04 & 0.05 & 0.04 & 0.03 & 0.03 & 0.04
+% 0.03 & 0.03 & 0.04 & 0.04 & 0.04 & 0.02 & 0.03 & 0.03
+% 0.03 & 0.03 & 0.05 & 0.05 & 0.04 & 0.03 & 0.03 & 0.04
+% 0.05 & 0.04 & 0.05 & 0.05 & 0.04 & 0.03 & 0.03 & 0.05
+% 0.05 & 0.04 & 0.05 & 0.04 & 0.03 & 0.03 & 0.03 & 0.04
+% 0.03 & 0.03 & 0.05 & 0.05 & 0.03 & 0.03 & 0.03 & 0.04
+% 0.04 & 0.02 & 0.04 & 0.05 & 0.03 & 0.02 & 0.03 & 0.03
+% 0.05 & 0.04 & 0.05 & 0.06 & 0.03 & 0.03 & 0.03 & 0.03
+% 0.03 & 0.03 & 0.04 & 0.04 & 0.04 & 0.03 & 0.03 & 0.03
+% 0.03 & 0.03 & 0.03 & 0.04 & 0.03 & 0.02 & 0.04 & 0.04
+% 0.05 & 0.03 & 0.04 & 0.05 & 0.04 & 0.02 & 0.03 & 0.04
+% 0.05 & 0.03 & 0.04 & 0.05 & 0.03 & 0.02 & 0.03 & 0.04
+% 0.03 & 0.02 & 0.04 & 0.03 & 0.03 & 0.02 & 0.03 & 0.03
+% 0.04 & 0.03 & 0.05 & 0.03 & 0.03 & 0.02 & 0.03 & 0.03
+% 0.05 & 0.02 & 0.04 & 0.04 & 0.03 & 0.02 & 0.03 & 0.03
+% 0.05 & 0.04 & 0.05 & 0.06 & 0.04 & 0.03 & 0.04 & 0.04
+% 0.04 & 0.03 & 0.04 & 0.02 & 0.03 & 0.02 & 0.02 & 0.03
+% 0.05 & 0.04 & 0.06 & 0.05 & 0.04 & 0.03 & 0.03 & 0.05
+% 0.05 & 0.03 & 0.04 & 0.04 & 0.04 & 0.02 & 0.03 & 0.04
+% 0.05 & 0.04 & 0.04 & 0.05 & 0.04 & 0.03 & 0.03 & 0.04
+% 0.04 & 0.03 & 0.03 & 0.03 & 0.02 & 0.02 & 0.02 & 0.03
+% 0.04 & 0.04 & 0.05 & 0.06 & 0.04 & 0.03 & 0.03 & 0.05
+% 0.04 & 0.03 & 0.05 & 0.04 & 0.03 & 0.03 & 0.03 & 0.04
+% 0.03 & 0.03 & 0.04 & 0.04 & 0.04 & 0.02 & 0.03 & 0.03
+% 0.04 & 0.03 & 0.04 & 0.05 & 0.04 & 0.02 & 0.03 & 0.04
+% 0.05 & 0.04 & 0.05 & 0.05 & 0.04 & 0.03 & 0.03 & 0.03
+% 0.06 & 0.04 & 0.05 & 0.05 & 0.04 & 0.03 & 0.03 & 0.05
 
 \begin{table}[!ht]
     \centering
