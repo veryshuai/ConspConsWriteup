@@ -9,20 +9,24 @@
 \usepackage{rotating}
 \usepackage{appendix}
 \usepackage{palatino}
+\usepackage{authblk}
 %\usepackage{wrapfig}
 %\usepackage[nolists]{endfloat}
 
 \title{Conspicuous Consumption in the United States and China}
-\author{David Jinkins
-    \thanks{I wish to acknowledge the National Science Foundation EAPSI program for generous support of this project.  I would also like to thank Jonathan Eaton, Ed Green, Jim Tybout, Venky Venkateswaran, Yaohui Zhao, and the participants in the Penn State I/O and Trade reading groups for helpful comments. Remaining errors are my own.}
-}
-\date{July 4, 2014}
+\author{David Jinkins \thanks{I wish to acknowledge the National Science Foundation EAPSI program for generous support of this project.  I would also like to thank Jonathan Eaton, Ed Green, Jim Tybout, Venky Venkateswaran, Yaohui Zhao, and the participants in the Penn State I/O and Trade reading groups for helpful comments. Remaining errors are my own.}}
+\affil{
+{\footnotesize Department of Economics     }\\
+{\footnotesize Copenhagen Business School  }\\
+{\footnotesize david.jinkins@gmail.com     }\\
+{\footnotesize Tel: +45 38155658}}
+\date{\today}
 
 \begin{document}
 \maketitle
 
 \begin{abstract}
-I develop a model of conspicuous consumption to empirically measure the importance of peer beliefs to Americans and Chinese.  In the model, a consumer cares not only about the direct utility she receives from consumption, but also about the way her consumption pattern affects her peer group's belief about her well-being.  I estimate the model on household budget surveys. According to model estimates, a Chinese consumer cares 20\% more than an American consumer about peer beliefs.  The absolute size of the conspicuous consumption motive in both countries is relatively small.  I use the estimated model to evaluate the welfare effect of the 1990-2002 American luxury tax on automobiles.  The luxury tax benefited nearly all Americans a small amount, but hurt the small fraction of consumers who love automobiles the most. \end{abstract}
+I develop a model of conspicuous consumption to measure the importance of peer beliefs to Americans and Chinese.  In the model, a consumer cares not only about the direct utility she receives from consumption, but also about the way her consumption pattern affects her peer group's belief about her well-being.  I estimate the model on household budget surveys. According to model estimates, a Chinese consumer cares 20\% more than an American consumer about peer beliefs.  The absolute size of the conspicuous consumption motive in both countries is relatively small.  I use the estimated model to evaluate the welfare effect of the 1990-2002 American luxury tax on automobiles.  The luxury tax benefited nearly all Americans a small amount, but hurt the small fraction of consumers who love automobiles the most. \end{abstract}
 
 \newpage
 
@@ -32,7 +36,7 @@ I wear a Seiko automatic watch.  Over the course of a month, it picks up about f
 
 When buying a car or a suit, a consumer considers how her social group will view the new purchase.  This paper adds to the empirical literature on conspicuous consumption by developing and estimating a partial-equilibrium heterogeneous-agent structural model in which a consumer's peers infer his wealth after observing a subset of his purchases.  Inference about welfare by his peer group causes a consumer to distort his consumption toward the purchase of visible goods.
 
-This paper adds to the recent empirical literature on conspicuous consumption by developing and estimating a new structural model.  To identify the strength of the motive to conspiciuously consume, previous literature has either relied on strong assumptions about the functional form of utility or arbitrary assumptions about the way in which observable consumption enters utility \citep{Heffetz2011, perez2013measuring}.  In the model developed below, households are allowed to have heterogenous, non-homethetic preferences.  A peer group forms beliefs about the household's welfare based on the observable part of the household's consumption.  The household cares about these peer group beliefs, and takes them into account when chosing how to allocate its income.  In order to identify this more flexible model, I use differences in the perception of the visibility of good categories across demographic groups, along with differences in how these demographic groups spend their incomes. The estimation uses both a survey on the relative visibility of different categories of goods, and household-level consumption expenditure data.  As it is used to calculate purchasing power, expenditure data is available for many countries and time periods.
+This paper adds to the recent empirical literature on conspicuous consumption by developing and estimating a new structural model.  To identify the strength of the motive to conspiciuously consume, previous literature has either relied on strong assumptions about the functional form of utility or arbitrary assumptions about the way in which observable consumption enters utility \citep{heffetz2011, perez2013measuring}.  In the model developed below, households are allowed to have heterogenous, non-homethetic preferences.  A peer group forms beliefs about the household's welfare based on the observable part of the household's consumption.  The household cares about these peer group beliefs, and takes them into account when chosing how to allocate its income.  In order to identify this more flexible model, I use differences in the perception of the visibility of good categories across demographic groups, along with differences in how these demographic groups spend their incomes. The estimation uses both a survey on the relative visibility of different categories of goods, and household-level consumption expenditure data.  As it is used to calculate purchasing power, expenditure data is available for many countries and time periods.
 
 I estimate the model separately using American and Chinese consumption expenditure data.  The motive to conspicuously consume creates the possibility of welfare improving government policy.  Optimal policy will differ between countries if consumption behaviors differ -- a point I will address in an exercise using my estimation results.  There is a business economics literature which analyses conspicuous consumption across countries, including comparison of the United States and China \citep{wong1998personal}.  Using survey results, an empirical branch of this literature has found mixed results concerning Chinese and US consumers \citep{podoshen2011materialism}.
 
@@ -41,7 +45,7 @@ Rather than use survey data, my estimation is based on observed consumption beha
 In this paper as well as the literature I am following, a consumer considers peer group belief an end in itself.  I put peer group belief about welfare directly into the utility function.  Some might argue that people only care about peer group beliefs as the means to an ultimate consumptive end--wearing a nice watch makes people trust you more, so you are more likely to get a loan or secure a business deal.  I am sympathetic to this point of view, and this sort of signaling is doubtless going on to some degree.  The two points of view about peer beliefs are complementary.  From a long perspective, our brains might have been selected to care about peer group beliefs precisely because good standing makes successful reproduction more likely. In this case, the utils we get from positive peer group beliefs are an evolutionary rule of thumb.\citep{RobsonSamuelson2010}
 
 There are several strands of empirical literature that support the presence of a peer belief component in the utility function.  Consider the ultimatum game in which one player proposes a split of a sum of money, and the other player decides whether to accept or reject.  If the second player accepts, the money is allocated according to the split. If the second player rejects, neither player gets anything.  There is a long and robust experimental literature showing that if people only care about immediate monetary payoffs, the splits they propose are too fair.  Researchers have been careful to pair subjects who do not know each other and are unlikely to have interaction after the experiment, and the result still holds.  One explanation is that there is some sort of social component in the utility function. \citep{FehrSchmidt1999,BoltonOckenfels2000}  A second defense comes from the literature on self-reported happiness and relative wealth.  \citet{Luttmer2004} finds that relative wealth compared with neighbors has a robust positive correlation  with self-reported happiness, controlling for absolute wealth level.  It seems hard to explain this fact without some sort of social component in the utility function.  If, however, the reader is not convinced that there is a fundamental social belief component in the utility function, he may think of this paper as estimating a reduced form of a more complicated dynamic game.  
-This paper adds to the general empirical literature on conspicuous consumption,\citep{Blochetal2004,Charlesetal2009,MoavNeeman2010,MoavNeeman2012} and in particular to recent work on differences in conspicuous consumption between regions \citep{friehe2014conspicuous}.  I extend work by \citet{heffetz2011}, who conducts a telephone survey in the United States to determine the visibility of consumption goods.  Heffetz analyzes household budget survey data, and finds evidence that the relatively visible goods identified by the survey are being used as a means to signal income.  To my knowledge, the only other structural estimation of a utility function including conspicuous consumption is \citet{perez2013measuring}.  Perez-Truglia follows earlier literature in using a two-good functional form, and a variety of specifications for how non-market goods like status enter utility.  My specification below differs from Perez-Truglia's in a few important ways.  Some cosmetic differences include that I allow for individual level preference heterogeneity and estimate a many good utility function.  Any good can be used for signaling in my model, while in Perez-Truglia's model cars and clothes are the visible goods.  More substantively, while Perez-Truglia is focused on the provision of unobservable non-market goods (status), I assume that society cares only about an individual's unobservable welfare.  This allows me to consider peer-group beliefs as an equilibrium outcome, rather than assume a functional form for the provision of a non-market good.  In his framework, Perez-Truglia finds that a tax on luxury goods can create welfare gains significantly larger than those I find in my estimation.
+This paper adds to the general empirical literature on conspicuous consumption,\citep{Blochetal2004,Charlesetal2009,MoavNeeman2010,MoavNeeman2012} and in particular to recent work on differences in conspicuous consumption between regions \citep{friehe2014conspicuous}.\footnote{ \citet{friehe2014conspicuous} contains an interesting discussion of why the Socialist East German system was likely to increase the importance of conspicuous consumption relative to its importance in West Germany.  The difference I find between Chinese and American preferences for visibile consumption may be related to the Socialist experience of Chinese citizens over the last century.} I extend work by \citet{heffetz2011}, who conducts a telephone survey in the United States to determine the visibility of consumption goods.  Heffetz analyzes household budget survey data, and finds evidence that the relatively visible goods identified by the survey are being used as a means to signal income.  To my knowledge, the only other structural estimation of a utility function including conspicuous consumption is \citet{perez2013measuring}.  Perez-Truglia follows earlier literature in using a two-good functional form, and a variety of specifications for how non-market goods like status enter utility.  My specification below differs from Perez-Truglia's in a few important ways.  Some cosmetic differences include that I allow for individual level preference heterogeneity and estimate a many good utility function.  Any good can be used for signaling in my model, while in Perez-Truglia's model cars and clothes are the visible goods.  More substantively, while Perez-Truglia is focused on the provision of unobservable non-market goods (status), I assume that society cares only about an individual's unobservable welfare.  This allows me to consider peer-group beliefs as an equilibrium outcome, rather than assume a functional form for the provision of a non-market good.  In his framework, Perez-Truglia finds that a tax on luxury goods can create welfare gains significantly larger than those I find in my estimation.
 
 There is a relatively large and old related literature estimating what are known as interdependent preferences.  Beginning with James Duesenberry's 1949 doctoral thesis,\citep{Duesenberry1949} researchers have theorized that the consumption of neighbors affects own demand.  A typical econometric model in this literature lets household demand parameters depend linearly on the average of the consumption of a reference group. A relationship between neighbor consumption and own consumption is taken to mean that preferences are interdependent.  The literature, however, does not take a stand on why consumption neighborhood consumption should be linked in this particular way.
 
@@ -186,7 +190,11 @@ In order to regain identification, I use differences in observed vindexes across
 
 In the United States I use visibility indexes for eight different demographic types of household.  One dimension of differentiation is the age of the survey respondent (over/under age 40). The other dimension of differentiation is region in the United States (Northeast, Midwest, West, and South).  The visibility probabilities are taken directly from Heffetz and normalized so that they sum to one.  Table \ref{tab:dem_vin} in the appendix characterizes observation-type probability distributions for the demographic groups.
 
-I have only a single Chinese demographic category, so when estimating Chinese preference parameters I cannot use an identification strategy based on differences across demographic groups.  MORE DISCUSSION OF WHETHER THIS IS A BIG PROBLEM!  In the Chinese estimation, I take the $\psi_g$'s in equation \eqref{eq:adj_util} as data from the American estimation.  This assumption implies that luxury and inferior good categories are the same in both China and the United States.  Deviations from Chinese expenditure share trends along with vindex probabilities identify $\alpha$.
+I have only a single Chinese demographic category, so when estimating Chinese preference parameters I cannot use an identification strategy based on differences across demographic groups.  In the Chinese estimation, I take the $\psi_g$'s in equation \eqref{eq:adj_util} as data from the American estimation.  This assumption implies that luxury and inferior good categories are the same in both China and the United States. Deviations from Chinese expenditure share trends along with vindex probabilities identify $\alpha$. 
+
+While it would of course be better to have a vindex calculated from Chinese survey data, on average using an average American vindex is likely to be a reasonable approximation to the average Chinese vindex.  While the US estimation is based on heterogeneity between demographic groups in observation-type probability, as one might expect, the correlation across groups is still quite high.  Jewelry is going to be more visible than insurance payments in any US demographic group.  This is likely true in China as well.
+
+If the Chinese do have a very different average vindex compared with Americans, my estimates are likely to be biased downward.  In the Chinese estimation, $\alpha$ is identified by the change in expenditure shares with income.  If the goods I am assuming have the highest visibilities are actually low visibility goods in China, expenditure shares will be nearly flat in income in those goods.  This will cause the estimated Chinese $\alpha$ to be too low.
 
 \section{Estimation Procedure} 
 
@@ -250,12 +258,10 @@ For each household, I assign the observation type giving the highest probability
 \section{Results and an Application to an American Luxury Tax}
 \label{sec:results}
 
-Chinese care about 20\% more than Americans about social beliefs.  The weight of social beliefs $\alpha$ in American utility is 0.027 with standard error $1\times10^{-4}$.  In Chinese utility, the weight of social beliefs is 0.033 with standard error 0.001.  Standard errors are bootstrapped by repeatedly redrawing from the data and reestimating the model.  All estimated parameters are presented in Appendix \ref{det_res}.
+Chinese care about 20\% more than Americans about social beliefs.  The weight of social beliefs $\alpha$ in American utility is 0.027 with standard error $1\times10^{-4}$.  In Chinese utility, the weight of social beliefs is 0.033 with standard error 0.001.  Standard errors are bootstrapped by repeatedly redrawing from the data and reestimating the model.  All estimated parameters are presented in Appendix \ref{sec:det_res}.
 
 The model is capable of simulating data similar to the real data set. Figure \ref{fig:shares_fake} is a scatter plot of simulated US data, superimposed on top of the scatter plots of the actual US data in figures \ref{fig:exp_shr}.
-\begin{figure}
-	\centering
-		\includegraphics[scale=1]{pics/shr_plot_sim.png}
+\begin{figure} \centering \includegraphics[scale=1]{pics/shr_plot_sim.png}
 	\caption{Log expenditure shares (y) by log expenditure (x), sim=red, dat=blue}
 	\label{fig:shares_fake}
 \end{figure}
@@ -271,10 +277,23 @@ Figure \ref{fig:vinmatch} is a scatter plot of the vindex probabilities and the 
 
 As my model and data are modified from \citet{heffetz2011}, it is useful to compare my results with his.  Of course, Heffetz takes a much different approach to estimation.  From his model he derives the prediction that a more visible good should have a larger elasticity with respect to income.  Using the same American consumer expenditure share data that I use, he first constructs a population-weighted, average elasticity for each good, and then regresses this elasticity on his visibility index.  Recall that the vindex is bounded between zero and one.  In his baseline regression, he finds that an increase in his vindex by $0.1$ will result in an increase in elasticity of consumption share with respect of income of $0.18$.  That is, if apples have a vindex of $0.5$, and bananas have a vindex of $0.6$, we should expect that a doubling of income will raise the consumption share of bananas $18\%$ more than the consumption share of apples.
 
-Heffetz makes no claim to structurally estimate his model -- he is just testing whether one of the predictions is borne out in the data.  The left hand side of the regression in his test is an average elasticity, for example, while even in his relatively simple model elasticities of relatively visible goods increase with income.  As one might expect with the amount of flexibility in my model, simulations do an excellent job of replicating the expenditure share data, so I am confident that a replication of the Heffetz methodology on my simulated data would be reasonably close to the original estimates.
+Heffetz makes no claim to structurally estimate his model -- he is just testing whether one of the predictions is borne out in the data.  The left hand side of the regression in his test is an average elasticity, for example, while even in his relatively simple model the elasticity of the visible good decreases with income.\footnote{This can be seen in Figure 1 of the working paper version of Heffetz's 2011 Review of Economic Statistics paper. \citep{heffetz2004conspicuous}}  As one might expect with the amount of flexibility in my model, simulations do an excellent job of replicating the expenditure share data, so I am confident that a replication of the Heffetz methodology on my simulated data would be reasonably close to the original estimates.
 
-Maybe more interesting is to consider the visible good expenditure with respect to income of a household in my estimated model.  This household only signals with one expenditure category.  The consumption share elasticity with respect to income of all other categories is a bit less than one, as an increase in income causes a relative spending increase in the visible category.  We can get the elasticity of the visible good share with respect to income by implicitly differentiating\eqref{eq:eq_cond} with respect to income.  Solving for the derivative of visible good consumption share $r$ with respect to income, multiplying by income and dividing by $r$ gives us a messy expression for the elasticity we are interested in.  Assuming equal utility weights and $\alpha = 0.027$ as estimated, we numerically plot the elasticity in figure blah.
+Maybe more interesting is to consider the visible good expenditure with respect to income of a household in my estimated model.  This household only signals with one expenditure category.  The consumption share elasticity with respect to income of all other categories is slightly less than zero, as an increase in income causes a relative spending increase in the visible category.  We can get the elasticity of the visible good share with respect to income by implicitly differentiating \eqref{eq:eq_cond} with respect to income.  Solving for the derivative of visible good consumption share $r$ with respect to income, multiplying by income and dividing by $r$ gives us an expression for the elasticity we are interested in:  
 
+\begin{equation}
+    \label{elasticity}
+    \frac{\alpha + \gamma}{r \left(1 + \gamma\right)\hat{w}^{-\frac{\alpha + \gamma}{\alpha}}\left(\left(1 + \frac{1}{\gamma}\right) r\right)^{\frac{\gamma}{\alpha}} - \gamma}
+\end{equation}
+
+Assuming equal utility weights ($\gamma = \frac{1}{28}$), the strength of signaling in utility as estimated ($\alpha = 0.027$), and using \eqref{eq:eq_cond} to get $r$ for any given normalized income level $\hat{w}$, I numerically plot the elasticity of visible good share with respect to income as a multiple of lowest possible income in Figure \ref{fig:elasticity}.  The elasticity falls dramatically with income, and is equal to 18\% (the Heffetz gain in elasticity from a 0.1 increase in vindex) when income is a little under twice the minimum possible amount.
+
+\begin{figure}
+    \centering
+	\includegraphics[scale=.8]{pics/elasticity.png}
+    \caption{Elasticity of visible good share with respect to income as a multiple of lowest possible income}
+    \label{fig:elasticity}
+\end{figure}
 
 \subsection{Policy Analysis: Luxury Tax}
 
@@ -290,6 +309,7 @@ My luxury tax will be 10\% of spending on automobiles.  Let $\tau = 0.1 / 1.1$ b
 
 \begin{align}
     (1 + s) \tau \sum_i w_i l_i &= s \sum_i w_i \nonumber \\
+    \label{eq:lux_bb}
     s &= \frac{\tau L}{1 - \tau L}
 \end{align}
 
@@ -454,6 +474,11 @@ underwear        & 0.12 & (0.011) \\
 % 0.04 & 0.03 & 0.04 & 0.05 & 0.04 & 0.02 & 0.03 & 0.04
 % 0.05 & 0.04 & 0.05 & 0.05 & 0.04 & 0.03 & 0.03 & 0.03
 % 0.06 & 0.04 & 0.05 & 0.05 & 0.04 & 0.03 & 0.03 & 0.05
+
+\newpage
+
+\section{Detailed Results}
+\label{sec:det_res}
 
 \begin{table}[!ht]
     \centering
